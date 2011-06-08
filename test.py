@@ -1,11 +1,10 @@
 #! /usr/bin/python
 
 from mininet.net import Mininet
-from mininet.topolib import TreeTopo
 from mininet.topo import Topo, Node, Edge, SingleSwitchTopo
 from mininet.node import RemoteController
 from mininet.cli import CLI
-from mininet.util import run
+# from mininet.util import run
 from optparse import OptionParser
 from threading import Thread
 import time
@@ -72,47 +71,6 @@ def do_dpctl_ports(sw, listenPort=6634):
 
 def chunks(l, n):
     return [l[i:i+n] for i in range(0, len(l), n)]
-
-class LocationServer(Thread):
-    global log
-
-    class LocServeHandler(SocketServer.BaseRequestHandler):
-        def handle(self):
-            req = self.request.recv(1024)
-            fname = ''
-            if req == 'server':
-                fname = '/tmp/server_loc.txt'
-            elif req == 'topo':
-                fname = '/tmp/topo.txt'
-            else:
-                return
-            try:
-                f = open(fname, 'r')
-                buf = ''
-                for l in f:
-                    buf += l
-                f.close()
-                self.request.send(buf)
-            except:
-                pass
-
-    class ModTcpServer(SocketServer.TCPServer):
-        allow_reuse_address = True
-
-    def __init__(self):
-        Thread.__init__(self)
-        self.log = log
-        self.start()
-
-    def run(self):
-        if self.log: sys.stderr.write('Starting TCP location server on %s:%d\n' % ('0.0.0.0', 9999))
-        self.server = LocationServer.ModTcpServer(('0.0.0.0', 9999), LocationServer.LocServeHandler)
-        self.server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        self.server.serve_forever()
-
-    def stop(self):
-        if self.log: sys.stderr.write('Stopping TCP location server\n')
-        self.server.shutdown()
 
 class HierarchicalTreeTopo(Topo):
     '''init
@@ -193,50 +151,34 @@ class HierarchicalTreeNet(object):
                 listenPort=6634, xterms=False, autoSetMacs=True)
         self.servers = [self.net.idToNode[s] for s in self.topo.servers]
         self.client = self.net.idToNode[self.topo.client]
-        self.serverIP = '10.0.0.100'
-        self.serverIPMask = 8
-        for s in self.servers:
-            # set server IP
-            s.cmd('ifconfig', '%s:%d' % (s.intfs[0], 0), '%s/%d' % (self.serverIP, self.serverIPMask))
-            # set static arp in servers for client IP
-            s.cmd('arp', '-s', self.client.IP(), self.client.MAC())
-            # start client script
-            if self.log: sys.stderr.write('Starting client %s\n' % s.name)
-
-            #s.cmd('python', 'httpd.py', '80', '&')
-            s.cmd('python', 'client.py', '&')
-            #TODO remove
-            break
-        # set static arp in client for server IP
-        self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
+        #self.serverIP = '10.0.0.100'
+        #self.serverIPMask = 8
         self.net.start()
         # log server location
         self.log_server_loc('/tmp/server_loc.txt')
         self.log_topology('/tmp/topo.txt')
 
     def test(self):
+        for s in self.servers:
+            # set server IP
+            #s.cmd('ifconfig', '%s:%d' % (s.intfs[0], 0), '%s/%d' % (self.serverIP, self.serverIPMask))
+            # set static arp in servers for client IP
+            #s.cmd('arp', '-s', self.client.IP(), self.client.MAC())
+            # start client script
+            if self.log: sys.stderr.write('Starting client %s\n' % s.name)
+
+            #s.cmd('python', 'httpd.py', '80', '&')
+            s.cmd('python', 'client.py', '%s.cfg'%s.name, '&')
+            #TODO remove
+            break
+
         os.system('rm -rf /tmp/time_log.txt')
         time.sleep(1)
         path_stats = []
         prev_stats = self.get_path_stats()
         if self.log: sys.stderr.write('Running test traffic...\n')
-
-        self.client.cmd('python', 'Netflix_Server_Tester.py')
-        '''
-        for i in xrange(3):
-            for j in xrange(len(self.topo.aggregation)):
-                output = self.client.cmd('./client/client.py',
-                        'http://%s/cgi-bin/noop.py'%self.serverIP, '2', '1',
-                        str(len(self.servers)))
-                time.sleep(2)
-                stats = self.get_path_stats()
-                delta_stats = [(i[0]-j[0], i[1]-j[1]) for (i, j) in zip(stats,
-                    prev_stats)]
-                path_stats.append(delta_stats)
-                prev_stats = stats
-        '''
-        #self.test_server_lb()
-        #self.test_path_lb(path_stats)
+        output = self.client.cmd('python', 'server.py')
+        print output
 
     def test_server_lb(self):
         print 'Testing server load-blancing...'
@@ -422,6 +364,103 @@ class HierarchicalTreeNet(object):
         if f is not None:
             f.close()
 
+class SingleServerNet(object):
+    global log
+
+    def __init__(self, ctrl_addr='127.0.0.1:6633'):
+	self.log = log
+        self.k = 2
+        self.topo = SingleSwitchTopo(k=self.k)
+
+	ctrl_args = ctrl_addr.split(':')
+	ctrl_ip = ctrl_args[0]
+	ctrl_port = int(ctrl_args[1]) if len(ctrl_args) > 1 else 6633
+	
+	if self.log: sys.stderr.write('Starting the Single-server network\n')
+
+	self.net = Mininet(topo=self.topo, controller= lambda x:
+		RemoteController(x, ctrl_ip, ctrl_port),
+		listenPort=6634, xterms=False, autoSetMacs=True)
+        self.servers = [self.net.idToNode[s] for s in range(2, self.k -1 + 2)]
+        self.client = self.net.idToNode[1+self.k]
+        #self.serverIP = '10.0.0.100'
+        #self.serverIPMask = 8
+        self.net.start()
+        # log server location
+        self.log_server_loc('/tmp/server_loc.txt')
+	self.log_topology('/tmp/topo.txt')
+
+    def test(self):
+        for s in self.servers:
+            # set server IP
+            s.cmd('ifconfig', '%s:%d' % (s.intfs[0], 0), '%s/%d' % (self.serverIP, self.serverIPMask))
+            # set static arp in servers for client IP
+            # self.client.cmd('arp', '-s', s.IP(), s.MAC())
+            # start web server
+        if self.log: sys.stderr.write('Starting web server on server %s\n' % s.name)
+        s.cmd('python', 'client.py', '%s.cfg' % s.name, '&')
+        # set static arp in client for server IP
+        #self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
+        os.system('rm -rf /tmp/time_log.txt')
+        time.sleep(1)
+        if self.log: sys.stderr.write('Running test traffic...\n')
+        for i in xrange(3):
+            output = self.client.cmd('./client/client.py',
+                'http://%s/cgi-bin/noop.py'%self.serverIP, '2', '1',
+                str(len(self.servers)))
+        self.test_server_lb()
+
+    def log_server_loc(self, filename=None):
+        f = None
+        if filename is not None:
+            try:
+                f = open(filename, 'w')
+            except IOError:
+                print 'Could not open file %s for writing' % filename
+                pass
+
+        # log client information
+        if self.log: sys.stderr.write('Client location:\n')
+        client_id = self.k + 1
+        switch = self.net.idToNode[1]
+        log_str = '%s %s %d\n' % (self.client.MAC(), switch.defaultMAC,
+            self.topo.port(client_id, 1)[1])
+        if self.log: sys.stderr.write(log_str)
+        if f is not None:
+            f.write(log_str)
+        else:
+            print log_str,
+        if self.log: sys.stderr.write('\n')
+
+        # log server information
+        if self.log: sys.stderr.write('Server location:\n')
+        for server_id in range(2, self.k -1 + 2):
+            s = self.net.idToNode[server_id]
+            switch = self.net.idToNode[1]
+            log_str = '%s %s %d\n' % (s.MAC(), switch.defaultMAC, self.topo.port(server_id, 1)[1])
+            if self.log: sys.stderr.write(log_str)
+            if f is not None:
+                f.write(log_str)
+            else:
+                print log_str,
+        if f is not None:
+            f.close()
+        if self.log: sys.stderr.write('\n')
+
+
+    def log_topology(self, filename=None):
+
+        f = None
+        if filename is not None:
+            try:
+                f = open(filename, 'w')
+            except IOError:
+                print 'Could not open file %s for writing' % filename
+                pass
+        switch = self.net.idToNode[1]
+        if f is not None:
+            f.write('%s\n'%switch.defaultMAC)
+            f.close()
 
 
 def start(mn, num_requests):
@@ -475,21 +514,40 @@ if __name__ == '__main__':
     v_str = "Print verbose output to stderr"
     parser.add_option("-v", "--verbose", action="store_true", dest="verbose",
 	    default=False, help=v_str)
+    i_str = "IP:port of the controller, default 127.0.0.1:6633"
+    parser.add_option("-i", "--interface", dest="ctrl_addr", type="string",
+	    default='127.0.0.1:6633',
+	    help=i_str, metavar="CONTROLLER_ADDR")
+    t_str = "Test your solution"
+    parser.add_option("-t", "--test", action="store_true", dest="test",
+	    default=False, help=t_str)
+    o_str = "Topology type"
+    parser.add_option("-o", "--topology", action="store", dest="topo", type="int",
+	    default=1, help=o_str)
     (options, args) = parser.parse_args()
 
     # verbose output?
     log = options.verbose
 
     # networks to run
-    mn = HierarchicalTreeNet(ctrl_addr="127.0.0.1:6633")
+    if (options.topo < 1 or options.topo > 2):
+        sys.stdout.write("Topology must be either 1 or 2")
+        die()
+    elif options.topo == 1: 
+        mn = SingleServerNet(ctrl_addr=options.ctrl_addr)
+    elif options.topo == 2:
+        mn = HierarchicalTreeNet(ctrl_addr=options.ctrl_addr)
 
     sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
     l = sys.stdin.readline()
     if l.strip().lower() == 'q':
         die()
 
-    time.sleep(5)
-    mn.test()
+    if options.test:
+        time.sleep(5)
+        mn.test()
+    else:
+        CLI(mn.net)
 
     stop(mn)
 
