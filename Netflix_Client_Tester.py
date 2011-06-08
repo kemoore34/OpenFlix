@@ -13,7 +13,6 @@ def client_exit(rcount,pcount,sock):
     print '%d / %d'%(rcount, pcount)
     sys.exit();
     
-print ('starting client........')
 #config_path
 config_path = ""
 if len(sys.argv) > 1 :

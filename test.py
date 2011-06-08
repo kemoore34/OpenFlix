@@ -203,8 +203,8 @@ class HierarchicalTreeNet(object):
             # start client script
             if self.log: sys.stderr.write('Starting client %s\n' % s.name)
 
-            s.cmd('python', 'httpd.py', '80', '&')
-            #s.cmd('python', 'cl.py', '&')
+            #s.cmd('python', 'httpd.py', '80', '&')
+            s.cmd('python', 'Netflix_Client_Tester.py', '&')
             #TODO remove
             break
         # set static arp in client for server IP

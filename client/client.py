@@ -11,7 +11,7 @@ RESP_TIME_AVG_N = 5
 MIN_REPORT_NUM = 0
 
 class Client:
-    def __init__(self, uri, rate, max_conn, num_req_threads, req_per_thread, log_name):
+    def __init__(self, log_name):
         self.num_req_threads_ = num_req_threads
         self.ctrl_lock_ = threading.Lock()
         self.rate_ = [rate,]
@@ -202,26 +202,26 @@ class Client:
                 print(sys.exc_info()[1])
                 self.ctrl_lock_.release()
             
-def main(uri, rate, max_conns, num_th, req_per_thread, log_name):
+def main(uri, log_name):
     client = Client(uri, rate, max_conns, num_th, req_per_thread, log_name); 
     client.run()
 
 if __name__ == '__main__':
-    max_conns = 50
-    num_th = 10
-    req_per_thread = 20
+    max_conns = 1
+    num_th = 1
+    req_per_thread = 1
     log_name = "/tmp/time_log.txt"
     report_interval = .1
     if (sys.argv[0].find("pydoc") == -1):
-            if (len(sys.argv) < 2 or
-                sys.argv[1] == "--help" or
-                sys.argv[1] == "-h"):
-                    print(sys.argv[0]+" URL [rate] [req threads = 10] [req per thread = 20]")
-                    sys.exit(1)
+        if (len(sys.argv) < 2 or
+            sys.argv[1] == "--help" or
+            sys.argv[1] == "-h"):
+                print(sys.argv[0]+" URL [rate] [req threads = 10] [req per thread = 20]")
+                sys.exit(1)
 
     uri = sys.argv[1]
     rate = float(sys.argv[2])
     num_th = int(sys.argv[3])
     req_per_thread = int(sys.argv[4])
    
-    main(uri, rate, max_conns, num_th, req_per_thread, log_name)
+    main(uri, log_name)
