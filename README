@@ -1,0 +1,2 @@
+run client with its IP as an argument
+ex. ./client 10.0.0.2

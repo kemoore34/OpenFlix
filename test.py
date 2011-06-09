@@ -4,6 +4,7 @@ from mininet.net import Mininet
 from mininet.topo import Topo, Node, Edge, SingleSwitchTopo
 from mininet.node import RemoteController
 from mininet.cli import CLI
+from mininet.util import run
 # from mininet.util import run
 from optparse import OptionParser
 from threading import Thread
@@ -392,23 +393,15 @@ class SingleServerNet(object):
 
     def test(self):
         for s in self.servers:
-            # set server IP
-            s.cmd('ifconfig', '%s:%d' % (s.intfs[0], 0), '%s/%d' % (self.serverIP, self.serverIPMask))
-            # set static arp in servers for client IP
-            # self.client.cmd('arp', '-s', s.IP(), s.MAC())
-            # start web server
-        if self.log: sys.stderr.write('Starting web server on server %s\n' % s.name)
-        s.cmd('python', 'client.py', '%s.cfg' % s.name, '&')
+            s.cmd('python', 'client.py', s.IP()+':1234', '&')
+        if self.log: sys.stderr.write('Starting client %s\n' % s.name)
         # set static arp in client for server IP
         #self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
         os.system('rm -rf /tmp/time_log.txt')
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
-        for i in xrange(3):
-            output = self.client.cmd('./client/client.py',
-                'http://%s/cgi-bin/noop.py'%self.serverIP, '2', '1',
-                str(len(self.servers)))
-        self.test_server_lb()
+        
+        output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '2', '1', '50')
 
     def log_server_loc(self, filename=None):
         f = None

@@ -1,7 +1,6 @@
 #! /usr/bin/python
 
 import socket, sys
-import ConfigParser
 
 #exit_function
 class Client:
@@ -12,15 +11,19 @@ class Client:
         self.timeout = timeout
         self.packet_count = packet_count
         self.log_name = '/tmp/client-%s.log' % name
+        self.f = open(self.log_name, "w")
 
     def client_exit(self, rcount,pcount):
         self.sock.close()
         print '%d / %d'%(rcount, pcount)
+
+        self.f.write('Received %d packets\n'% rcount)
+        self.f.close()
         sys.exit();
     
     def run(self):
-        f = open(self.log_name, "w")
-        f.write('Starting client at %s:%d with timeout:%d\n'%(self.ip, self.port, self.timeout))
+        self.f.write('Starting client at %s:%d with timeout:%d\n'%(self.ip, self.port, self.timeout))
+        print 'Starting client at %s:%d with timeout:%d'%(self.ip, self.port, self.timeout)
         
         self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
         self.sock.settimeout(timeout)
@@ -28,7 +31,7 @@ class Client:
 
         recv_count = 0
 
-        f.write('Waiting for packet...\n')
+        self.f.write('Waiting for packet...\n')
         while True:
             try:
                 data, addr = self.sock.recvfrom( 1024 ) # buffer size is 1024 bytes
@@ -38,25 +41,20 @@ class Client:
             recv_count += 1        
             print '.',
             if recv_count == packet_count:
-                f.write('Received %d packets\n'% packet_count)
-                f.close()
                 self.client_exit(recv_count, packet_count)    
 
 #config_path
 config_path = ""
 if len(sys.argv) > 1 :
-    config_path = sys.argv[1] 
+    ip, port = sys.argv[1].split(':')
+    port = int(port)
 else :
-    config_path = "Netflix_Client.cfg"
+    ip = '127.0.0.1'
+    port = 80
 
-config = ConfigParser.RawConfigParser()
-config.read(config_path)
-
-name = config.get('Client', 'name')
-ip = config.get('Client', 'ip')
-port = config.getint('Client', 'port')
-timeout = config.getint('Client', 'timeout')
-packet_count = config.getint('Client', 'packet_count')
+name = ip
+timeout = 30
+packet_count = 2000
 
 client = Client(name, ip, port, timeout, packet_count)
 client.run()

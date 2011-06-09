@@ -9,7 +9,7 @@ import re
 from urlparse import urlsplit
 
 class ReqGenerator(Thread):
-    def __init__(self, rate, uri_list, req_dict, lock, sock_dict, time_dict,  max_conn, my_poll, req_per_thread):
+    def __init__(self, rate, uri_list, req_dict, lock, sock_dict, time_dict, max_conn, my_poll, req_per_thread):
         Thread.__init__(self)
 
         self.rate_ = rate
@@ -41,6 +41,11 @@ class ReqGenerator(Thread):
             except:
                 pass
 
+    # send udp packet with given msg len
+    def send_udp(self, sd, dest_ip, dest_port, msg, packet_len):
+        data = ' '*(packet_len - len(msg)) + msg 
+        sd.sendto(data, dest_ip, dest_port) 
+
     # parses url to get hostname and port
     def get_address(self, url):
         u = urlsplit(url)
@@ -61,6 +66,8 @@ class ReqGenerator(Thread):
             next_t = 1. / self.rate_[0] 
         except:
             pass
+
+        # Cause random initial delay
         old_t = time.time() - random.random() * next_t
         self.lock_.release()
         
@@ -91,7 +98,7 @@ class ReqGenerator(Thread):
                 # check if new request needs/can to be sent
                 if (len(self.req_list_) > 0) and (len(self.sock_dict_) < self.max_conn_):
 
-                    sd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    sd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
                     # non blocking sockets
                     sd.setblocking(0)
@@ -99,12 +106,11 @@ class ReqGenerator(Thread):
                     # keep connection start time for logging purposes
                     self.time_dict_[sd.fileno()] = time.time()
 
-                    # send next http request
-                    uri = self.req_list_[0]
+                    # send next msg
+                    dest_ip, dest_port = self.req_list_[0].split(':')
                     try:
-                        print '.',
                         sys.stdout.flush()
-                        self.send_http(sd, uri)
+                        self.send_udp(sd, dest_ip, dest_port, str(self.total_req_), 100)
                     except:
                         print(sys.exc_info()[0])
                         print(sys.exc_info()[1])
