@@ -179,6 +179,7 @@ class HierarchicalTreeNet(object):
         prev_stats = self.get_path_stats()
         if self.log: sys.stderr.write('Running test traffic...\n')
         output = self.client.cmd('python', 'server.py')
+        time.sleep(5)
         print output
 
     def test_server_lb(self):
@@ -401,7 +402,8 @@ class SingleServerNet(object):
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
         
-        output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '2', '1', '50')
+        print s.IP()
+        output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
 
     def log_server_loc(self, filename=None):
         f = None

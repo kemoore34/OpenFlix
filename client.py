@@ -4,20 +4,21 @@ import socket, sys
 
 #exit_function
 class Client:
-    def __init__(self, name, ip, port, timeout, packet_count):
+    def __init__(self, name, ip, port, timeout):
         self.name = name
         self.ip = ip
         self.port = port
         self.timeout = timeout
-        self.packet_count = packet_count
         self.log_name = '/tmp/client-%s.log' % name
         self.f = open(self.log_name, "w")
+        self.num_packets = 0
+        self.recv_count = 0
 
     def client_exit(self, rcount,pcount):
         self.sock.close()
         print '%d / %d'%(rcount, pcount)
 
-        self.f.write('Received %d packets\n'% rcount)
+        self.f.write('Received %d / %d packets\n'% (rcount, pcount))
         self.f.close()
         sys.exit();
     
@@ -29,19 +30,21 @@ class Client:
         self.sock.settimeout(timeout)
         self.sock.bind((ip,port))
 
-        recv_count = 0
-
         self.f.write('Waiting for packet...\n')
+        
         while True:
             try:
                 data, addr = self.sock.recvfrom( 1024 ) # buffer size is 1024 bytes
             except socket.timeout:
-                self.client_exit(recv_count, packet_count)
+                self.client_exit(self.recv_count, self.num_packets)
                 
-            recv_count += 1        
-            print '.',
-            if recv_count == packet_count:
-                self.client_exit(recv_count, packet_count)    
+            self.recv_count += 1        
+            seq_total = data.strip()
+            seq, self.num_packets = map(int, seq_total.split('/'))
+            
+            # Terminate client
+            if seq == self.num_packets:
+                self.client_exit(self.recv_count, self.num_packets)    
 
 #config_path
 config_path = ""
@@ -54,7 +57,6 @@ else :
 
 name = ip
 timeout = 30
-packet_count = 2000
 
-client = Client(name, ip, port, timeout, packet_count)
+client = Client(name, ip, port, timeout)
 client.run()

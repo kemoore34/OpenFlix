@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import socket
+import traceback
 import sys, time, signal
 from threading import Thread
 import struct
@@ -44,7 +45,7 @@ class ReqGenerator(Thread):
     # send udp packet with given msg len
     def send_udp(self, sd, dest_ip, dest_port, msg, packet_len):
         data = ' '*(packet_len - len(msg)) + msg 
-        sd.sendto(data, dest_ip, dest_port) 
+        sd.sendto(data, (dest_ip, dest_port)) 
 
     # parses url to get hostname and port
     def get_address(self, url):
@@ -86,14 +87,13 @@ class ReqGenerator(Thread):
             self.lock_.acquire()
             try:
                 # check for 0 request rate
-                if self.rate_[0] <= 1e-5:
+                if self.rate_[0] > 0 and self.rate_[0] <= 1e-5:
                     self.lock_.release()
                     continue
 
-                if( time.time() - old_t - (1. / self.rate_[0]) < -0.01 ):
+                if self.rate_[0] > 0 and ( time.time() - old_t - (1. / self.rate_[0]) < -0.01 ):
                     self.lock_.release()
                     continue
-
 
                 # check if new request needs/can to be sent
                 if (len(self.req_list_) > 0) and (len(self.sock_dict_) < self.max_conn_):
@@ -105,12 +105,17 @@ class ReqGenerator(Thread):
 
                     # keep connection start time for logging purposes
                     self.time_dict_[sd.fileno()] = time.time()
-
+                    
                     # send next msg
+                    if ':' not in self.req_list_[0]:
+                        print 'Destination port number missing'
+                        die()
+
                     dest_ip, dest_port = self.req_list_[0].split(':')
+
                     try:
                         sys.stdout.flush()
-                        self.send_udp(sd, dest_ip, dest_port, str(self.total_req_), 100)
+                        self.send_udp(sd, dest_ip, int(dest_port), `i+1`+'/'+str(self.total_req_), 100)
                     except:
                         print(sys.exc_info()[0])
                         print(sys.exc_info()[1])
@@ -118,11 +123,11 @@ class ReqGenerator(Thread):
                         continue
 
                     # register socket for the poll
-                    self.my_poll_.register(sd, select.POLLIN | select.POLLOUT)
+                    #self.my_poll_.register(sd, select.POLLIN | select.POLLOUT)
                     
                     # keep a reference to the socket, otherwise it gets destroyed, because poll.register() only
                     # remembers the file descriptor
-                    self.sock_dict_[sd.fileno()] = sd
+                    #self.sock_dict_[sd.fileno()] = sd
 
                 # update timeout for the next poll (wake up to send a new request on time)
                 next_t = 1. / self.rate_[0]
