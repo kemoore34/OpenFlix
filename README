@@ -1,2 +1,15 @@
-run client with its IP as an argument
-ex. ./client 10.0.0.2
+Running the test script
+
+To run the test script 
+./test
+
+Run test script in CLI with extended information
+./test -v
+
+Run test script with automated traffic generation
+./test -v -t
+
+
+Running the server and client as a independent process
+./client my_ip:port 
+./server dest_ip:port rate num_packets
