@@ -194,8 +194,6 @@ class HierarchicalTreeNet(object):
                 listenPort=6634, xterms=False, autoSetMacs=True)
         self.servers = [self.net.idToNode[s] for s in self.topo.servers]
         self.client = self.net.idToNode[self.topo.client]
-        #self.serverIP = '10.0.0.100'
-        #self.serverIPMask = 8
         self.net.start()
         # log server location
         self.log_server_loc('/tmp/server_loc.txt')
@@ -204,19 +202,16 @@ class HierarchicalTreeNet(object):
     def test(self):
         for s in self.servers:
             s.cmd('python', 'client.py', s.IP()+':1234', '&')
+            s.cmd('arp', '-s', self.client.IP(), self.client.MAC())
             self.client.cmd('arp', '-s', s.IP(), s.MAC())
 
-        if self.log: sys.stderr.write('Starting client %s\n' % s.name)
-        # set static arp in client for server IP
-        #self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
         os.system('rm -rf /tmp/time_log.txt')
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
         
-        output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
+        for s in self.servers: 
+            output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
         time.sleep(5)
-        print output
-
 
     def get_path_stats(self):
         listenPort = 6634
