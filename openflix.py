@@ -204,6 +204,8 @@ class HierarchicalTreeNet(object):
     def test(self):
         for s in self.servers:
             s.cmd('python', 'client.py', s.IP()+':1234', '&')
+            self.client.cmd('arp', '-s', s.IP(), s.MAC())
+
         if self.log: sys.stderr.write('Starting client %s\n' % s.name)
         # set static arp in client for server IP
         #self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
@@ -339,8 +341,9 @@ class SingleServerNet(object):
         for s in self.servers:
             s.cmd('python', 'client.py', s.IP()+':1234', '&')
         if self.log: sys.stderr.write('Starting client %s\n' % s.name)
+
         # set static arp in client for server IP
-        #self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
+        self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
         os.system('rm -rf /tmp/time_log.txt')
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
