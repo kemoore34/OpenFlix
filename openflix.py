@@ -134,7 +134,7 @@ class HierarchicalTreeTopo(Topo):
         self.aggregation = range(c+1, b+c+1) # b aggregation switches
         self.access = range(b+c+1, a+b+c+1) # a access switches
         self.servers = range(a+b+c+1, 3*a+b+c+1) # 2*a servers, 2 per access switch
-        self.client = 3*a+b+c+1 # 1 client
+        self.clients = range(3*a+b+c+1, 3*a+b+2*c+1) # c clients
 
         log_str = ''.join(['Starting HierarchicalTreeTopo with ', 
             '%d core, %d aggregate, %d access switches, ' % (c, b, a),
@@ -150,13 +150,16 @@ class HierarchicalTreeTopo(Topo):
             self.add_node(aa, Node())
 
         # add hosts
-        self.add_node(self.client, Node(is_switch=False))
+        for client in self.clients:
+            self.add_node(client, Node(is_switch=False))
         for s in self.servers:
             self.add_node(s, Node(is_switch=False))
 
         # add links
         # client <-> core
-        self.add_edge(self.client, self.core[0], Edge())
+        for client in self.clients:
+            self.add_edge(client, self.core[client-self.clients[0]], Edge())
+
         # core <-> aggregation
         for cc in self.core:
             for bb in self.aggregation:
@@ -193,7 +196,8 @@ class HierarchicalTreeNet(object):
                 RemoteController(x, ctrl_ip, ctrl_port), 
                 listenPort=6634, xterms=False, autoSetMacs=True)
         self.servers = [self.net.idToNode[s] for s in self.topo.servers]
-        self.client = self.net.idToNode[self.topo.client]
+        self.clients = [self.net.idToNode[cl] for cl in self.topo.clients]
+        #self.client = self.net.idToNode[self.topo.client]
         self.net.start()
         # log server location
         self.log_server_loc('/tmp/server_loc.txt')
@@ -202,15 +206,15 @@ class HierarchicalTreeNet(object):
     def test(self):
         for s in self.servers:
             s.cmd('python', 'client.py', s.IP()+':1234', '&')
-            s.cmd('arp', '-s', self.client.IP(), self.client.MAC())
-            self.client.cmd('arp', '-s', s.IP(), s.MAC())
+            s.cmd('arp', '-s', self.clients[0].IP(), self.clients[0].MAC())
+            self.clients[0].cmd('arp', '-s', s.IP(), s.MAC())
 
         os.system('rm -rf /tmp/time_log.txt')
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
         
         for s in self.servers: 
-            output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
+            output = self.clients[0].cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
         time.sleep(5)
 
     def get_path_stats(self):
@@ -237,21 +241,28 @@ class HierarchicalTreeNet(object):
         # log client information
         #if self.log: sys.stderr.write('Client location:\n')
         if self.log: sys.stderr.write('Server location:\n')
-        client_id = self.topo.client
-        switch_id = self.topo.core[0]
-        switch = self.net.idToNode[switch_id]
-        log_str = '%s %s %d\n' % (self.client.MAC(), switch.defaultMAC,
-                self.topo.port(client_id, switch_id)[1])
-        if self.log: sys.stderr.write(log_str)
+        log_str = '#Servers: Do not delete this line\n'
         if f is not None:
             f.write(log_str)
-        else:
-            print log_str,
+        for c_idx in range(len(self.topo.clients)):
+            client_id = self.topo.clients[c_idx]
+            switch_id = self.topo.core[c_idx]
+            switch = self.net.idToNode[switch_id]
+            log_str = '%s %s %d\n' % (self.clients[c_idx].MAC(), switch.defaultMAC, self.topo.port(client_id, switch_id)[1])
+            if self.log: sys.stderr.write(log_str)
+            if f is not None:
+                f.write(log_str)
+            else:
+                print log_str,
+
         if self.log: sys.stderr.write('\n')
 
         # log server information
         #if self.log: sys.stderr.write('Server location:\n')
         if self.log: sys.stderr.write('Client location:\n')
+        log_str = '#Clients: Do not delete this line\n'
+        if f is not None:
+            f.write(log_str)
         for aa in range(len(self.topo.access)):
             switch_id = self.topo.access[0] + aa
             s1_id = self.topo.servers[0] + 2*aa
@@ -485,7 +496,7 @@ if __name__ == '__main__':
     elif options.topo == 1: 
         mn = SingleServerNet(ctrl_addr=options.ctrl_addr)
     elif options.topo == 2:
-        mn = HierarchicalTreeNet(ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(c=2, b=2, a=2, ctrl_addr=options.ctrl_addr)
 
     sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
     l = sys.stdin.readline()
