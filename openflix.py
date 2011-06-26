@@ -205,7 +205,7 @@ class HierarchicalTreeNet(object):
 
     def test(self):
         for s in self.servers:
-            s.cmd('python', 'client.py', s.IP()+':1234', '&')
+            s.cmd('python', 'client.py', '-i', s.IP()+':1234', '-q', '&')
             s.cmd('arp', '-s', self.clients[0].IP(), self.clients[0].MAC())
             self.clients[0].cmd('arp', '-s', s.IP(), s.MAC())
 
@@ -214,7 +214,7 @@ class HierarchicalTreeNet(object):
         if self.log: sys.stderr.write('Running test traffic...\n')
         
         for s in self.servers: 
-            output = self.clients[0].cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
+            output = self.clients[0].cmd('python' ,'server.py', self.clients[0].IP()+':1234', s.IP()+':1234', '300', '1000')
         time.sleep(5)
 
     def get_path_stats(self):
