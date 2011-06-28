@@ -97,7 +97,7 @@ ip, port = options.ctrl_addr.split(':')
 port = int(port)
 
 name = ip
-timeout = 30
+timeout = 10
 
 client = Client(name, ip, port, timeout)
 client.qc = options.quality

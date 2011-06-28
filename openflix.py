@@ -213,9 +213,12 @@ class HierarchicalTreeNet(object):
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
         
+        server_port = 1234
         for s in self.servers: 
-            output = self.clients[0].cmd('python' ,'server.py', self.clients[0].IP()+':1234', s.IP()+':1234', '300', '1000')
-        time.sleep(5)
+            output = self.clients[0].cmd('python' ,'server.py', '-i', self.clients[0].IP()+':'+str(server_port), 
+                                         '-d', s.IP()+':1234', '-r', '300', '-n', '4500', '&')
+            server_port += 1
+        time.sleep(20)
 
     def get_path_stats(self):
         listenPort = 6634
@@ -354,8 +357,8 @@ class SingleServerNet(object):
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
         
-        print s.IP()
-        output = self.client.cmd('python' ,'server.py', s.IP()+':1234', '300', '1000')
+        output = self.clients[0].cmd('python' ,'server.py', '-i', self.clients[0].IP()+':'+str(server_port), 
+                                         '-d', s.IP()+':1234', '-r', '300', '-n', '3000')
 
     def log_server_loc(self, filename=None):
         f = None

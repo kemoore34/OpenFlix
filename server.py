@@ -3,6 +3,7 @@
 import sys,time,socket
 from threading import Thread
 from string import atoi
+from optparse import OptionParser
 
 class ReqGenerator(Thread):
     def __init__(self, self_ip, self_port, ip, port, rate, pcount):
@@ -18,7 +19,13 @@ class ReqGenerator(Thread):
     
     def run(self):
         
-        sleep_time = 1. / self.rate_
+        if self.rate_ < 0:
+            sleep_time = 0
+        elif self.rate_ == 0:
+            return
+        else:
+            sleep_time = 1. / self.rate_
+        
         sd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sd.setblocking(0)
         #sd.connect((self.ip_,self.port_))
@@ -47,7 +54,7 @@ class ReqGenerator(Thread):
             
             try:
                 sd.sendto(sdata,(self.ip_,self.port_))
-                print str(sent_count) + "th packet sent"
+                #print str(sent_count) + "th packet sent"
                 sent_count = sent_count + 1
             except:
                 print "packet dropped. exit."
@@ -55,20 +62,27 @@ class ReqGenerator(Thread):
             
         
 if __name__ == '__main__':
-    if (sys.argv[0].find("pydoc") == -1):
-        if (len(sys.argv) < 2 or
-            sys.argv[1] == "--help" or
-            sys.argv[1] == "-h"):
-                print(sys.argv[0]+" URL_SELF URL_TO [rate] [number of packets = 20]")
-                print(sys.argv[0]+"     URL_SELF: ip_address:port.  Ex. 127.0.0.1:80.")
-                print(sys.argv[0]+"     URL_TO: ip_address:port.  Ex. 127.0.0.1:80.")
-                print(sys.argv[0]+"     rate: packets per second.  -1 sends at maximum rate.")
-                sys.exit(1)
-                
-    uri_self = (sys.argv[1]).split(":")
-    uri = (sys.argv[2]).split(":")
-    rate = int(sys.argv[3])
-    num_packets = int(sys.argv[4])
+    # parse options
+    parser = OptionParser()
+    i_str = "IP:port of the server listening address, default 127.0.0.1:1234"
+    parser.add_option("-i", "--interface", dest="svr_addr", type="string",
+            default='127.0.0.1:1234', help=i_str, metavar="LISTEN_ADDR")
+    d_str = "IP:port of the destination client address"
+    parser.add_option("-d", "--destination", dest="dest_addr", type="string",
+            default=None, help=d_str, metavar="DEST_ADDR")
+    r_str = "Rate. Packets sent per second. Do not set this option to send at maximum speed"
+    parser.add_option("-r", "--rate", dest="rate", type="int",
+            default=-1, help=r_str)
+    n_str = "Number of packets to send."
+    parser.add_option("-n", "--number", dest="num", type="int",
+            default=None, help=n_str)
+    (options, args) = parser.parse_args()
+
+    uri_self = options.svr_addr.split(':')
+    uri = options.dest_addr.split(':')
+               
+    rate = int(options.rate)
+    num_packets = int(options.num)
    
     rg = ReqGenerator(uri_self[0],atoi(uri_self[1]),uri[0],atoi(uri[1]),rate,num_packets)
     rg.start();
