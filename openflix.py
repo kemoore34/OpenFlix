@@ -205,7 +205,7 @@ class HierarchicalTreeNet(object):
 
     def test(self):
         for s in self.servers:
-            s.cmd('python', 'client.py', '-i', s.IP()+':1234', '-q', '&')
+            s.cmd('python', 'client.py', '-i', s.IP()+':1234', '&')
             s.cmd('arp', '-s', self.clients[0].IP(), self.clients[0].MAC())
             self.clients[0].cmd('arp', '-s', s.IP(), s.MAC())
 
@@ -216,9 +216,10 @@ class HierarchicalTreeNet(object):
         server_port = 1234
         for s in self.servers: 
             output = self.clients[0].cmd('python' ,'server.py', '-i', self.clients[0].IP()+':'+str(server_port), 
-                                         '-d', s.IP()+':1234', '-r', '300', '-n', '4500', '&')
+                                         '-d', s.IP()+':1234', '-r', '1000', '-n', '10000', '&')
             server_port += 1
-        time.sleep(20)
+
+        time.sleep(30)
 
     def get_path_stats(self):
         listenPort = 6634
@@ -299,16 +300,18 @@ class HierarchicalTreeNet(object):
         if f is not None:
             f.write(log_str+'\n')
         # log core -> aggregation
-        core_id = self.topo.core[0]
-        s_core = self.net.idToNode[core_id]
+        for core_id in self.topo.core:
+            s_core = self.net.idToNode[core_id]
+            for agg_id in self.topo.aggregation:
+                s_agg = self.net.idToNode[agg_id]
+                p1, p2 = self.topo.port(core_id, agg_id)
+                log_str = '%s %d %s %d\n' % (s_core.defaultMAC, p1,
+                        s_agg.defaultMAC, p2)
+                if f is not None:
+                    f.write(log_str)
+
         for agg_id in self.topo.aggregation:
             s_agg = self.net.idToNode[agg_id]
-            p1, p2 = self.topo.port(core_id, agg_id)
-            log_str = '%s %d %s %d\n' % (s_core.defaultMAC, p1,
-                    s_agg.defaultMAC, p2)
-            if f is not None:
-                f.write(log_str)
-
             # log aggregation -> access
             for acc_id in self.topo.access:
                 s_acc = self.net.idToNode[acc_id]
@@ -499,7 +502,7 @@ if __name__ == '__main__':
     elif options.topo == 1: 
         mn = SingleServerNet(ctrl_addr=options.ctrl_addr)
     elif options.topo == 2:
-        mn = HierarchicalTreeNet(c=2, b=2, a=2, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
 
     sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
     l = sys.stdin.readline()

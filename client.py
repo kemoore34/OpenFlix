@@ -39,11 +39,12 @@ class Client:
         self.sock.bind((ip,port))
 
         self.f.write('Waiting for packet...\n')
+        print self.qc
         
         last_time = 0
         while True:
             try:
-                data, addr = self.sock.recvfrom( 1024 ) # buffer size is 1024 bytes
+                data, addr = self.sock.recvfrom(2048) # buffer size is 2048 bytes
                 
                 self.rate_recv_count +=1
                 self.recv_count += 1

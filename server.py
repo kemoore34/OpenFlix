@@ -32,25 +32,26 @@ class ReqGenerator(Thread):
         
         sdr = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sdr.bind((self.selfip_,self.selfport_))
-        sdr.setblocking(0)
-        packet_len = 100
+        # Non-blocking socket receive
+        sdr.setblocking(0)  
+        packet_len = 1400
         sent_count = 1;
         while(sent_count <= self.pcount_):
             time.sleep(sleep_time)
             try:
-                rdata = sdr.recv(1000)
+                rdata = sdr.recv(2048)
                 if rdata == 'low':
                     #self.rate_ = (int) (0.8 * self.rate_)
                     #sleep_time = 1. / self.rate_
-                    packet_len = 50; 
+                    packet_len = 512; 
                     #print "rate is decreased. new rate is" + str(self.rate_)
-                    print "quality is decreased. new quality length is " + str(50)
+                    print "quality is decreased. new quality length is " + str(packet_len)
             except:
                 pass
             
             
             msg = str(sent_count)+'/'+str(self.pcount_) +'/'+str(self.rate_) +'/'+self.selfip_+":"+str(self.selfport_)
-            sdata = ' '*(packet_len - len(msg)) + msg
+            sdata = msg + ' '*(packet_len - len(msg))
             
             try:
                 sd.sendto(sdata,(self.ip_,self.port_))
