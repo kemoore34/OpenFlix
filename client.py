@@ -35,11 +35,10 @@ class Client:
         print 'Starting client at %s:%d with timeout:%d'%(self.ip, self.port, self.timeout)
         
         self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
-        self.sock.settimeout(timeout)
+        self.sock.settimeout(self.timeout)
         self.sock.bind((ip,port))
 
         self.f.write('Waiting for packet...\n')
-        print self.qc
         
         last_time = 0
         while True:
@@ -92,15 +91,17 @@ parser.add_option("-i", "--interface", dest="ctrl_addr", type="string",
 q_str = "Enable Quality Control"
 parser.add_option("-q", "--quality", action="store_true", dest="quality",
         default=False, help=q_str)
+to_str = "Timeout"
+parser.add_option("-t", "--timeout", dest="timeout",
+        default=10.0, type='float', help=to_str)
 (options, args) = parser.parse_args()
 
 ip, port = options.ctrl_addr.split(':')
 port = int(port)
 
 name = ip
-timeout = 10
 
-client = Client(name, ip, port, timeout)
+client = Client(name, ip, port, options.timeout)
 client.qc = options.quality
 client.verbose = options.verbose
 client.run()

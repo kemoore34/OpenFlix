@@ -197,7 +197,6 @@ class HierarchicalTreeNet(object):
                 listenPort=6634, xterms=False, autoSetMacs=True)
         self.servers = [self.net.idToNode[s] for s in self.topo.servers]
         self.clients = [self.net.idToNode[cl] for cl in self.topo.clients]
-        #self.client = self.net.idToNode[self.topo.client]
         self.net.start()
         # log server location
         self.log_server_loc('/tmp/server_loc.txt')
@@ -220,6 +219,44 @@ class HierarchicalTreeNet(object):
             server_port += 1
 
         time.sleep(30)
+
+    def replay(self, filename):
+        f = None
+        max_end_time = 0
+        curTime = 0
+        packet_rate = 1000
+        timeout = 10
+        if filename is not None:
+            try:
+                f = open(filename, 'r')
+                for l in f:
+                    if l.startswith('#'): continue
+                    send_time, src_addr, dst_addr, end_time = l.split()
+                    time.sleep(float(send_time) - curTime)
+                    curTime = float(send_time)
+                    for s in self.servers: 
+                        if s.IP() == dst_addr.split(':')[0]:
+                            break
+                    for c in self.clients:
+                        if c.IP() == src_addr.split(':')[0]:                    
+                            break
+                    total_packets = int(packet_rate * (float(end_time)-float(curTime)))
+                    if end_time > max_end_time: max_end_time = float(end_time)
+
+                    s.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '&')
+                    s.cmd('arp', '-s', c.IP(), c.MAC())
+                    c.cmd('arp', '-s', s.IP(), s.MAC())
+                    c.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
+                            '-n', `total_packets`, '&')
+                # Wait until all packets are sent
+                time.sleep(max_end_time-curTime)
+                # Grace period for clients to timeout
+                time.sleep(timeout)
+                time.sleep(5)
+                        
+            except IOError:
+                print 'Could not open replay file %s' % filename
+                pass
 
     def get_path_stats(self):
         listenPort = 6634
@@ -483,6 +520,9 @@ if __name__ == '__main__':
     t_str = "Test your solution"
     parser.add_option("-t", "--test", action="store_true", dest="test",
             default=False, help=t_str)
+    r_str = "Replay traffic"
+    parser.add_option("-r", "--replay", type="string", dest="replay",
+            default=None, help=r_str)
     o_str = "Topology type"
     parser.add_option("-o", "--topology", action="store", dest="topo", type="int",
             default=1, help=o_str)
@@ -510,8 +550,12 @@ if __name__ == '__main__':
         die()
 
     if options.test:
-        time.sleep(5)
-        mn.test()
+        if options.replay:
+            time.sleep(5)
+            mn.replay(options.replay)
+        else:
+            time.sleep(5)
+            mn.test()
     else:
         CLI(mn.net)
 
