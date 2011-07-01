@@ -232,6 +232,9 @@ class HierarchicalTreeNet(object):
                 for l in f:
                     if l.startswith('#'): continue
                     send_time, src_addr, dst_addr, end_time = l.split()
+                    if send_time < curTime:
+                        print "Error: Send time later than the current time."
+                        break
                     time.sleep(float(send_time) - curTime)
                     curTime = float(send_time)
                     for s in self.servers: 
@@ -249,11 +252,12 @@ class HierarchicalTreeNet(object):
                     c.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
                             '-n', `total_packets`, '&')
                 # Wait until all packets are sent
-                time.sleep(max_end_time-curTime)
+                wait_time = max_end_time-curTime
+                time.sleep(wait_time)
                 # Grace period for clients to timeout
                 time.sleep(timeout)
-                time.sleep(5)
-                        
+                time.sleep(10)
+    
             except IOError:
                 print 'Could not open replay file %s' % filename
                 pass

@@ -11,7 +11,7 @@ class Client:
         self.ip = ip
         self.port = port
         self.timeout = timeout
-        self.log_name = '/tmp/client-%s.log' % name
+        self.log_name = '/tmp/client-%s-%s.log' % (name,port)
         self.f = open(self.log_name, "w")
         self.num_packets = 0
         self.recv_count = 0
