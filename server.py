@@ -59,7 +59,15 @@ class ReqGenerator(Thread):
                 sent_count = sent_count + 1
             except:
                 print "packet dropped. exit."
-                sys.exit()
+                break
+        # Notify connection termination
+        try:
+            sd.setsockopt(socket.IPPROTO_IP, socket.IP_TOS, 4)
+            sd.sendto('Finish',(self.ip_,self.port_))
+        except:
+            print "Finish packet failed to send"
+            
+        sys.exit()
             
         
 if __name__ == '__main__':
