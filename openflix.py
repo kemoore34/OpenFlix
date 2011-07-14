@@ -133,8 +133,8 @@ class HierarchicalTreeTopo(Topo):
         self.core = range(1, c+1) # c core switches
         self.aggregation = range(c+1, b+c+1) # b aggregation switches
         self.access = range(b+c+1, a+b+c+1) # a access switches
-        self.servers = range(a+b+c+1, 3*a+b+c+1) # 2*a servers, 2 per access switch
-        self.clients = range(3*a+b+c+1, 3*a+b+2*c+1) # c clients
+        self.servers = range(a+b+c+1, 5*a+b+c+1) # 2*a servers, 2 per access switch
+        self.clients = range(5*a+b+c+1, 5*a+b+2*c+1) # c clients
 
         log_str = ''.join(['Starting HierarchicalTreeTopo with ', 
             '%d core, %d aggregate, %d access switches, ' % (c, b, a),
@@ -171,10 +171,14 @@ class HierarchicalTreeTopo(Topo):
         # access <-> servers
         for aa in range(len(self.access)):
             sw = self.access[0] + aa
-            s1 = self.servers[0] + 2*aa
-            s2 = self.servers[0] + 2*aa + 1
+            s1 = self.servers[0] + 4*aa
+            s2 = self.servers[0] + 4*aa + 1
+            s3 = self.servers[0] + 4*aa + 2
+            s4 = self.servers[0] + 4*aa + 3
             self.add_edge(sw, s1, Edge())
             self.add_edge(sw, s2, Edge())
+            self.add_edge(sw, s3, Edge())
+            self.add_edge(sw, s4, Edge())
 
         self.enable_all()
 
@@ -310,20 +314,28 @@ class HierarchicalTreeNet(object):
             f.write(log_str)
         for aa in range(len(self.topo.access)):
             switch_id = self.topo.access[0] + aa
-            s1_id = self.topo.servers[0] + 2*aa
-            s2_id = self.topo.servers[0] + 2*aa + 1
+            s1_id = self.topo.servers[0] + 4*aa
+            s2_id = self.topo.servers[0] + 4*aa + 1
+            s3_id = self.topo.servers[0] + 4*aa + 2
+            s4_id = self.topo.servers[0] + 4*aa + 3
             switch = self.net.idToNode[switch_id]
             s1 = self.net.idToNode[s1_id]
             s2 = self.net.idToNode[s2_id]
+            s3 = self.net.idToNode[s3_id]
+            s4 = self.net.idToNode[s4_id]
             log_str1 = '%s %s %d\n' % (s1.MAC(), switch.defaultMAC,
                     self.topo.port(s1_id, switch_id)[1])
             log_str2 = '%s %s %d\n' % (s2.MAC(), switch.defaultMAC,
                     self.topo.port(s2_id, switch_id)[1])
-            if self.log: sys.stderr.write('%s%s' % (log_str1, log_str2))
+            log_str3 = '%s %s %d\n' % (s3.MAC(), switch.defaultMAC,
+                    self.topo.port(s3_id, switch_id)[1])
+            log_str4 = '%s %s %d\n' % (s4.MAC(), switch.defaultMAC,
+                    self.topo.port(s4_id, switch_id)[1])
+            if self.log: sys.stderr.write('%s%s%s%s' % (log_str1, log_str2, log_str3, log_str4))
             if f is not None:
-                f.write('%s%s' % (log_str1, log_str2))
+                f.write('%s%s%s%s' % (log_str1, log_str2, log_str3, log_str4))
             else:
-                print log_str1, log_str2,
+                print log_str1, log_str2, log_str3, log_str4,
         if f is not None:
             f.close()
 
