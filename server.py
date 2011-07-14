@@ -26,10 +26,11 @@ class ReqGenerator(Thread):
         else:
             sleep_time = 1. / self.rate_
         
+        # Socket to send packet to clients
         sd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sd.setblocking(0)
-        #sd.connect((self.ip_,self.port_))
         
+        # Socket to listen for packet size change requests
         sdr = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sdr.bind((self.selfip_,self.selfport_))
         # Non-blocking socket receive
@@ -41,8 +42,6 @@ class ReqGenerator(Thread):
             try:
                 rdata = sdr.recv(2048)
                 if rdata == 'low':
-                    #self.rate_ = (int) (0.8 * self.rate_)
-                    #sleep_time = 1. / self.rate_
                     packet_len = 512; 
                     #print "rate is decreased. new rate is" + str(self.rate_)
                     print "quality is decreased. new quality length is " + str(packet_len)
@@ -55,7 +54,6 @@ class ReqGenerator(Thread):
             
             try:
                 sd.sendto(sdata,(self.ip_,self.port_))
-                #print str(sent_count) + "th packet sent"
                 sent_count = sent_count + 1
             except:
                 print "packet dropped. exit."
