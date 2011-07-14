@@ -15,6 +15,7 @@ import sys
 import SocketServer
 import socket
 import signal
+import random
 
 log = False
 
@@ -151,7 +152,8 @@ class HierarchicalTreeTopo(Topo):
 
         # add hosts
         for client in self.clients:
-            self.add_node(client, Node(is_switch=False))
+            clientNode = Node(is_switch=False)
+            self.add_node(client, clientNode)
         for s in self.servers:
             self.add_node(s, Node(is_switch=False))
 
@@ -217,6 +219,7 @@ class HierarchicalTreeNet(object):
         if self.log: sys.stderr.write('Running test traffic...\n')
         
         server_port = 1234
+        # Single server to clients test
         for s in self.servers: 
             output = self.clients[0].cmd('python' ,'server.py', '-i', self.clients[0].IP()+':'+str(server_port), 
                                          '-d', s.IP()+':1234', '-r', '1000', '-n', '10000', '&')
@@ -224,12 +227,40 @@ class HierarchicalTreeNet(object):
 
         time.sleep(30)
 
-    def replay(self, filename):
+    def randomtest(self, avgTransmit=5.0, avgWait=10.0, totalTime=60.0):
+        filepath = '/tmp/random.replay'
+        f = open(filepath, 'w')
+        replay = list()
+        count = 0
+        port = 1234
+        
+        for s in self.servers:
+            curTime = 0
+            port = 1234
+            while(True):
+                startTime = random.expovariate(1/avgWait) 
+                txTime = random.expovariate(1/avgTransmit)
+                if(curTime+startTime+txTime > totalTime): break
+                else:
+                    replay.append((curTime+startTime, s.IP()+':'+str(port), curTime+startTime+txTime))
+                    port += 1
+                    curTime += startTime + txTime
+
+        replay.sort()
+        count = 0
+        port = 1234
+
+        for startTime, dstIP, endTime in replay:
+            srcIP = self.clients[count%len(self.clients)].IP()+':'+str(port+count)
+            f.write("%f %s %s %f\n"%(startTime, srcIP, dstIP, endTime))
+            count += 1
+        f.close()
+        self.replay(filepath)
+
+    def replay(self, filename, packet_rate=1000, timeout=10):
         f = None
-        max_end_time = 0
-        curTime = 0
-        packet_rate = 1000
-        timeout = 10
+        terminate_time = 0.0
+        curTime = 0.0
         if filename is not None:
             try:
                 f = open(filename, 'r')
@@ -248,19 +279,39 @@ class HierarchicalTreeNet(object):
                         if c.IP() == src_addr.split(':')[0]:                    
                             break
                     total_packets = int(packet_rate * (float(end_time)-float(curTime)))
-                    if end_time > max_end_time: max_end_time = float(end_time)
+                    if float(end_time) > terminate_time: terminate_time = float(end_time)
 
                     s.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '&')
                     s.cmd('arp', '-s', c.IP(), c.MAC())
                     c.cmd('arp', '-s', s.IP(), s.MAC())
                     c.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
                             '-n', `total_packets`, '&')
+                    print `curTime`, src_addr, '->', dst_addr, 'packets:', total_packets
+                f.close()
                 # Wait until all packets are sent
-                wait_time = max_end_time-curTime
+                wait_time = terminate_time-curTime
                 time.sleep(wait_time)
-                # Grace period for clients to timeout
-                time.sleep(timeout)
-                time.sleep(10)
+                # Allow clients to timeout with some grace period
+                time.sleep(timeout+10)
+
+                filelist = os.listdir('/tmp/')
+                recvCount = 0
+                totalCount = 0
+                for filename in filelist:
+                    if filename.startswith('client-'):
+                        f = open('/tmp/'+filename, 'r')
+                        lastline = f.readlines().pop()
+                        if lastline.startswith('Received'):
+                            print lastline
+                            tokens = lastline.split()
+                            recvCount += int(tokens[1])
+                            totalCount += int(tokens[3])
+                        f.close()
+                
+                f = open('/tmp/result', 'w')
+                f.write('Total '+`recvCount`+' / '+`totalCount`)
+                f.close()
+                print 'Total '+`recvCount`+' / '+`totalCount`
     
             except IOError:
                 print 'Could not open replay file %s' % filename
@@ -455,7 +506,6 @@ class SingleServerNet(object):
 
 
     def log_topology(self, filename=None):
-
         f = None
         if filename is not None:
             try:
@@ -537,8 +587,11 @@ if __name__ == '__main__':
     parser.add_option("-t", "--test", action="store_true", dest="test",
             default=False, help=t_str)
     r_str = "Replay traffic"
-    parser.add_option("-r", "--replay", type="string", dest="replay",
+    parser.add_option("-p", "--replay", type="string", dest="replay",
             default=None, help=r_str)
+    rand_str = "Genrate random traffic"
+    parser.add_option("-r", "--random", action="store_true", dest="random",
+            default=False, help=rand_str)
     o_str = "Topology type"
     parser.add_option("-o", "--topology", action="store", dest="topo", type="int",
             default=1, help=o_str)
@@ -565,13 +618,15 @@ if __name__ == '__main__':
     if l.strip().lower() == 'q':
         die()
 
-    if options.test:
-        if options.replay:
-            time.sleep(5)
-            mn.replay(options.replay)
-        else:
-            time.sleep(5)
-            mn.test()
+    if options.replay:
+        time.sleep(5)
+        mn.replay(options.replay)
+    elif options.random:
+        time.sleep(5)
+        mn.randomtest()
+    elif options.test:
+        time.sleep(5)
+        mn.test()
     else:
         CLI(mn.net)
 

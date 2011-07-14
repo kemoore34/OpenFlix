@@ -1,15 +1,13 @@
 Running the test script
 
 To run the test script 
-./test
+sudo ./openflix.py -v -o 2 -t -p /tmp/random.replay
 
-Run test script in CLI with extended information
-./test -v
+options
+-o 1:single server topology 2:multi server client topology
+-v :verbose 
+-i :controller interface address in ip:port
+-t :test solution
+-p :play replay file
+-r :generate random traffic and test
 
-Run test script with automated traffic generation
-./test -v -t
-
-
-Running the server and client as a independent process
-./client my_ip:port 
-./server dest_ip:port rate num_packets
