@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import math
 import sys,time,socket
 from threading import Thread
 from string import atoi
@@ -16,6 +17,8 @@ class ReqGenerator(Thread):
         self.port_= port;
         self.rate_= rate;
         self.pcount_= pcount;
+        self.packet_len_max = 1400
+        self.aimd_rtt = 0.01
     
     def run(self):
         
@@ -35,19 +38,22 @@ class ReqGenerator(Thread):
         sdr.bind((self.selfip_,self.selfport_))
         # Non-blocking socket receive
         sdr.setblocking(0)  
-        packet_len = 1400
+        packet_len = self.packet_len_max
         sent_count = 1;
         while(sent_count <= self.pcount_):
             time.sleep(sleep_time)
             try:
                 rdata = sdr.recv(2048)
                 if rdata == 'low':
-                    packet_len = 512; 
-                    #print "rate is decreased. new rate is" + str(self.rate_)
+                    packet_len = 700; 
                     print "quality is decreased. new quality length is " + str(packet_len)
             except:
-                pass
+                # Perform AIMD at every RTT
+                if packet_len < self.packet_len_max and sent_count % math.ceil(self.aimd_rtt * self.rate_) == 0: 
+                    packet_len += 1
+                    #print "quality is increased. new quality length is " + str(packet_len)
             
+            #if packet_len == self.packet_len_max: print "Quality is maxed."
             
             msg = str(sent_count)+'/'+str(self.pcount_) +'/'+str(self.rate_) +'/'+self.selfip_+":"+str(self.selfport_)
             sdata = msg + ' '*(packet_len - len(msg))
@@ -84,6 +90,9 @@ if __name__ == '__main__':
     parser.add_option("-n", "--number", dest="num", type="int",
             default=None, help=n_str)
     (options, args) = parser.parse_args()
+    
+    if not options.svr_addr or not options.dest_addr or not options.rate:
+        parser.error("Missing parameters")
 
     uri_self = options.svr_addr.split(':')
     uri = options.dest_addr.split(':')

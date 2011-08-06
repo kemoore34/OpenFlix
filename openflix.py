@@ -8,6 +8,7 @@ from mininet.util import run
 from mininet.util import run
 from optparse import OptionParser
 from threading import Thread
+from threading import Timer
 import time
 import os
 import re
@@ -16,6 +17,7 @@ import SocketServer
 import socket
 import signal
 import random
+import datetime
 
 log = False
 
@@ -74,10 +76,69 @@ def do_dpctl_ports(sw, listenPort=6634):
 def chunks(l, n):
     return [l[i:i+n] for i in range(0, len(l), n)]
 
+
+class BandwidthMonitor:
+    '''Monitor link bandwidth.
+    '''
+    def __init__(self, func):
+        os.system('rm -rf /tmp/bandwidth')
+        self.func = func
+        self.interval = 0.5
+        self.timer = Timer(self.interval, self.recordBandwidth)
+        self.stats = []
+        BandwidthMonitor.last_total_rx = 0
+        
+    def recordBandwidth(self):
+        # Measure bandwidth at every 0.5 sec
+        curTime = time.time()
+        diff_time = curTime - self.timer.start_time
+        # Adjust timer to sync with the interval
+        offset = self.interval - diff_time
+        last_total_rx = BandwidthMonitor.last_total_rx
+        self.timer = Timer(self.interval - offset, self.recordBandwidth)
+        self.timer.start_time = curTime
+        self.timer.start()
+
+        client_stats = self.func()
+        self.stats.append((curTime - self.begin_time, client_stats))
+        #total_rx = self.func()
+        #diff_rx = total_rx - last_total_rx
+        #BandwidthMonitor.last_total_rx = total_rx
+        #self.rate_list.append((curTime - self.begin_time, diff_rx / diff_time))
+
+    def start(self):
+        self.begin_time = time.time()
+        self.timer.start_time = time.time()
+        self.timer.start()
+
+    def cancel(self):
+        self.timer.cancel()
+        try:
+            f = open('/tmp/bandwidth', 'a')
+            for stats in self.stats:
+                # Write timestamp
+                f.write('%f'%stats[0])
+                rate_sum = 0
+                for rate in stats[1]:
+                    # Write tx
+                    f.write(', %f'%rate[1])
+                    rate_sum += rate[1]
+
+                f.write(', %f'%rate_sum)
+                f.write('\n')
+                
+            f.close()
+        except:
+            pass
+    
+        
+
 class LocationServer(Thread):
+    '''Send topology and server/client information to the nox controller'''
     global log
 
     class LocServeHandler(SocketServer.BaseRequestHandler):
+        # serve topology and server information
         def handle(self):
             req = self.request.recv(1024)
             fname = ''
@@ -125,7 +186,7 @@ class HierarchicalTreeTopo(Topo):
     '''
     global log
 
-    def __init__(self, c=1, b=2, a=2):
+    def __init__(self, d=4, c=1, b=2, a=2):
 
         super(HierarchicalTreeTopo, self).__init__()
         self.log = log
@@ -134,8 +195,8 @@ class HierarchicalTreeTopo(Topo):
         self.core = range(1, c+1) # c core switches
         self.aggregation = range(c+1, b+c+1) # b aggregation switches
         self.access = range(b+c+1, a+b+c+1) # a access switches
-        self.clients = range(a+b+c+1, 5*a+b+c+1) # 2*a clients, 2 per access switch
-        self.servers = range(5*a+b+c+1, 5*a+b+2*c+1) # c servers
+        self.clients = range(a+b+c+1, (d+1)*a+b+c+1) # d*a clients, d per access switch
+        self.servers = range((d+1)*a+b+c+1, (d+1)*a+b+2*c+1) # c servers
 
         log_str = ''.join(['Starting HierarchicalTreeTopo with ', 
             '%d servers, %d core, %d aggregate, %d access switches, ' % (c, c, b, a),
@@ -173,14 +234,10 @@ class HierarchicalTreeTopo(Topo):
         # access <-> clients
         for aa in range(len(self.access)):
             sw = self.access[0] + aa
-            c1 = self.clients[0] + 4*aa
-            c2 = self.clients[0] + 4*aa + 1
-            c3 = self.clients[0] + 4*aa + 2
-            c4 = self.clients[0] + 4*aa + 3
-            self.add_edge(sw, c1, Edge())
-            self.add_edge(sw, c2, Edge())
-            self.add_edge(sw, c3, Edge())
-            self.add_edge(sw, c4, Edge())
+            # Add client to each port on switch
+            for dd in range(d):
+                cc = self.clients[0] + d*aa + dd
+                self.add_edge(sw, cc, Edge())
 
         self.enable_all()
 
@@ -188,9 +245,9 @@ class HierarchicalTreeNet(object):
     global log
 
     # Default configuration is single core and 2 aggregates, and 4 access switches
-    def __init__(self, c=1, b=2, a=2, ctrl_addr='127.0.0.1:6633'):
+    def __init__(self, d=4, c=1, b=2, a=2, ctrl_addr='127.0.0.1:6633'):
         self.log = log
-        self.topo = HierarchicalTreeTopo(c, b, a)
+        self.topo = HierarchicalTreeTopo(d, c, b, a)
 
         ctrl_args = ctrl_addr.split(':')
         ctrl_ip = ctrl_args[0]
@@ -208,25 +265,59 @@ class HierarchicalTreeNet(object):
         self.log_server_loc('/tmp/server_loc.txt')
         self.log_topology('/tmp/topo.txt')
 
-    # Test single server
-    def test(self):
+    # Test numConn connections
+    def test(self, numConn=1):
+        total_packets = 900000 
+        send_rate = 1000
+        timeout = 10
+        cl_count = 0
         for cl in self.clients:
-            cl.cmd('python', 'client.py', '-i', cl.IP()+':1234', '&')
+            cl.cmd('python', 'client.py', '-i', cl.IP()+':1234', '-t', `timeout`, '-q', `0.05`, '&>singletest.output', '&')
             cl.cmd('arp', '-s', self.servers[0].IP(), self.servers[0].MAC())
             self.servers[0].cmd('arp', '-s', cl.IP(), cl.MAC())
+            cl_count += 1
+            if cl_count >= numConn: break
 
         os.system('rm -rf /tmp/time_log.txt')
         time.sleep(1)
         if self.log: sys.stderr.write('Running test traffic...\n')
-        
+
+        # Send packets 
+        cl_count = 0
         server_port = 1234
-        # Single server to servers test
         for cl in self.clients: 
             output = self.servers[0].cmd('python' ,'server.py', '-i', self.servers[0].IP()+':'+str(server_port), 
-                                         '-d', cl.IP()+':1234', '-r', '1000', '-n', '10000', '&')
+                                         '-d', cl.IP()+':1234', '-r', `send_rate`, '-n', `total_packets`, '&')
             server_port += 1
+            cl_count += 1
+            if cl_count >= numConn: break
 
-        time.sleep(30)
+        start_time = time.time()
+        time.sleep(float(total_packets)/send_rate)
+
+        # Print packet statistics for each client
+        filelist = os.listdir('/tmp/')
+        recvCount = 0
+        totalCount = 0
+        for filename in filelist:
+            if filename.startswith('client-'):
+                while True:
+                    f = open('/tmp/'+filename, 'r')
+                    lines = f.readlines()
+                    f.close()
+                    if len(lines):
+                        lastline = lines.pop()
+                        if lastline.startswith('Received'):
+                            tokens = lastline.split()
+                            recvCount += int(tokens[1])
+                            totalCount += int(tokens[3])
+                            break
+                    else:
+                        time.sleep(1)
+        print 'Received ' + `recvCount` + ' / ' + `totalCount`
+        print 'Experiment took ' + `(time.time()-start_time)` + 'secs.'
+                         
+                
 
     # Generate random replay file and test it
     def randomtest(self, avgTransmit=5.0, avgWait=10.0, totalTime=60.0):
@@ -242,16 +333,18 @@ class HierarchicalTreeNet(object):
             while(True):
                 startTime = random.expovariate(1/avgWait) 
                 txTime = random.expovariate(1/avgTransmit)
+
+                # Generate traffic until total time
                 if(curTime+startTime+txTime > totalTime): break
                 else:
                     replay.append((curTime+startTime, cl.IP()+':'+str(port), curTime+startTime+txTime))
                     port += 1
                     curTime += startTime + txTime
 
+        # Write replay to file sorted by timestamp
         replay.sort()
         count = 0
         port = 1234
-
         for startTime, dstIP, endTime in replay:
             srcIP = self.servers[count%len(self.servers)].IP()+':'+str(port+count)
             f.write("%f %s %s %f\n"%(startTime, srcIP, dstIP, endTime))
@@ -261,10 +354,15 @@ class HierarchicalTreeNet(object):
 
     # Replay a replay file
     def replay(self, filename, packet_rate=1000, timeout=10):
-        f = None
+        e = None
         terminate_time = 0.0
         curTime = 0.0
+        graceTime = 10.0
         if filename is not None:
+            # Start bandwidth monitor
+            bm = BandwidthMonitor(self.get_access_client_stats)
+            bm.start()
+            
             try:
                 f = open(filename, 'r')
                 for l in f:
@@ -284,7 +382,7 @@ class HierarchicalTreeNet(object):
                     total_packets = int(packet_rate * (float(end_time)-float(curTime)))
                     if float(end_time) > terminate_time: terminate_time = float(end_time)
 
-                    cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '&')
+                    cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '&')
                     cl.cmd('arp', '-s', s.IP(), s.MAC())
                     s.cmd('arp', '-s', cl.IP(), cl.MAC())
                     s.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
@@ -294,33 +392,48 @@ class HierarchicalTreeNet(object):
                 # Wait until all packets are sent
                 wait_time = terminate_time-curTime
                 time.sleep(wait_time)
-                # Allow servers to timeout with some grace period
-                time.sleep(timeout+10)
+                total_tx = self.get_total_rx()
+                avg_throughput = total_tx / terminate_time
 
+                # Print packet statistics for each client
                 filelist = os.listdir('/tmp/')
                 recvCount = 0
                 totalCount = 0
                 for filename in filelist:
                     if filename.startswith('client-'):
-                        f = open('/tmp/'+filename, 'r')
-                        lastline = f.readlines().pop()
-                        if lastline.startswith('Received'):
-                            print lastline
-                            tokens = lastline.split()
-                            recvCount += int(tokens[1])
-                            totalCount += int(tokens[3])
-                        f.close()
-                
+                        while True:
+                            f = open('/tmp/'+filename, 'r')
+                            lines = f.readlines()
+                            f.close()
+                            if len(lines):
+                                lastline = lines.pop()
+                                if lastline.startswith('Received'):
+                                    tokens = lastline.split()
+                                    recvCount += int(tokens[1])
+                                    totalCount += int(tokens[3])
+                                    break
+                            else:
+                                time.sleep(1) 
+                # Calculate throughput
+
                 f = open('/tmp/result', 'w')
-                f.write('Total '+`recvCount`+' / '+`totalCount`)
+                f.write('Total '+`recvCount`+' / '+`totalCount` + '\n')
+                f.write('Avg Throughput: '+`avg_throughput/1000` +'KBps')
                 f.close()
                 print 'Total '+`recvCount`+' / '+`totalCount`
+                print 'Total TX: ' + `total_tx`
+                print 'Avg Throughput: '+`avg_throughput/1000` +'KBps'
+
+                # Cleanup
+                bm.cancel()
     
             except IOError:
                 print 'Could not open replay file %s' % filename
                 pass
+        else:
+            die()
 
-    def get_path_stats(self):
+    def get_access_path_stats(self):
         listenPort = 6634
         stats = []
         for ac in sorted(self.topo.access):
@@ -331,6 +444,29 @@ class HierarchicalTreeNet(object):
                 port = self.topo.port(ac, ag)[0]
                 stats.append(all_stats[port])
         return stats
+
+    def get_access_client_stats(self):
+        listenPort = 6634
+        stats = []
+        for aa in range(len(self.topo.access)):
+            ac_sw_id = self.topo.access[0] + aa
+            ac_sw = self.net.idToNode[ac_sw_id]
+            all_stats = do_dpctl_ports(ac_sw, listenPort + ac_sw_id - 1)
+
+            d = len(self.topo.clients) / len(self.topo.access)
+            # Print client attached to each port
+            for dd in range(d):
+                cc_id = self.topo.clients[0] + d*aa + dd
+                cc = self.net.idToNode[cc_id]
+                port = self.topo.port(ac_sw_id, cc_id)[0]
+                stats.append(all_stats[port])
+        return stats 
+
+    def get_total_rx(self):
+        total_rx = 0
+        for path_stat in self.get_access_path_stats():
+           total_rx += path_stat[0]
+        return total_rx
 
     def log_server_loc(self, filename=None):
         f = None
@@ -348,10 +484,10 @@ class HierarchicalTreeNet(object):
         if f is not None:
             f.write(log_str)
         for s_idx in range(len(self.topo.servers)):
-            client_id = self.topo.servers[s_idx]
+            server_id = self.topo.servers[s_idx]
             switch_id = self.topo.core[s_idx]
             switch = self.net.idToNode[switch_id]
-            log_str = '%s %s %d\n' % (self.servers[s_idx].MAC(), switch.defaultMAC, self.topo.port(client_id, switch_id)[1])
+            log_str = '%s %s %d\n' % (self.servers[s_idx].MAC(), switch.defaultMAC, self.topo.port(server_id, switch_id)[1])
             if self.log: sys.stderr.write(log_str)
             if f is not None:
                 f.write(log_str)
@@ -368,28 +504,20 @@ class HierarchicalTreeNet(object):
             f.write(log_str)
         for aa in range(len(self.topo.access)):
             switch_id = self.topo.access[0] + aa
-            c1_id = self.topo.clients[0] + 4*aa
-            c2_id = self.topo.clients[0] + 4*aa + 1
-            c3_id = self.topo.clients[0] + 4*aa + 2
-            c4_id = self.topo.clients[0] + 4*aa + 3
             switch = self.net.idToNode[switch_id]
-            c1 = self.net.idToNode[c1_id]
-            c2 = self.net.idToNode[c2_id]
-            c3 = self.net.idToNode[c3_id]
-            c4 = self.net.idToNode[c4_id]
-            log_str1 = '%s %s %d\n' % (c1.MAC(), switch.defaultMAC,
-                    self.topo.port(c1_id, switch_id)[1])
-            log_str2 = '%s %s %d\n' % (c2.MAC(), switch.defaultMAC,
-                    self.topo.port(c2_id, switch_id)[1])
-            log_str3 = '%s %s %d\n' % (c3.MAC(), switch.defaultMAC,
-                    self.topo.port(c3_id, switch_id)[1])
-            log_str4 = '%s %s %d\n' % (c4.MAC(), switch.defaultMAC,
-                    self.topo.port(c4_id, switch_id)[1])
-            if self.log: sys.stderr.write('%s%s%s%s' % (log_str1, log_str2, log_str3, log_str4))
-            if f is not None:
-                f.write('%s%s%s%s' % (log_str1, log_str2, log_str3, log_str4))
-            else:
-                print log_str1, log_str2, log_str3, log_str4,
+
+            d = len(self.topo.clients) / len(self.topo.access)
+            # Print client attached to each port
+            for dd in range(d):
+                cc_id = self.topo.clients[0] + d*aa + dd
+                cc = self.net.idToNode[cc_id]
+                log_str = '%s %s %d\n' % (cc.MAC(), switch.defaultMAC,
+                        self.topo.port(cc_id, switch_id)[1])
+                if self.log: sys.stderr.write(log_str)
+                if f is not None:
+                    f.write(log_str)
+                else:
+                    print log_str,
         if f is not None:
             f.close()
 
@@ -429,98 +557,6 @@ class HierarchicalTreeNet(object):
                     f.write(log_str)
         if f is not None:
             f.close()
-
-class SingleServerNet(object):
-    global log
-
-    def __init__(self, ctrl_addr='127.0.0.1:6633'):
-        self.log = log
-        self.k = 2
-        self.topo = SingleSwitchTopo(k=self.k)
-
-        ctrl_args = ctrl_addr.split(':')
-        ctrl_ip = ctrl_args[0]
-        ctrl_port = int(ctrl_args[1]) if len(ctrl_args) > 1 else 6633
-        
-        if self.log: sys.stderr.write('Starting the Single-server network\n')
-
-        self.net = Mininet(topo=self.topo, controller= lambda x:
-                RemoteController(x, ctrl_ip, ctrl_port),
-                listenPort=6634, xterms=False, autoSetMacs=True)
-        self.clients = [self.net.idToNode[c] for c in range(2, self.k -1 + 2)]
-        self.client = self.net.idToNode[1+self.k]
-        #self.serverIP = '10.0.0.100'
-        #self.serverIPMask = 8
-        self.net.start()
-        # log server location
-        self.log_server_loc('/tmp/server_loc.txt')
-        self.log_topology('/tmp/topo.txt')
-
-    def test(self):
-        for c in self.clients:
-            c.cmd('python', 'client.py', s.IP()+':1234', '&')
-        if self.log: sys.stderr.write('Starting client %s\n' % s.name)
-
-        # set static arp in client for server IP
-        self.client.cmd('arp', '-s', self.serverIP, 'FF:FF:FF:FF:FF:FF')
-        os.system('rm -rf /tmp/time_log.txt')
-        time.sleep(1)
-        if self.log: sys.stderr.write('Running test traffic...\n')
-        
-        output = self.servers[0].cmd('python' ,'server.py', '-i', self.servers[0].IP()+':'+str(server_port), 
-                                         '-d', c.IP()+':1234', '-r', '300', '-n', '3000')
-
-    def log_server_loc(self, filename=None):
-        f = None
-        if filename is not None:
-            try:
-                f = open(filename, 'w')
-            except IOError:
-                print 'Could not open file %s for writing' % filename
-                pass
-
-        # log client information
-        if self.log: sys.stderr.write('Client location:\n')
-        client_id = self.k + 1
-        switch = self.net.idToNode[1]
-        log_str = '%s %s %d\n' % (self.client.MAC(), switch.defaultMAC,
-            self.topo.port(client_id, 1)[1])
-        if self.log: sys.stderr.write(log_str)
-        if f is not None:
-            f.write(log_str)
-        else:
-            print log_str,
-        if self.log: sys.stderr.write('\n')
-
-        # log server information
-        if self.log: sys.stderr.write('Server location:\n')
-        for server_id in range(2, self.k -1 + 2):
-            s = self.net.idToNode[server_id]
-            switch = self.net.idToNode[1]
-            log_str = '%s %s %d\n' % (s.MAC(), switch.defaultMAC, self.topo.port(server_id, 1)[1])
-            if self.log: sys.stderr.write(log_str)
-            if f is not None:
-                f.write(log_str)
-            else:
-                print log_str,
-        if f is not None:
-            f.close()
-        if self.log: sys.stderr.write('\n')
-
-
-    def log_topology(self, filename=None):
-        f = None
-        if filename is not None:
-            try:
-                f = open(filename, 'w')
-            except IOError:
-                print 'Could not open file %s for writing' % filename
-                pass
-        switch = self.net.idToNode[1]
-        if f is not None:
-            f.write('%s\n'%switch.defaultMAC)
-            f.close()
-
 
 def start(mn, num_requests):
     global log
@@ -612,9 +648,12 @@ if __name__ == '__main__':
         sys.stdout.write("Topology must be either 1 or 2")
         die()
     elif options.topo == 1: 
-        mn = SingleServerNet(ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
     elif options.topo == 2:
-        mn = HierarchicalTreeNet(c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
+    else:
+        sys.stdout.write('No topology given')
+        die()
 
     sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
     l = sys.stdin.readline()
@@ -629,7 +668,7 @@ if __name__ == '__main__':
         mn.randomtest()
     elif options.test:
         time.sleep(5)
-        mn.test()
+        mn.test(numConn=1)
     else:
         CLI(mn.net)
 
