@@ -29,8 +29,24 @@ def _get_port_no( port_stat ):
         exit(0)
     return int(m.group(1))
 
+def _get_rx_drops( port_stat ):
+    r = r'rx .* drop=(\d+)'
+    m = re.search( r, port_stat)
+    if m == None:
+        print '*** Error: could not parse port stats output: %s\n' % port_stat
+        exit(0)
+    return int(m.group(1))
+
 def _get_rx_bytes( port_stat ):
     r = r'rx .* bytes=(\d+)'
+    m = re.search( r, port_stat)
+    if m == None:
+        print '*** Error: could not parse port stats output: %s\n' % port_stat
+        exit(0)
+    return int(m.group(1))
+
+def _get_tx_drops( port_stat ):
+    r = r'tx .* drop=(\d+)'
     m = re.search( r, port_stat)
     if m == None:
         print '*** Error: could not parse port stats output: %s\n' % port_stat
@@ -54,7 +70,7 @@ def _parse_dpctl(dpctl_output ):
             port_no = _get_port_no( port_stat )
             rx_pkts = _get_rx_bytes( port_stat )
             tx_pkts = _get_tx_bytes( port_stat )
-            stats[port_no] = (rx_pkts, tx_pkts)
+            stats[port_no] = (rx_pkts, tx_pkts )
         return stats
 
 def do_dpctl_ports(sw, listenPort=6634):
@@ -82,6 +98,7 @@ class BandwidthMonitor:
     '''
     def __init__(self, func):
         os.system('rm -rf /tmp/bandwidth')
+        os.system('rm -rf /tmp/drops')
         self.func = func
         self.interval = 0.5
         self.timer = Timer(self.interval, self.recordBandwidth)
@@ -101,10 +118,6 @@ class BandwidthMonitor:
 
         client_stats = self.func()
         self.stats.append((curTime - self.begin_time, client_stats))
-        #total_rx = self.func()
-        #diff_rx = total_rx - last_total_rx
-        #BandwidthMonitor.last_total_rx = total_rx
-        #self.rate_list.append((curTime - self.begin_time, diff_rx / diff_time))
 
     def start(self):
         self.begin_time = time.time()
@@ -119,10 +132,10 @@ class BandwidthMonitor:
                 # Write timestamp
                 f.write('%f'%stats[0])
                 rate_sum = 0
-                for rate in stats[1]:
+                for stat in stats[1]:
                     # Write tx
-                    f.write(', %f'%rate[1])
-                    rate_sum += rate[1]
+                    f.write(', %f'%stat[1])
+                    rate_sum += stat[1]
 
                 f.write(', %f'%rate_sum)
                 f.write('\n')
@@ -320,7 +333,7 @@ class HierarchicalTreeNet(object):
                 
 
     # Generate random replay file and test it
-    def randomtest(self, avgTransmit=5.0, avgWait=10.0, totalTime=60.0):
+    def randomtest(self, avgTransmit=5.0, avgWait=10.0, totalTime=90.0):
         filepath = '/tmp/random.replay'
         f = open(filepath, 'w')
         replay = list()
@@ -350,10 +363,10 @@ class HierarchicalTreeNet(object):
             f.write("%f %s %s %f\n"%(startTime, srcIP, dstIP, endTime))
             count += 1
         f.close()
-        self.replay(filepath)
+        #self.replay(filepath)
 
     # Replay a replay file
-    def replay(self, filename, packet_rate=1000, timeout=10):
+    def replay(self, filename, packet_rate=8000, timeout=10):
         e = None
         terminate_time = 0.0
         curTime = 0.0
