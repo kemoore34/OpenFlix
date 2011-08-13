@@ -366,8 +366,7 @@ class HierarchicalTreeNet(object):
         #self.replay(filepath)
 
     # Replay a replay file
-    def replay(self, filename, packet_rate=8000, timeout=10):
-        e = None
+    def replay(self, filename, packet_rate=1000, timeout=10):
         terminate_time = 0.0
         curTime = 0.0
         graceTime = 10.0
