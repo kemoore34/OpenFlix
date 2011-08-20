@@ -24,10 +24,12 @@ class ReqGenerator(Thread):
         
         if self.rate_ < 0:
             sleep_time = 0
+        if self.rate_ > 10000:
+            return
         elif self.rate_ == 0:
             return
         else:
-            sleep_time = 1. / self.rate_
+            sleep_time = 1.0 / self.rate_
         
         # Socket to send packet to clients
         sd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
