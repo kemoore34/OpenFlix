@@ -40,22 +40,19 @@ class Client:
         print 'End time: %f'%self.connection_end_time
         print 'Duration: %f'%(self.connection_end_time - self.connection_start_time)
         self.f.write('Number of times throttled: %d\n'%th_count)
-        self.f.write('Received %d / %d packets\n'% (rcount, pcount))
-        self.f.write('Start time: %f'%self.connection_start_time)
-        self.f.write('End time: %f'%self.connection_end_time)
-        self.f.write('Duration: %f'%(self.connection_end_time - self.connection_start_time))
+        self.f.write('Received: %d / %d packets\n'% (rcount, pcount))
+        self.f.write('Start time: %f\n'%self.connection_start_time)
+        self.f.write('End time: %f\n'%self.connection_end_time)
+        self.f.write('Duration: %f\n'%(self.connection_end_time - self.connection_start_time))
         self.f.close()
         sys.exit()
     
     def run(self):
         self.f.write('Starting client at %s:%d with timeout:%d\n'%(self.ip, self.port, self.timeout))
-        
         self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
         self.sock.settimeout(self.qos_notification_interval)
         self.sock.bind((ip,port))
 
-        self.f.write('Waiting for packet...\n')
-        
         last_qos_time = 0
         prev_seq = 0
         while True:
