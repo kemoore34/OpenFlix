@@ -143,7 +143,6 @@ class BandwidthMonitor:
             f.close()
         except:
             pass
-    
         
 
 class LocationServer(Thread):
@@ -329,8 +328,7 @@ class HierarchicalTreeNet(object):
                         time.sleep(1)
         print 'Received ' + `recvCount` + ' / ' + `totalCount`
         print 'Experiment took ' + `(time.time()-start_time)` + 'secs.'
-                         
-                
+
 
     # Generate random replay file and test it
     def randomtest(self, avgTransmit=5.0, avgWait=10.0, totalTime=90.0):
@@ -656,13 +654,15 @@ if __name__ == '__main__':
     time.sleep(2)
 
     # networks to run
-    if (options.topo < 1 or options.topo > 2):
+    if (options.topo < 1 or options.topo > 3):
         sys.stdout.write("Topology must be either 1 or 2")
         die()
     elif options.topo == 1: 
-        mn = HierarchicalTreeNet(d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(d=4, c=1, b=4, a=4, ctrl_addr=options.ctrl_addr)
     elif options.topo == 2:
         mn = HierarchicalTreeNet(d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
+    elif options.topo == 3:
+        mn = HierarchicalTreeNet(d=2, c=1, b=1, a=1, ctrl_addr=options.ctrl_addr)
     else:
         sys.stdout.write('No topology given')
         die()
