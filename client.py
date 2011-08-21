@@ -14,17 +14,16 @@ class Client:
         self.log_name = '/tmp/client-%s-%s.log' % (name,port)
         self.f = open(self.log_name, "w")
         self.num_packets = 0
-        self.recv_count_total = 0
-        self.recv_count_per_sec = 0
+        self.recv_total = 0
+        self.recv_per_sec = 0
         self.throttle_count = 0
         self.rate = 0
         self.qos_notification_interval = 1
         self.return_ip = ""
         self.return_port = 0
-        self.packet_loss_threshold = 1.0
+        self.loss_threshold = 1.0
         self.verbose = False
         self.loss_stat = []
-        self.timeout_count = 0
         self.connection_start_time = 0
         self.connection_end_time = 0
 
@@ -39,10 +38,12 @@ class Client:
         print 'Received %d / %d packets'%(rcount, pcount)
         print 'Start time: %f'%self.connection_start_time
         print 'End time: %f'%self.connection_end_time
+        print 'Duration: %f'%(self.connection_end_time - self.connection_start_time)
         self.f.write('Number of times throttled: %d\n'%th_count)
         self.f.write('Received %d / %d packets\n'% (rcount, pcount))
         self.f.write('Start time: %f'%self.connection_start_time)
         self.f.write('End time: %f'%self.connection_end_time)
+        self.f.write('Duration: %f'%(self.connection_end_time - self.connection_start_time))
         self.f.close()
         sys.exit()
     
@@ -64,12 +65,12 @@ class Client:
 
                 # Termination condition check
                 if data_s == 'Finish':
-                    self.client_exit(self.recv_count_total, self.num_packets, self.throttle_count)
+                    self.client_exit(self.recv_total, self.num_packets, self.throttle_count)
 
                 # Reset timeout whenever a packet is received
-                self.timeout_count = 0
-                self.recv_count_per_sec += 1
-                self.recv_count_total += 1
+                timeout_period = 0
+                self.recv_per_sec += 1
+                self.recv_total += 1
                 cur_time = time.time()
 
                 # Initialization upon first packet
@@ -77,17 +78,16 @@ class Client:
                     last_qos_time = cur_time
                     self.connection_start_time = cur_time 
 
-                # Send qos change request
                 if (cur_time - last_qos_time) >= self.qos_notification_interval :
                     # Change the quliaty to low
-                    if (self.rate - self.recv_count_per_sec) > self.packet_loss_threshold * self.rate :
+                    if (self.rate - self.recv_per_sec) > self.loss_threshold * self.rate :
                         self.throttle_count += 1
                         temp_sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
                         temp_sock.setblocking(0)
                         temp_sock.sendto("low",(self.return_ip,self.return_port))
                         temp_sock.close()
-                    # Reset counter 
-                    self.recv_count_per_sec = 0
+                    # Reset qos counter 
+                    self.recv_per_sec = 0
                     last_qos_time = cur_time
                         
                 # Parse packet content
@@ -102,9 +102,9 @@ class Client:
                 prev_seq = seq
                      
             except socket.timeout:
-                self.timeout_count += 1
-                if self.timeout_count >= self.timeout:
-                    self.client_exit(self.recv_count_total, self.num_packets, self.throttle_count)
+                timeout_period += self.qos_notification_interval
+                if timeout_period >= self.timeout:
+                    self.client_exit(self.recv_total, self.num_packets, self.throttle_count)
                 
 # parse options
 parser = OptionParser()
@@ -130,6 +130,6 @@ port = int(port)
 name = ip
 
 client = Client(name, ip, port, options.timeout)
-client.packet_loss_threshold = options.quality
+client.loss_threshold = options.quality
 client.verbose = options.verbose
 client.run()
