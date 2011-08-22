@@ -280,7 +280,7 @@ class HierarchicalTreeNet(object):
     # Test numConn connections
     def test(self, numConn=1):
         total_packets = 900000 
-        send_rate = 1000
+        send_rate = 850
         timeout = 10
         cl_count = 0
         for cl in self.clients:
@@ -364,7 +364,7 @@ class HierarchicalTreeNet(object):
         #self.replay(filepath)
 
     # Replay a replay file
-    def replay(self, filename, packet_rate=1000, timeout=10):
+    def replay(self, filename, packet_rate=850, timeout=10):
         terminate_time = 0.0
         curTime = 0.0
         graceTime = 10.0

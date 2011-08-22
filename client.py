@@ -15,10 +15,10 @@ class Client:
         self.f = open(self.log_name, "w")
         self.num_packets = 0
         self.recv_total = 0
-        self.recv_per_sec = 0
+        self.recv_per_interval = 0
         self.throttle_count = 0
         self.rate = 0
-        self.qos_notification_interval = 1
+        self.qos_notification_interval = 0.1
         self.return_ip = ""
         self.return_port = 0
         self.loss_threshold = 1.0
@@ -29,7 +29,7 @@ class Client:
 
     def client_exit(self, rcount, pcount, th_count):
         self.sock.close()
-        self.connection_end_time = time.time()
+        if self.connection_start_time: self.connection_end_time = time.time()
 
         for skip in self.loss_stat: 
             self.f.write('Skipped Seq from %d to %d\n'%skip) 
@@ -55,6 +55,7 @@ class Client:
 
         last_qos_time = 0
         prev_seq = 0
+        timeout_period = 0
         while True:
             try:
                 data, addr = self.sock.recvfrom(2048) # buffer size is 2048 bytes
@@ -66,7 +67,7 @@ class Client:
 
                 # Reset timeout whenever a packet is received
                 timeout_period = 0
-                self.recv_per_sec += 1
+                self.recv_per_interval += 1
                 self.recv_total += 1
                 cur_time = time.time()
 
@@ -77,14 +78,14 @@ class Client:
 
                 if (cur_time - last_qos_time) >= self.qos_notification_interval :
                     # Change the quliaty to low
-                    if (self.rate - self.recv_per_sec) > self.loss_threshold * self.rate :
+                    if (self.rate - self.recv_per_interval) > self.loss_threshold * self.rate :
                         self.throttle_count += 1
                         temp_sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
                         temp_sock.setblocking(0)
                         temp_sock.sendto("low",(self.return_ip,self.return_port))
                         temp_sock.close()
                     # Reset qos counter 
-                    self.recv_per_sec = 0
+                    self.recv_per_interval = 0
                     last_qos_time = cur_time
                         
                 # Parse packet content

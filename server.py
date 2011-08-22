@@ -17,7 +17,7 @@ class ReqGenerator(Thread):
         self.rate_= rate;
         self.total_packets_= total_packets;
         self.max_packet_len = 1400 #bytes
-        self.aimd_rtt = 0.01 #seconds
+        self.aimd_rtt = 0.001 #seconds
     
     def run(self):
         
