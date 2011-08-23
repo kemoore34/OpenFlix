@@ -39,17 +39,17 @@ class ReqGenerator(Thread):
         # Non-blocking socket receive
         sdr.setblocking(0)  
         packet_len = self.max_packet_len
-        sent_count = 1;
+        sent_count = 0;
         start_time = time.time()
 
         # Start sending packet
-        while(sent_count <= self.total_packets_):
+        while(sent_count < self.total_packets_):
             time.sleep(sleep_time)
             # Process QOS
             try:
                 rdata = sdr.recv(10000)
                 if rdata == 'low':
-                    packet_len = 700; 
+                    packet_len = 700
             except:
                 # Perform additional increament at every RTT
                 if packet_len < self.max_packet_len and sent_count % math.ceil(self.aimd_rtt * self.rate_) == 0: 
@@ -59,14 +59,15 @@ class ReqGenerator(Thread):
             expected_packet_count = (cur_time - start_time) * self.rate_
 
             # Sleep might delay packets. Send queued packets
-            while expected_packet_count > sent_count :
+            while expected_packet_count > sent_count and sent_count < self.total_packets_ :
+                sent_count += 1
                 msg = str(sent_count)+'/'+str(self.total_packets_) +'/'+str(self.rate_) +'/'+self.selfip_+":"+str(self.selfport_)
                 sdata = msg + ' '*(packet_len - len(msg))
                 
                 try:
                     sd.sendto(sdata,(self.ip_,self.port_))
-                    sent_count = sent_count + 1
                 except:
+                    print 'Exception while trying to send'
                     pass
         # Notify connection termination
         end_time = cur_time
