@@ -4,6 +4,8 @@ import socket, sys, time
 from string import atoi
 from optparse import OptionParser
 
+MIN_REPORT_NUM = 100
+
 #exit_function
 class Client:
     def __init__(self, name, ip, port, timeout):
@@ -26,6 +28,22 @@ class Client:
         self.loss_stat = []
         self.connection_start_time = 0
         self.connection_end_time = 0
+        self.time_list = {}
+        self.last_log_write_ts = 0
+        self.ts_log_name = "/tmp/client-ts-%s-%s.log" % (name,port)
+        self.ts_f = open(self.ts_log_name, "w")
+
+    def dump_log(self, force = False):
+        try:
+            if ( force or len(self.time_list) > MIN_REPORT_NUM ):
+                for k in sorted(self.time_list.keys()):
+                    self.ts_f.write(`k` + " " + `self.time_list[k]` + "\n")
+                self.last_log_write_ts = time.time()
+                self.time_list.clear()
+        except:
+            print sys.exc_info()[0]
+            print sys.exc_info()[1]
+
 
     def client_exit(self, rcount, pcount, th_count):
         self.sock.close()
@@ -33,7 +51,6 @@ class Client:
 
         for skip in self.loss_stat: 
             self.f.write('Skipped Seq from %d to %d\n'%skip) 
-        print '%d / %d'%(rcount, pcount)
         print 'Number of times throttled: %d'%th_count
         print 'Received %d / %d packets'%(rcount, pcount)
         print 'Start time: %f'%self.connection_start_time
@@ -45,6 +62,8 @@ class Client:
         self.f.write('End time: %f\n'%self.connection_end_time)
         self.f.write('Duration: %f\n'%(self.connection_end_time - self.connection_start_time))
         self.f.close()
+        self.dump_log(True)
+        self.ts_f.close()
         sys.exit()
     
     def run(self):
@@ -52,14 +71,19 @@ class Client:
         self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
         self.sock.settimeout(self.qos_notification_interval)
         self.sock.bind((ip,port))
+        temp_sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
+        temp_sock.setblocking(0)
 
         last_qos_time = 0
         prev_seq = 0
         timeout_period = 0
         while True:
             try:
-                data, addr = self.sock.recvfrom(2048) # buffer size is 2048 bytes
+                data, addr = self.sock.recvfrom(10000) # buffer size is 2048 bytes
                 data_s = data.strip()
+                cur_time = time.time()
+                self.time_list[cur_time] = data_s
+                self.dump_log()
 
                 # Termination condition check
                 if data_s == 'Finish':
@@ -69,7 +93,6 @@ class Client:
                 timeout_period = 0
                 self.recv_per_interval += 1
                 self.recv_total += 1
-                cur_time = time.time()
 
                 # Initialization upon first packet
                 if last_qos_time == 0 : 
@@ -80,10 +103,8 @@ class Client:
                     # Change the quliaty to low
                     if (self.rate - self.recv_per_interval) > self.loss_threshold * self.rate :
                         self.throttle_count += 1
-                        temp_sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
-                        temp_sock.setblocking(0)
                         temp_sock.sendto("low",(self.return_ip,self.return_port))
-                        temp_sock.close()
+                        #print 'sending qos change req to '+self.return_ip+':'+`self.return_port`
                     # Reset qos counter 
                     self.recv_per_interval = 0
                     last_qos_time = cur_time
@@ -96,6 +117,7 @@ class Client:
                 
                 # Log sequence skips
                 if prev_seq != seq - 1:
+                    print data_s
                     self.loss_stat.append((prev_seq, seq))
                 prev_seq = seq
                      
@@ -116,6 +138,9 @@ parser.add_option("-i", "--interface", dest="ctrl_addr", type="string",
 q_str = "Quality of service threshold.  Change quality when packet loss rate exceeds the given rate." 
 parser.add_option("-q", "--quality", action="store", type="float", dest="quality",
         default=1.0, help=q_str)
+r_str = "Force Rate. Packets sent per second. Set a rate instead of using the rate specified in client."
+parser.add_option("-r", "--rate", dest="rate", type="int",
+        default=-1, help=r_str)
 to_str = "Timeout"
 parser.add_option("-t", "--timeout", dest="timeout",
         default=10.0, type='float', help=to_str)
