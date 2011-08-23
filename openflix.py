@@ -100,7 +100,7 @@ class BandwidthMonitor:
         os.system('rm -rf /tmp/bandwidth')
         os.system('rm -rf /tmp/drops')
         self.func = func
-        self.interval = 0.5
+        self.interval = 0.1
         self.timer = Timer(self.interval, self.recordBandwidth)
         self.stats = []
         BandwidthMonitor.last_total_rx = 0
@@ -331,7 +331,7 @@ class HierarchicalTreeNet(object):
 
 
     # Generate random replay file and test it
-    def randomtest(self, avgTransmit=5.0, avgWait=10.0, totalTime=90.0):
+    def randomtest(self, avgTransmit=5.0, avgWait=20.0, totalTime=200.0):
         filepath = '/tmp/random.replay'
         f = open(filepath, 'w')
         replay = list()
@@ -409,26 +409,33 @@ class HierarchicalTreeNet(object):
                 filelist = os.listdir('/tmp/')
                 recvCount = 0
                 totalCount = 0
+                throttleCount = 0
                 for filename in filelist:
                     if filename.startswith('client-'):
                         while True:
                             f = open('/tmp/'+filename, 'r')
                             lines = f.readlines()
                             f.close()
-                            if len(lines):
-                                lastline = lines.pop()
-                                if lastline.startswith('Received'):
-                                    tokens = lastline.split()
-                                    recvCount += int(tokens[1])
-                                    totalCount += int(tokens[3])
-                                    break
+                            if len(lines) > 1:
+                                for line in lines:
+                                    if line.find('Received:') >= 0:
+                                        r = r'.*: (\d+) \/ (\d+).*'
+                                        m = re.search(r, line)
+                                        recvCount += int(m.group(1))
+                                        totalCount += int(m.group(2))
+                                    elif line.find('throttled:') >= 0:
+                                        r = r'.*: (\d+)'
+                                        m = re.search( r, line)
+                                        throttleCount += int(m.group(1))
+                                break
                             else:
                                 time.sleep(1) 
                 # Calculate throughput
 
                 f = open('/tmp/result', 'w')
-                f.write('Total '+`recvCount`+' / '+`totalCount` + '\n')
-                f.write('Avg Throughput: '+`avg_throughput/1000` +'KBps')
+                f.write('Total: '+`recvCount`+' / '+`totalCount` + '\n')
+                f.write('Avg Throughput: '+`avg_throughput/1000` +'KBps\n')
+                f.write('Total throttled: '+`throttleCount`+'\n')
                 f.close()
                 print 'Total '+`recvCount`+' / '+`totalCount`
                 print 'Total TX: ' + `total_tx`
