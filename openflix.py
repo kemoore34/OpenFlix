@@ -416,7 +416,7 @@ class HierarchicalTreeNet(object):
                             f = open('/tmp/'+filename, 'r')
                             lines = f.readlines()
                             f.close()
-                            if len(lines) > 1:
+                            if len(lines) > 2:
                                 for line in lines:
                                     if line.find('Received:') >= 0:
                                         r = r'.*: (\d+) \/ (\d+).*'

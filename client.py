@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-import socket, sys, time
+import socket, sys, time, os
 from string import atoi
 from optparse import OptionParser
 
@@ -30,7 +30,7 @@ class Client:
         self.connection_end_time = 0
         self.time_list = {}
         self.last_log_write_ts = 0
-        self.ts_log_name = "/tmp/client-ts-%s-%s.log" % (name,port)
+        self.ts_log_name = "/tmp/client_ts-%s-%s.log" % (name,port)
         self.ts_f = open(self.ts_log_name, "w")
 
     def dump_log(self, force = False):
@@ -46,7 +46,10 @@ class Client:
 
 
     def client_exit(self, rcount, pcount, th_count):
-        self.sock.close()
+        try:
+            self.sock.close()
+        except:
+            pass
         if self.connection_start_time: self.connection_end_time = time.time()
 
         for skip in self.loss_stat: 
@@ -62,28 +65,51 @@ class Client:
         self.f.write('End time: %f\n'%self.connection_end_time)
         self.f.write('Duration: %f\n'%(self.connection_end_time - self.connection_start_time))
         self.f.close()
-        self.dump_log(True)
+        #self.dump_log(True)
         self.ts_f.close()
         sys.exit()
     
     def run(self):
         self.f.write('Starting client at %s:%d with timeout:%d\n'%(self.ip, self.port, self.timeout))
-        self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
-        self.sock.settimeout(self.qos_notification_interval)
-        self.sock.bind((ip,port))
-        temp_sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
-        temp_sock.setblocking(0)
-
+        cmdines = os.popen("ifconfig -a")
+        r = r'.*inet addr:([0-9.]*).*'
+        for l in cmdlines.readlines():
+            m = re.search(r, l)
+            if (m != None):
+                self.f.write('My IP address is %s'%m.group(1))
+                break
+            
+        for i in range(10):
+            try:
+                self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
+                self.sock.settimeout(self.qos_notification_interval)
+                self.sock.bind((ip,port))
+                temp_sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM )
+                temp_sock.setblocking(0)
+                break
+            except IOError as (errno, strerror):
+                self.f.write('socket error\n')
+                self.f.write(`errno`)
+                self.f.write(strerror)
+            except:
+                self.f.write('Unknown socket error\n')
+                self.f.write(sys.exc_info()[0])
+                self.f.write(sys.exc_info()[1])
+            time.sleep(0.1)
+        
         last_qos_time = 0
         prev_seq = 0
         timeout_period = 0
         while True:
             try:
                 data, addr = self.sock.recvfrom(10000) # buffer size is 2048 bytes
+                if data == 0: 
+                    self.f.write('Error: Nothing received on socket\n')
+                    self.client_exit()
                 data_s = data.strip()
                 cur_time = time.time()
                 self.time_list[cur_time] = data_s
-                self.dump_log()
+                #self.dump_log()
 
                 # Termination condition check
                 if data_s == 'Finish':
