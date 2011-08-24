@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-import socket, sys, time, os
+import socket, sys, time, os, re
 from string import atoi
 from optparse import OptionParser
 
@@ -71,7 +71,7 @@ class Client:
     
     def run(self):
         self.f.write('Starting client at %s:%d with timeout:%d\n'%(self.ip, self.port, self.timeout))
-        cmdines = os.popen("ifconfig -a")
+        cmdlines = os.popen("ifconfig -a")
         r = r'.*inet addr:([0-9.]*).*'
         for l in cmdlines.readlines():
             m = re.search(r, l)
@@ -79,7 +79,7 @@ class Client:
                 self.f.write('My IP address is %s'%m.group(1))
                 break
             
-        for i in range(10):
+        for i in range(3):
             try:
                 self.sock = socket.socket( socket.AF_INET, socket.SOCK_DGRAM ) # UDP
                 self.sock.settimeout(self.qos_notification_interval)
@@ -88,14 +88,20 @@ class Client:
                 temp_sock.setblocking(0)
                 break
             except IOError as (errno, strerror):
+                print ('socket error')
                 self.f.write('socket error\n')
                 self.f.write(`errno`)
                 self.f.write(strerror)
+                cmdlines = os.popen("lsof -i :"+str(self.port))
+                for l in cmdlines.readlines(): self.f.write(l+"\n")
             except:
+                print ('socket error')
                 self.f.write('Unknown socket error\n')
                 self.f.write(sys.exc_info()[0])
                 self.f.write(sys.exc_info()[1])
-            time.sleep(0.1)
+                cmdlines = os.popen("lsof -i :"+str(self.port))
+                for l in cmdlines.readlines(): self.f.write(l+"\n")
+            time.sleep(0.5)
         
         last_qos_time = 0
         prev_seq = 0
