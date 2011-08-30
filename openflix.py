@@ -270,8 +270,19 @@ class HierarchicalTreeNet(object):
         self.net = Mininet(topo=self.topo, controller=lambda x:
                 RemoteController(x, ctrl_ip, ctrl_port), 
                 listenPort=6634, xterms=False, autoSetMacs=True)
+
         self.clients = [self.net.idToNode[cl] for cl in self.topo.clients]
+        self.clients_dict = {}
+        for cl in self.topo.clients:
+            node = self.net.idToNode[cl]
+            self.clients_dict[node.IP()] = node
+
         self.servers = [self.net.idToNode[s] for s in self.topo.servers]
+        self.servers_dict = {}
+        for s in self.topo.servers:
+            node = self.net.idToNode[s]
+            self.servers_dict[node.IP()] = node
+
         self.net.start()
         # log server location
         self.log_server_loc('/tmp/server_loc.txt')
@@ -383,14 +394,56 @@ class HierarchicalTreeNet(object):
                         break
                     time.sleep(float(send_time) - curTime)
                     curTime = float(send_time)
+                
+                    #'''
+                    #TODO delete ipLog
+                    ipLog = []
+                    ipLog2 = []
+                    ipLog3 = []
+                    ipKeys = self.clients_dict.keys()
                     for cl in self.clients: 
-                        if cl.IP() == dst_addr.split(':')[0]:
+                        cl_ip = cl.IP()
+                        ipLog.append(cl_ip)
+                        ipLog.append(id(cl))
+                        ipLog.append(cl)
+                        ipLog2.append(ipKeys[self.clients.index(cl)])
+                        ipLog2.append(id(self.clients_dict[ipKeys[self.clients.index(cl)]]))
+                        ipLog2.append(self.clients_dict[ipKeys[self.clients.index(cl)]])
+                        ipLog3.append(cl_ip)
+                        ipLog3.append(id(cl))
+                        ipLog3.append(cl)
+                        if cl_ip == dst_addr.split(':')[0]:
                             break
+                        cl = None
                     for s in self.servers:
-                        if s.IP() == src_addr.split(':')[0]:                    
+                        s_ip = s.IP()
+                        if s_ip == src_addr.split(':')[0]:                    
                             break
+                        s = None
+
+                    if cl == None:
+                        print 'iplog'
+                        print ipLog
+                        print 'iplog2'
+                        print ipLog2
+                        print 'iplog3'
+                        print ipLog3
+                        print 'cur list'
+                        for cl in self.clients:
+                            print cl.IP()
+                            print id(cl)
+                            print cl
+                        die()
+
+                    '''
+                    #TODO good code
+                    cl = self.clients_dict[dst_addr.split(':')[0]]
+                    s = self.servers_dict[src_addr.split(':')[0]]
+                    '''
                     total_packets = int(packet_rate * (float(end_time)-float(curTime)))
-                    if float(end_time) > terminate_time: terminate_time = float(end_time)
+
+                    if float(end_time) > terminate_time: 
+                        terminate_time = float(end_time)
 
                     cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '&')
                     cl.cmd('arp', '-s', s.IP(), s.MAC())
