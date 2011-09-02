@@ -17,7 +17,7 @@ class Client:
         self.f = open(self.log_name, "w")
         self.num_packets = 0
         self.recv_total = 0
-        self.recv_per_interval = 0
+        #self.recv_per_interval = 0
         self.throttle_count = 0
         self.rate = 0
         self.qos_notification_interval = 0.1
@@ -41,8 +41,8 @@ class Client:
                 self.last_log_write_ts = time.time()
                 self.time_list.clear()
         except:
-            print sys.exc_info()[0]
-            print sys.exc_info()[1]
+            self.ts_f.write(sys.exc_info()[0])
+            self.ts_f.write(sys.exc_info()[1])
 
 
     def client_exit(self, rcount, pcount, th_count):
@@ -54,11 +54,6 @@ class Client:
 
         for skip in self.loss_stat: 
             self.f.write('Skipped Seq from %d to %d\n'%skip) 
-        print 'Number of times throttled: %d'%th_count
-        print 'Received %d / %d packets'%(rcount, pcount)
-        print 'Start time: %f'%self.connection_start_time
-        print 'End time: %f'%self.connection_end_time
-        print 'Duration: %f'%(self.connection_end_time - self.connection_start_time)
         self.f.write('Number of times throttled: %d\n'%th_count)
         self.f.write('Received: %d / %d packets\n'% (rcount, pcount))
         self.f.write('Start time: %f\n'%self.connection_start_time)
@@ -88,14 +83,12 @@ class Client:
                 temp_sock.setblocking(0)
                 break
             except IOError as (errno, strerror):
-                print ('socket error')
                 self.f.write('socket error\n')
                 self.f.write(`errno`)
                 self.f.write(strerror)
                 cmdlines = os.popen("lsof -i :"+str(self.port))
                 for l in cmdlines.readlines(): self.f.write(l+"\n")
             except:
-                print ('socket error')
                 self.f.write('Unknown socket error\n')
                 self.f.write(sys.exc_info()[0])
                 self.f.write(sys.exc_info()[1])
@@ -106,6 +99,7 @@ class Client:
         last_qos_time = 0
         prev_seq = 0
         timeout_period = 0
+        ploss_count = 0
         while True:
             try:
                 data, addr = self.sock.recvfrom(10000) # buffer size is 2048 bytes
@@ -123,7 +117,7 @@ class Client:
 
                 # Reset timeout whenever a packet is received
                 timeout_period = 0
-                self.recv_per_interval += 1
+                #self.recv_per_interval += 1
                 self.recv_total += 1
 
                 # Initialization upon first packet
@@ -131,6 +125,7 @@ class Client:
                     last_qos_time = cur_time
                     self.connection_start_time = cur_time 
 
+                '''    
                 if (cur_time - last_qos_time) >= self.qos_notification_interval :
                     # Change the quliaty to low
                     if (self.rate - self.recv_per_interval) > self.loss_threshold * self.rate :
@@ -140,7 +135,8 @@ class Client:
                     # Reset qos counter 
                     self.recv_per_interval = 0
                     last_qos_time = cur_time
-                        
+                '''
+     
                 # Parse packet content
                 seq, self.num_packets, self.rate = map(int, data_s.split('/')[:3])
                 url = data_s.split('/')[3].split(':')
@@ -149,9 +145,18 @@ class Client:
                 
                 # Log sequence skips
                 if prev_seq != seq - 1:
-                    print data_s
                     self.loss_stat.append((prev_seq, seq))
+                    ploss_count += (seq - prev_seq - 1)
                 prev_seq = seq
+
+                # QOS processing
+                if cur_time - last_qos_time >= self.qos_notification_interval :
+                    if ploss_count > self.loss_threshold * self.rate :
+                        self.throttle_count += 1
+                        temp_sock.sendto("low",(self.return_ip, self.return_port))
+                    # Reset QOS counter
+                    ploss_count = 0
+                    last_qos_time = cur_time
                      
             except socket.timeout:
                 timeout_period += self.qos_notification_interval
