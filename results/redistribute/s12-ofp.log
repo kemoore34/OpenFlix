@@ -1,0 +1,130 @@
+Aug 30 18:05:58|00001|openflowd|INFO|Open vSwitch version 1.1.0pre2
+Aug 30 18:05:58|00002|openflowd|INFO|OpenFlow protocol version 0x01
+Aug 30 18:05:58|00003|ofproto|INFO|using datapath ID 0000002320b48f8a
+Aug 30 18:05:58|00004|ofproto|INFO|datapath ID changed to 000000000000000c
+Aug 30 18:05:58|00005|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:05:58|00006|rconn|WARN|dp11<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 18:05:58|00007|rconn|INFO|dp11<->tcp:127.0.0.1:6633: waiting 1 seconds before reconnect
+Aug 30 18:05:59|00008|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:05:59|00009|rconn|WARN|dp11<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 18:05:59|00010|rconn|INFO|dp11<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Aug 30 18:06:01|00011|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:06:01|00012|rconn|WARN|dp11<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 18:06:01|00013|rconn|INFO|dp11<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Aug 30 18:06:05|00014|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:06:05|00015|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connected
+Aug 30 18:06:05|00016|ofp_util|WARN|received Nicira extension message of unknown type 8
+Aug 30 18:06:05|00017|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 18:06:05|00018|ofp_util|INFO| pre: wildcards=0xffffffff  in_port=    0  dl_src=00:00:90:a9:c0:ff  dl_dst=fe:1a:79:1d:ff:02  dl_vlan=    0  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=      0x16  nw_dst=0x3a000502  tp_src=    0  tp_dst=  256
+Aug 30 18:06:05|00019|ofp_util|INFO|post: wildcards= 0x23fffff  in_port=    0  dl_src=00:00:00:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=    0  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 18:06:13|00020|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 18:06:13|00021|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001c  nw_dst= 0xa00001e  tp_src= 1234  tp_dst=33702
+Aug 30 18:06:13|00022|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 18:06:13|00023|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 18:06:13|00024|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001c  nw_dst= 0xa00001e  tp_src= 1234  tp_dst=33702
+Aug 30 18:06:13|00025|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 18:06:13|00026|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 18:06:13|00027|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001c  nw_dst= 0xa00001e  tp_src= 1234  tp_dst=33702
+Aug 30 18:06:13|00028|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 18:07:08|00029|ofp_util|INFO|Dropped 57 log messages in last 52 seconds due to excessive rate
+Aug 30 18:07:08|00030|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 18:07:08|00031|ofp_util|INFO| pre: wildcards=      0x30  in_port=    5  dl_src=00:00:00:00:00:19  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000019  nw_dst= 0xa00001e  tp_src= 1237  tp_dst=32847
+Aug 30 18:07:08|00032|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    5  dl_src=00:00:00:00:00:19  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 18:08:06|00033|ofp_util|INFO|Dropped 90 log messages in last 58 seconds due to excessive rate
+Aug 30 18:08:06|00034|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 18:08:06|00035|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:1a  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001a  nw_dst= 0xa000020  tp_src= 1239  tp_dst=36883
+Aug 30 18:08:06|00036|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:1a  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 18:08:34|00037|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connection closed by peer
+Aug 30 18:08:35|00038|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s12-eth8 failed: No such device
+Aug 30 18:08:35|00039|timeval|WARN|70 ms poll interval (0 ms user, 0 ms system) is over 112 times the weighted mean interval 1 ms (1570 samples)
+Aug 30 18:08:35|00040|timeval|WARN|context switches: 2 voluntary, 0 involuntary
+Aug 30 18:08:35|00041|coverage|INFO|Event coverage (epoch 1570/entire run), hash=1594cbd2:
+Aug 30 18:08:35|00042|coverage|INFO|ofproto_update_port          1 /         9
+Aug 30 18:08:35|00043|coverage|INFO|hmap_expand                  2 /        29
+Aug 30 18:08:35|00044|coverage|INFO|poll_fd_wait                 7 /     14902
+Aug 30 18:08:35|00045|coverage|INFO|poll_zero_timeout            1 /         3
+Aug 30 18:08:35|00046|coverage|INFO|util_xalloc                151 /     37455
+Aug 30 18:08:35|00047|coverage|INFO|netdev_get_hwaddr            1 /        18
+Aug 30 18:08:35|00048|coverage|INFO|netdev_ethtool               1 /        27
+Aug 30 18:08:35|00049|coverage|INFO|netlink_received            44 /        72
+Aug 30 18:08:35|00050|coverage|INFO|rtnetlink_changed           44 /        72
+Aug 30 18:08:35|00051|coverage|INFO|facet_changed_rule           0 /        37
+Aug 30 18:08:35|00052|coverage|INFO|facet_revalidate             0 /       738
+Aug 30 18:08:35|00053|coverage|INFO|ofproto_del_rule             0 /        25
+Aug 30 18:08:35|00054|coverage|INFO|ofproto_error                0 /         1
+Aug 30 18:08:35|00055|coverage|INFO|ofproto_expiration           0 /       156
+Aug 30 18:08:35|00056|coverage|INFO|ofproto_ofp2odp              0 /       782
+Aug 30 18:08:35|00057|coverage|INFO|ofproto_packet_in            0 /        48
+Aug 30 18:08:35|00058|coverage|INFO|ofproto_recv_openflow        0 /       620
+Aug 30 18:08:35|00059|coverage|INFO|dpif_flow_flush              0 /         1
+Aug 30 18:08:35|00060|coverage|INFO|dpif_flow_put                0 /        76
+Aug 30 18:08:35|00061|coverage|INFO|dpif_flow_del                0 /        61
+Aug 30 18:08:35|00062|coverage|INFO|dpif_flow_query_list         0 /       156
+Aug 30 18:08:35|00063|coverage|INFO|dpif_flow_query_list_n       0 /       502
+Aug 30 18:08:35|00064|coverage|INFO|dpif_execute                 0 /        73
+Aug 30 18:08:35|00065|coverage|INFO|dpif_purge                   0 /         1
+Aug 30 18:08:35|00066|coverage|INFO|flow_extract                 0 /       121
+Aug 30 18:08:35|00067|coverage|INFO|netdev_get_stats             0 /      2079
+Aug 30 18:08:35|00068|coverage|INFO|rconn_overflow               0 /        32
+Aug 30 18:08:35|00069|coverage|INFO|rconn_queued                 0 /       283
+Aug 30 18:08:35|00070|coverage|INFO|rconn_sent                   0 /       283
+Aug 30 18:08:35|00071|coverage|INFO|vconn_open                   0 /         4
+Aug 30 18:08:35|00072|coverage|INFO|vconn_received               0 /       852
+Aug 30 18:08:35|00073|coverage|INFO|vconn_sent                   0 /       515
+Aug 30 18:08:35|00074|coverage|INFO|pstream_open                 0 /         1
+Aug 30 18:08:35|00075|coverage|INFO|stream_open                  0 /         4
+Aug 30 18:08:35|00076|coverage|INFO|51 events never hit
+Aug 30 18:08:35|00077|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:08:35|00078|rconn|WARN|dp11<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 18:08:35|00079|rconn|INFO|dp11<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Aug 30 18:08:37|00080|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:08:37|00081|rconn|WARN|dp11<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 18:08:37|00082|rconn|INFO|dp11<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Aug 30 18:08:37|00083|timeval|WARN|73 ms poll interval (0 ms user, 0 ms system) is over 116 times the weighted mean interval 1 ms (1639 samples)
+Aug 30 18:08:37|00084|timeval|WARN|context switches: 4 voluntary, 0 involuntary
+Aug 30 18:08:37|00085|coverage|INFO|Event coverage (epoch 1639/entire run), hash=2be76fa3:
+Aug 30 18:08:37|00086|coverage|INFO|poll_fd_wait                 8 /     15454
+Aug 30 18:08:37|00087|coverage|INFO|util_xalloc                 32 /     38822
+Aug 30 18:08:37|00088|coverage|INFO|vconn_open                   1 /         6
+Aug 30 18:08:37|00089|coverage|INFO|stream_open                  1 /         6
+Aug 30 18:08:37|00090|coverage|INFO|facet_changed_rule           0 /        37
+Aug 30 18:08:37|00091|coverage|INFO|facet_revalidate             0 /       738
+Aug 30 18:08:37|00092|coverage|INFO|ofproto_del_rule             0 /        25
+Aug 30 18:08:37|00093|coverage|INFO|ofproto_error                0 /         1
+Aug 30 18:08:37|00094|coverage|INFO|ofproto_expiration           0 /       158
+Aug 30 18:08:37|00095|coverage|INFO|ofproto_ofp2odp              0 /       782
+Aug 30 18:08:37|00096|coverage|INFO|ofproto_packet_in            0 /        48
+Aug 30 18:08:37|00097|coverage|INFO|ofproto_recv_openflow        0 /       620
+Aug 30 18:08:37|00098|coverage|INFO|ofproto_update_port          0 /        13
+Aug 30 18:08:37|00099|coverage|INFO|dpif_flow_flush              0 /         1
+Aug 30 18:08:37|00100|coverage|INFO|dpif_flow_put                0 /        76
+Aug 30 18:08:37|00101|coverage|INFO|dpif_flow_del                0 /        61
+Aug 30 18:08:37|00102|coverage|INFO|dpif_flow_query_list         0 /       158
+Aug 30 18:08:37|00103|coverage|INFO|dpif_flow_query_list_n       0 /       502
+Aug 30 18:08:37|00104|coverage|INFO|dpif_execute                 0 /        73
+Aug 30 18:08:37|00105|coverage|INFO|dpif_purge                   0 /         1
+Aug 30 18:08:37|00106|coverage|INFO|flow_extract                 0 /       121
+Aug 30 18:08:37|00107|coverage|INFO|hmap_expand                  0 /        29
+Aug 30 18:08:37|00108|coverage|INFO|netdev_get_stats             0 /      2079
+Aug 30 18:08:37|00109|coverage|INFO|poll_zero_timeout            0 /         3
+Aug 30 18:08:37|00110|coverage|INFO|rconn_overflow               0 /        32
+Aug 30 18:08:37|00111|coverage|INFO|rconn_queued                 0 /       283
+Aug 30 18:08:37|00112|coverage|INFO|rconn_sent                   0 /       283
+Aug 30 18:08:37|00113|coverage|INFO|vconn_received               0 /       852
+Aug 30 18:08:37|00114|coverage|INFO|vconn_sent                   0 /       515
+Aug 30 18:08:37|00115|coverage|INFO|netdev_get_hwaddr            0 /        18
+Aug 30 18:08:37|00116|coverage|INFO|netdev_ethtool               0 /        27
+Aug 30 18:08:37|00117|coverage|INFO|netlink_received             0 /       136
+Aug 30 18:08:37|00118|coverage|INFO|rtnetlink_changed            0 /       136
+Aug 30 18:08:37|00119|coverage|INFO|pstream_open                 0 /         1
+Aug 30 18:08:37|00120|coverage|INFO|51 events never hit
+Aug 30 18:08:41|00121|rconn|INFO|dp11<->tcp:127.0.0.1:6633: connecting...
+Aug 30 18:08:41|00122|rconn|WARN|dp11<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 18:08:41|00123|rconn|INFO|dp11<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
+Aug 30 18:08:42|00124|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s12-eth1 failed: No such device
+Aug 30 18:08:43|00125|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s12-eth2 failed: No such device
+Aug 30 18:08:45|00126|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s12-eth3 failed: No such device
+Aug 30 18:08:46|00127|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s12-eth4 failed: No such device
+Aug 30 18:08:48|00128|dpif_linux|WARN|system@dp11: read failed: No such device
+Aug 30 18:08:48|00129|ofproto|ERR|system@dp11: datapath was destroyed externally
+ovs-openflowd: unrecoverable datapath error (No such device)

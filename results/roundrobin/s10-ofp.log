@@ -1,0 +1,105 @@
+Aug 30 17:18:26|00001|openflowd|INFO|Open vSwitch version 1.1.0pre2
+Aug 30 17:18:26|00002|openflowd|INFO|OpenFlow protocol version 0x01
+Aug 30 17:18:26|00003|ofproto|INFO|using datapath ID 0000002320a48277
+Aug 30 17:18:26|00004|ofproto|INFO|datapath ID changed to 000000000000000a
+Aug 30 17:18:26|00005|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:18:26|00006|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:18:26|00007|rconn|INFO|dp9<->tcp:127.0.0.1:6633: waiting 1 seconds before reconnect
+Aug 30 17:18:26|00008|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:18:26|00009|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:18:26|00010|rconn|INFO|dp9<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Aug 30 17:18:28|00011|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:18:28|00012|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:18:28|00013|rconn|INFO|dp9<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Aug 30 17:18:32|00014|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:18:32|00015|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:18:32|00016|rconn|INFO|dp9<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
+Aug 30 17:18:40|00017|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:18:48|00018|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:18:56|00019|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:19:04|00020|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:19:12|00021|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:19:20|00022|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:19:28|00023|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:19:36|00024|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:19:44|00025|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connected
+Aug 30 17:19:44|00026|ofp_util|WARN|received Nicira extension message of unknown type 8
+Aug 30 17:19:44|00027|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 17:19:44|00028|ofp_util|INFO| pre: wildcards=0xffffffff  in_port=    0  dl_src=00:00:a0:8c:8e:08  dl_dst=60:73:06:08:04:00  dl_vlan=  256  dl_vlan_pcp=  0  dl_type=     0  nw_tos=0x80  nw_proto=0x6f  nw_src=         0  nw_dst=0xc88b8e08  tp_src=    0  tp_dst=    0
+Aug 30 17:19:44|00029|ofp_util|INFO|post: wildcards= 0x23fffff  in_port=    0  dl_src=00:00:00:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=  256  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 17:19:54|00030|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 17:19:54|00031|ofp_util|INFO| pre: wildcards=  0x200030  in_port=    8  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000014  nw_dst= 0xa000020  tp_src= 1234  tp_dst=60710
+Aug 30 17:19:54|00032|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 17:19:54|00033|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 17:19:54|00034|ofp_util|INFO| pre: wildcards=  0x200030  in_port=    8  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000014  nw_dst= 0xa000020  tp_src= 1234  tp_dst=60710
+Aug 30 17:19:54|00035|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 17:19:54|00036|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 17:19:54|00037|ofp_util|INFO| pre: wildcards=  0x200030  in_port=    8  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000014  nw_dst= 0xa000020  tp_src= 1234  tp_dst=60710
+Aug 30 17:19:54|00038|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 17:20:53|00039|ofp_util|INFO|Dropped 39 log messages in last 53 seconds due to excessive rate
+Aug 30 17:20:53|00040|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 17:20:53|00041|ofp_util|INFO| pre: wildcards=  0x200030  in_port=    7  dl_src=00:00:00:00:00:13  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000013  nw_dst= 0xa00001d  tp_src= 1236  tp_dst=41687
+Aug 30 17:20:53|00042|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:13  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 17:21:47|00043|ofp_util|INFO|Dropped 49 log messages in last 54 seconds due to excessive rate
+Aug 30 17:21:47|00044|ofp_util|INFO|normalization changed ofp_match, details:
+Aug 30 17:21:47|00045|ofp_util|INFO| pre: wildcards=  0x200030  in_port=    6  dl_src=00:00:00:00:00:12  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000012  nw_dst= 0xa00001e  tp_src= 1239  tp_dst=51285
+Aug 30 17:21:47|00046|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:12  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Aug 30 17:22:04|00047|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connection closed by peer
+Aug 30 17:22:04|00048|netdev|WARN|failed to get flags for network device s10-eth7: No such device
+Aug 30 17:22:04|00049|ofproto|WARN|ignoring port s10-eth7 (7) because netdev s10-eth7 cannot be opened (No such device)
+Aug 30 17:22:04|00050|netdev|WARN|failed to get flags for network device s10-eth6: No such device
+Aug 30 17:22:04|00051|ofproto|WARN|ignoring port s10-eth6 (6) because netdev s10-eth6 cannot be opened (No such device)
+Aug 30 17:22:04|00052|timeval|WARN|119 ms poll interval (0 ms user, 0 ms system) is over 190 times the weighted mean interval 1 ms (1674 samples)
+Aug 30 17:22:04|00053|timeval|WARN|context switches: 5 voluntary, 0 involuntary
+Aug 30 17:22:04|00054|coverage|INFO|Event coverage (epoch 1674/entire run), hash=78ac5267:
+Aug 30 17:22:04|00055|coverage|INFO|ofproto_update_port          3 /        11
+Aug 30 17:22:04|00056|coverage|INFO|hmap_expand                  2 /        27
+Aug 30 17:22:04|00057|coverage|INFO|poll_fd_wait                 7 /     15801
+Aug 30 17:22:04|00058|coverage|INFO|poll_zero_timeout            1 /         3
+Aug 30 17:22:04|00059|coverage|INFO|util_xalloc                114 /     39099
+Aug 30 17:22:04|00060|coverage|INFO|netlink_received            32 /       115
+Aug 30 17:22:04|00061|coverage|INFO|rtnetlink_changed           32 /       115
+Aug 30 17:22:04|00062|coverage|INFO|facet_changed_rule           0 /        44
+Aug 30 17:22:04|00063|coverage|INFO|facet_revalidate             0 /       688
+Aug 30 17:22:04|00064|coverage|INFO|ofproto_error                0 /         1
+Aug 30 17:22:04|00065|coverage|INFO|ofproto_expiration           0 /       217
+Aug 30 17:22:04|00066|coverage|INFO|ofproto_ofp2odp              0 /       768
+Aug 30 17:22:04|00067|coverage|INFO|ofproto_packet_in            0 /        39
+Aug 30 17:22:04|00068|coverage|INFO|ofproto_recv_openflow        0 /       446
+Aug 30 17:22:04|00069|coverage|INFO|dpif_flow_flush              0 /         1
+Aug 30 17:22:04|00070|coverage|INFO|dpif_flow_put                0 /       102
+Aug 30 17:22:04|00071|coverage|INFO|dpif_flow_del                0 /        80
+Aug 30 17:22:04|00072|coverage|INFO|dpif_flow_query_list         0 /       217
+Aug 30 17:22:04|00073|coverage|INFO|dpif_flow_query_list_n       0 /       754
+Aug 30 17:22:04|00074|coverage|INFO|dpif_execute                 0 /        93
+Aug 30 17:22:04|00075|coverage|INFO|dpif_purge                   0 /         1
+Aug 30 17:22:04|00076|coverage|INFO|flow_extract                 0 /       132
+Aug 30 17:22:04|00077|coverage|INFO|netdev_get_stats             0 /      2115
+Aug 30 17:22:04|00078|coverage|INFO|rconn_overflow               0 /        39
+Aug 30 17:22:04|00079|coverage|INFO|rconn_queued                 0 /       252
+Aug 30 17:22:04|00080|coverage|INFO|rconn_sent                   0 /       252
+Aug 30 17:22:04|00081|coverage|INFO|vconn_open                   0 /        13
+Aug 30 17:22:04|00082|coverage|INFO|vconn_received               0 /       682
+Aug 30 17:22:04|00083|coverage|INFO|vconn_sent                   0 /       488
+Aug 30 17:22:04|00084|coverage|INFO|netdev_get_hwaddr            0 /        17
+Aug 30 17:22:04|00085|coverage|INFO|netdev_ethtool               0 /        26
+Aug 30 17:22:04|00086|coverage|INFO|pstream_open                 0 /         1
+Aug 30 17:22:04|00087|coverage|INFO|stream_open                  0 /        13
+Aug 30 17:22:04|00088|coverage|INFO|52 events never hit
+Aug 30 17:22:04|00089|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s10-eth8 failed: No such device
+Aug 30 17:22:04|00090|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:22:04|00091|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:22:04|00092|rconn|INFO|dp9<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Aug 30 17:22:06|00093|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:22:06|00094|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:22:06|00095|rconn|INFO|dp9<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Aug 30 17:22:10|00096|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s10-eth1 failed: No such device
+Aug 30 17:22:10|00097|rconn|INFO|dp9<->tcp:127.0.0.1:6633: connecting...
+Aug 30 17:22:10|00098|rconn|WARN|dp9<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Aug 30 17:22:10|00099|rconn|INFO|dp9<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
+Aug 30 17:22:12|00100|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s10-eth2 failed: No such device
+Aug 30 17:22:13|00101|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s10-eth3 failed: No such device
+Aug 30 17:22:15|00102|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s10-eth4 failed: No such device
+Aug 30 17:22:16|00103|dpif_linux|WARN|system@dp9: read failed: No such device
+Aug 30 17:22:16|00104|ofproto|ERR|system@dp9: datapath was destroyed externally
+ovs-openflowd: unrecoverable datapath error (No such device)
