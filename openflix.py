@@ -96,11 +96,11 @@ def chunks(l, n):
 class BandwidthMonitor:
     '''Monitor link bandwidth.
     '''
-    def __init__(self, func):
+    def __init__(self, interval, func):
         os.system('rm -rf /tmp/bandwidth')
         os.system('rm -rf /tmp/drops')
         self.func = func
-        self.interval = 0.1
+        self.interval = interval
         self.timer = Timer(self.interval, self.recordBandwidth)
         self.stats = []
         BandwidthMonitor.last_total_rx = 0
@@ -288,6 +288,7 @@ class HierarchicalTreeNet(object):
         self.log_server_loc('/tmp/server_loc.txt')
         self.log_topology('/tmp/topo.txt')
 
+    # Deprecated
     # Test numConn connections
     def test(self, numConn=1):
         total_packets = 900000 
@@ -295,7 +296,7 @@ class HierarchicalTreeNet(object):
         timeout = 10
         cl_count = 0
         for cl in self.clients:
-            cl.cmd('python', 'client.py', '-i', cl.IP()+':1234', '-t', `timeout`, '-q', `0.05`, '&>singletest.output', '&')
+            cl.cmd('python', 'client.py', '-i', cl.IP()+':1234', '-t', `timeout`, '-q', `0.02`, '&>singletest.output', '&')
             cl.cmd('arp', '-s', self.servers[0].IP(), self.servers[0].MAC())
             self.servers[0].cmd('arp', '-s', cl.IP(), cl.MAC())
             cl_count += 1
@@ -342,7 +343,7 @@ class HierarchicalTreeNet(object):
 
 
     # Generate random replay file and test it
-    def randomtest(self, avgTransmit=5.0, avgWait=20.0, totalTime=200.0):
+    def randomtest(self, avgTransmit=10.0, avgWait=20.0, totalTime=200.0):
         filepath = '/tmp/random.replay'
         f = open(filepath, 'w')
         replay = list()
@@ -375,14 +376,18 @@ class HierarchicalTreeNet(object):
         #self.replay(filepath)
 
     # Replay a replay file
-    def replay(self, filename, packet_rate=850, timeout=10):
+    def replay(self, filename, packet_rate=850, timeout=10, fast_monitor=False):
         terminate_time = 0.0
         curTime = 0.0
         graceTime = 10.0
+        monitor_interval = 1
+        if fast_monitor: 
+            monitor_interval = 0.1
+
         if filename is not None:
             # Start bandwidth monitor
-            bm = BandwidthMonitor(self.get_access_client_stats)
-            bm.start()
+            #bm = BandwidthMonitor(monitor_interval, self.get_access_client_stats)
+            #bm.start()
             
             try:
                 f = open(filename, 'r')
@@ -395,7 +400,7 @@ class HierarchicalTreeNet(object):
                     time.sleep(float(send_time) - curTime)
                     curTime = float(send_time)
                 
-                    #'''
+                    '''
                     #TODO delete ipLog
                     ipLog = []
                     ipLog2 = []
@@ -434,19 +439,18 @@ class HierarchicalTreeNet(object):
                             print id(cl)
                             print cl
                         die()
-
                     '''
                     #TODO good code
                     cl = self.clients_dict[dst_addr.split(':')[0]]
                     s = self.servers_dict[src_addr.split(':')[0]]
-                    '''
+                    #'''
                     total_packets = int(packet_rate * (float(end_time)-float(curTime)))
 
                     if float(end_time) > terminate_time: 
                         terminate_time = float(end_time)
 
-                    cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '&')
                     cl.cmd('arp', '-s', s.IP(), s.MAC())
+                    cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '&')
                     s.cmd('arp', '-s', cl.IP(), cl.MAC())
                     s.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
                             '-n', `total_packets`, '&')
@@ -495,7 +499,7 @@ class HierarchicalTreeNet(object):
                 print 'Avg Throughput: '+`avg_throughput/1000` +'KBps'
 
                 # Cleanup
-                bm.cancel()
+                #bm.cancel()
     
             except IOError:
                 print 'Could not open replay file %s' % filename
@@ -704,10 +708,16 @@ if __name__ == '__main__':
     o_str = "Topology type"
     parser.add_option("-o", "--topology", action="store", dest="topo", type="int",
             default=1, help=o_str)
+    fm_str = "Fast Monitor"
+    parser.add_option("", "--fastmonitor", action="store_true", dest="fast_monitor",
+            default=False, help=fm_str)
     (options, args) = parser.parse_args()
 
     # verbose output?
     log = options.verbose
+
+    # Delete existing logs
+    os.system('rm -rf /tmp/*')
 
     # location server
     loc_server = LocationServer()
@@ -734,7 +744,7 @@ if __name__ == '__main__':
 
     if options.replay:
         time.sleep(5)
-        mn.replay(options.replay)
+        mn.replay(options.replay, fast_monitor = options.fast_monitor)
     elif options.random:
         time.sleep(5)
         mn.randomtest()
