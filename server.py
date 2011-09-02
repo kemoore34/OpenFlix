@@ -17,7 +17,7 @@ class ReqGenerator(Thread):
         self.rate_= rate;
         self.total_packets_= total_packets;
         self.max_packet_len = 1400 #bytes
-        self.aimd_rtt = 0.001 #seconds
+        self.aimd_rtt = 0.01 #seconds
     
     def run(self):
         
@@ -49,7 +49,7 @@ class ReqGenerator(Thread):
             try:
                 rdata = sdr.recv(10000)
                 if rdata == 'low':
-                    packet_len = 700
+                    packet_len = self.max_packet_len / 8
             except:
                 # Perform additional increament at every RTT
                 if packet_len < self.max_packet_len and sent_count % math.ceil(self.aimd_rtt * self.rate_) == 0: 

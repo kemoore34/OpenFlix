@@ -1,3 +1,7 @@
 Starting client at 10.0.0.14:1237 with timeout:10
-Waiting for packet...
-Received 9115 / 11846 packets
+My IP address is 10.0.0.14Skipped Seq from 602 to 606
+Number of times throttled: 9
+Received: 880 / 883 packets
+Start time: 1314750066.568143
+End time: 1314750067.601980
+Duration: 1.033837

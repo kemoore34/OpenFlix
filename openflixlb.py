@@ -258,9 +258,9 @@ class loadbalancer(Component):
 
         if (packet_src, packet_dst, packet_srcport, packet_dstport) in self.flow_table:
             dps = self.flow_table[(packet_src, packet_dst, packet_srcport, packet_dstport)]
+            # Copy dps
             dps = dps[:]
         elif self.sloc.servers[packet_src][0] == create_datapathid_from_host(dpid):
-            #print packet.src, packet_srcport, packet.dst, packet_dstport, self.next_sw_idx
             #Find max/min load on the nodes then assign aggregate with the minimum load
             dps = self.get_path(packet_src, self.aggr_sw[self.next_sw_idx], packet_dst)
             self.flow_table[(packet_src, packet_dst, packet_srcport, packet_dstport)] = dps

@@ -1,3 +1,6 @@
 Starting client at 10.0.0.23:1235 with timeout:10
-Waiting for packet...
-Received 5316 / 5316 packets
+My IP address is 10.0.0.23Number of times throttled: 8
+Received: 728 / 728 packets
+Start time: 1314752806.850767
+End time: 1314752817.961454
+Duration: 11.110687
