@@ -52,8 +52,12 @@ class Client:
             pass
         if self.connection_start_time: self.connection_end_time = time.time()
 
-        for skip in self.loss_stat: 
-            self.f.write('Skipped Seq from %d to %d\n'%skip) 
+        for loss in self.loss_stat: 
+            seq1, seq2 = loss
+            if seq1 < seq2:
+                self.f.write('Skipped Seq from %d to %d\n'%loss) 
+            elif seq1 > seq2:
+                self.f.write('Recovered out of order packet from %d to %d\n'%loss)
         self.f.write('Number of times throttled: %d\n'%th_count)
         self.f.write('Received: %d / %d packets\n'% (rcount, pcount))
         self.f.write('Start time: %f\n'%self.connection_start_time)
@@ -144,10 +148,16 @@ class Client:
                 self.return_port = atoi(url[1])
                 
                 # Log sequence skips
-                if prev_seq != seq - 1:
+                if prev_seq < seq - 1:
                     self.loss_stat.append((prev_seq, seq))
                     ploss_count += (seq - prev_seq - 1)
-                prev_seq = seq
+                    prev_seq = seq
+                elif prev_seq > seq - 1:
+                    # Recover as much out of order packet as possible
+                    self.loss_stat.append((prev_seq, seq))
+                    ploss_count -= 1
+                else:
+                    prev_seq = seq
 
                 # QOS processing
                 if cur_time - last_qos_time >= self.qos_notification_interval :
