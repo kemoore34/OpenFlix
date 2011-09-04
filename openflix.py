@@ -708,6 +708,9 @@ if __name__ == '__main__':
     o_str = "Topology type"
     parser.add_option("-o", "--topology", action="store", dest="topo", type="int",
             default=1, help=o_str)
+    ctrl_str = "Controller"
+    parser.add_option("-c", "--controller", type="string", dest="controller",
+            default=None, help=ctrl_str)
     fm_str = "Fast Monitor"
     parser.add_option("", "--fastmonitor", action="store_true", dest="fast_monitor",
             default=False, help=fm_str)
@@ -737,10 +740,16 @@ if __name__ == '__main__':
         sys.stdout.write('No topology given')
         die()
 
-    sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
-    l = sys.stdin.readline()
-    if l.strip().lower() == 'q':
-        die()
+    if (options.controller):
+        cur_dir = os.getcwdu()
+        os.chdir('/home/openflow/nox/build/src')
+        os.system('./nox_core -i ptcp: '+options.controller+' &')
+        os.chdir(cur_dir)
+    else:
+        sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
+        l = sys.stdin.readline()
+        if l.strip().lower() == 'q':
+            die()
 
     if options.replay:
         time.sleep(5)
