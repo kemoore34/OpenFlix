@@ -17,10 +17,9 @@ class Client:
         self.f = open(self.log_name, "w")
         self.num_packets = 0
         self.recv_total = 0
-        #self.recv_per_interval = 0
         self.throttle_count = 0
         self.rate = 0
-        self.qos_notification_interval = 0.1
+        self.qos_notification_interval = 1 #seconds
         self.return_ip = ""
         self.return_port = 0
         self.loss_threshold = 1.0
@@ -191,6 +190,9 @@ parser.add_option("-r", "--rate", dest="rate", type="int",
 to_str = "Timeout"
 parser.add_option("-t", "--timeout", dest="timeout",
         default=10.0, type='float', help=to_str)
+c_str = "QOS interval"
+parser.add_option("-c", "--qosinterval", dest="interval",
+        default=1.0, type='float', help=c_str)
 (options, args) = parser.parse_args()
 
 if not options.ctrl_addr: parser.error("Missing interface address"); die()
@@ -201,5 +203,6 @@ name = ip
 
 client = Client(name, ip, port, options.timeout)
 client.loss_threshold = options.quality
+client.qos_notification_interval = options.interval
 client.verbose = options.verbose
 client.run()
