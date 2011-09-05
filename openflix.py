@@ -343,8 +343,7 @@ class HierarchicalTreeNet(object):
 
 
     # Generate random replay file and test it
-    def randomtest(self, avgTransmit=10.0, avgWait=20.0, totalTime=200.0):
-        filepath = '/tmp/random.replay'
+    def random_gen(self, filepath="random.replay", avgTransmit=30.0, avgWait=90.0, totalTime=1200.0):
         f = open(filepath, 'w')
         replay = list()
         count = 0
@@ -373,20 +372,19 @@ class HierarchicalTreeNet(object):
             f.write("%f %s %s %f\n"%(startTime, srcIP, dstIP, endTime))
             count += 1
         f.close()
-        #self.replay(filepath)
 
     # Replay a replay file
-    def replay(self, filename, packet_rate=850, timeout=10, fast_monitor=False):
+    def replay(self, filename, packet_rate=850, timeout=10, fast_check=False):
         terminate_time = 0.0
         curTime = 0.0
         graceTime = 10.0
-        monitor_interval = 1
-        if fast_monitor: 
-            monitor_interval = 0.1
+        meta_interval = 1
+        if fast_check: 
+            meta_interval = 0.1
 
         if filename is not None:
             # Start bandwidth monitor
-            #bm = BandwidthMonitor(monitor_interval, self.get_access_client_stats)
+            #bm = BandwidthMonitor(meta_interval, self.get_access_client_stats)
             #bm.start()
             
             try:
@@ -450,7 +448,7 @@ class HierarchicalTreeNet(object):
                         terminate_time = float(end_time)
 
                     cl.cmd('arp', '-s', s.IP(), s.MAC())
-                    cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '&')
+                    cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '-c', `meta_interval`, '&')
                     s.cmd('arp', '-s', cl.IP(), cl.MAC())
                     s.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
                             '-n', `total_packets`, '&')
@@ -703,8 +701,8 @@ if __name__ == '__main__':
     parser.add_option("-p", "--replay", type="string", dest="replay",
             default=None, help=r_str)
     rand_str = "Genrate random traffic"
-    parser.add_option("-r", "--random", action="store_true", dest="random",
-            default=False, help=rand_str)
+    parser.add_option("-r", "--random", type="string", dest="random",
+            default=None, help=rand_str)
     o_str = "Topology type"
     parser.add_option("-o", "--topology", action="store", dest="topo", type="int",
             default=1, help=o_str)
@@ -712,7 +710,7 @@ if __name__ == '__main__':
     parser.add_option("-c", "--controller", type="string", dest="controller",
             default=None, help=ctrl_str)
     fm_str = "Fast Monitor"
-    parser.add_option("", "--fastmonitor", action="store_true", dest="fast_monitor",
+    parser.add_option("", "--fastmonitor", action="store_true", dest="fast_check",
             default=False, help=fm_str)
     (options, args) = parser.parse_args()
 
@@ -740,6 +738,12 @@ if __name__ == '__main__':
         sys.stdout.write('No topology given')
         die()
 
+    if options.random:
+        time.sleep(5)
+        mn.random_gen(options.random)
+        stop(mn)
+        die()
+
     if (options.controller):
         cur_dir = os.getcwdu()
         os.chdir('/home/openflow/nox/build/src')
@@ -753,10 +757,7 @@ if __name__ == '__main__':
 
     if options.replay:
         time.sleep(5)
-        mn.replay(options.replay, fast_monitor = options.fast_monitor)
-    elif options.random:
-        time.sleep(5)
-        mn.randomtest()
+        mn.replay(options.replay, fast_check = options.fast_check)
     elif options.test:
         time.sleep(5)
         mn.test(numConn=1)
