@@ -1,7 +1,10 @@
 Running the test script
 
 To run the test script 
-sudo ./openflix.py -v -o 2 -p random.replay --fastmonitor
+sudo ./openflix.py -v -o 2 -p random.replay --fastmonitor -c openflixlb
+
+sudo ./openflix.py -v -o 2 -r OUTPUT_REPLAY_FILE
+
 
 options
 -o 1:single server topology 2:multi server client topology

@@ -1,0 +1,10 @@
+Starting client at 10.0.0.11:1240 with timeout:10
+My IP address is 10.0.0.11Skipped Seq from 2503 to 2505
+Skipped Seq from 2535 to 2540
+Skipped Seq from 2570 to 2582
+Skipped Seq from 2622 to 2626
+Number of times throttled: 0
+Received: 9700 / 9719 packets
+Start time: 1315248162.862828
+End time: 1315248174.296981
+Duration: 11.434153
