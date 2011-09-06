@@ -1,0 +1,18 @@
+#!/bin/bash
+
+REPLAYS[0]="random-30-0-1200.replay"
+REPLAYS[1]="random-30-30-600-0.1.replay"
+REPLAYS[2]="random-30-30-600.replay"
+REPLAYS[3]="random-30-60-1200.replay"
+REPLAYS[4]="random-30-90-1200.replay"
+
+TOPOLOGY[0]=1
+TOPOLOGY[1]=2
+TOPOLOGY[2]=2
+TOPOLOGY[3]=2
+TOPOLOGY[4]=2
+
+for index in 0 1 2 3 4 
+do
+    ./generate_results "${TOPOLOGY[index]}" "${REPLAYS[index]}"
+done
