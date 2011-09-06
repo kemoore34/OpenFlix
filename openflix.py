@@ -343,7 +343,7 @@ class HierarchicalTreeNet(object):
 
 
     # Generate random replay file and test it
-    def random_gen(self, filepath="random.replay", avgTransmit=30.0, avgWait=90.0, totalTime=1200.0):
+    def random_gen(self, filepath="random.replay", avgTransmit=30.0, avgWait=0, totalTime=1200.0):
         f = open(filepath, 'w')
         replay = list()
         count = 0
@@ -353,7 +353,11 @@ class HierarchicalTreeNet(object):
             curTime = 0
             port = 1234
             while(True):
-                startTime = random.expovariate(1/avgWait) 
+                if avgWait == 0:
+                    startTime = 0
+                else:
+                    startTime = random.expovariate(1/avgWait) 
+
                 txTime = random.expovariate(1/avgTransmit)
 
                 # Generate traffic until total time
@@ -729,7 +733,7 @@ if __name__ == '__main__':
         sys.stdout.write("Topology must be either 1 or 2")
         die()
     elif options.topo == 1: 
-        mn = HierarchicalTreeNet(d=4, c=1, b=4, a=4, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(d=2, c=1, b=4, a=4, ctrl_addr=options.ctrl_addr)
     elif options.topo == 2:
         mn = HierarchicalTreeNet(d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
     elif options.topo == 3:
@@ -742,6 +746,8 @@ if __name__ == '__main__':
         time.sleep(5)
         mn.random_gen(options.random)
         stop(mn)
+        mn = None
+        shutdown()
         die()
 
     if (options.controller):
