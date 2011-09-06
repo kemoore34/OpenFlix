@@ -7,6 +7,7 @@ from mininet.cli import CLI
 from mininet.util import run
 from mininet.util import run
 from optparse import OptionParser
+from threading import Lock
 from threading import Thread
 from threading import Timer
 import time
@@ -103,6 +104,7 @@ class BandwidthMonitor:
         self.interval = interval
         self.timer = Timer(self.interval, self.recordBandwidth)
         self.stats = []
+        self.lock = Lock()
         BandwidthMonitor.last_total_rx = 0
         
     def recordBandwidth(self):
@@ -116,8 +118,10 @@ class BandwidthMonitor:
         self.timer.start_time = curTime
         self.timer.start()
 
+        self.lock.acquire()
         client_stats = self.func()
         self.stats.append((curTime - self.begin_time, client_stats))
+        self.lock.release()
 
     def start(self):
         self.begin_time = time.time()
@@ -126,6 +130,7 @@ class BandwidthMonitor:
 
     def cancel(self):
         self.timer.cancel()
+        self.lock.acquire()
         try:
             f = open('/tmp/bandwidth', 'a')
             for stats in self.stats:
@@ -143,6 +148,7 @@ class BandwidthMonitor:
             f.close()
         except:
             pass
+        self.lock.release()
         
 
 class LocationServer(Thread):
@@ -258,6 +264,7 @@ class HierarchicalTreeNet(object):
 
     # Default configuration is single core and 2 aggregates, and 4 access switches
     def __init__(self, d=4, c=1, b=2, a=2, ctrl_addr='127.0.0.1:6633'):
+        self.bm = None
         self.log = log
         self.topo = HierarchicalTreeTopo(d, c, b, a)
 
@@ -388,8 +395,8 @@ class HierarchicalTreeNet(object):
 
         if filename is not None:
             # Start bandwidth monitor
-            #bm = BandwidthMonitor(meta_interval, self.get_access_client_stats)
-            #bm.start()
+            self.bm = BandwidthMonitor(meta_interval, self.get_access_client_stats)
+            self.bm.start()
             
             try:
                 f = open(filename, 'r')
@@ -501,7 +508,7 @@ class HierarchicalTreeNet(object):
                 print 'Avg Throughput: '+`avg_throughput/1000` +'KBps'
 
                 # Cleanup
-                #bm.cancel()
+                self.bm.cancel()
     
             except IOError:
                 print 'Could not open replay file %s' % filename
@@ -669,6 +676,8 @@ def shutdown():
         sys.stderr.write('Bye, Bye!\n')
 
 def die(signum=None, frame=None):
+    if mn and mn.bm:
+        mn.bm.cancel()
     try:
         shutdown()
     finally:
@@ -753,7 +762,9 @@ if __name__ == '__main__':
     if (options.controller):
         cur_dir = os.getcwdu()
         os.chdir('/home/openflow/nox/build/src')
+        time.sleep(3)
         os.system('./nox_core -i ptcp: '+options.controller+' &')
+        time.sleep(3)
         os.chdir(cur_dir)
     else:
         sys.stdout.write('Now, RESTART the controller and hit ENTER when you are done:')
