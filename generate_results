@@ -1,7 +1,5 @@
 #!/bin/bash
 
-for index in 0 1 2 3 4
-do
 
 if [ $# -ne 2 ]
     then
@@ -15,6 +13,7 @@ if [ ! -d results/loadbalancer/$2 ]
     else
         rm results/loadbalancer/$2/*
     fi
+sudo mn -c
 sudo ./openflix.py -v -o $1 -p replay/o$1/$2 -c loadbalancer
 cp /tmp/* results/loadbalancer/$2/
 
@@ -24,7 +23,7 @@ if [ ! -d results/openflixlb/$2 ]
     else
         rm results/openflixlb/$2/*
     fi
+sudo mn -c
 sudo ./openflix.py -v -o $1 -p replay/o$1/$2 -c openflixlb
 cp /tmp/* results/openflixlb/$2/
 
-done

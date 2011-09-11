@@ -1,23 +1,25 @@
 Starting client at 10.0.0.16:1239 with timeout:10
-My IP address is 10.0.0.16Skipped Seq from 4304 to 4307
-Skipped Seq from 4331 to 4348
-Skipped Seq from 4357 to 4365
-Skipped Seq from 4447 to 4462
-Skipped Seq from 4475 to 4480
-Skipped Seq from 4504 to 4508
-Skipped Seq from 4516 to 4522
-Skipped Seq from 4534 to 4544
-Skipped Seq from 4551 to 4560
-Skipped Seq from 4570 to 4576
-Skipped Seq from 4587 to 4593
-Skipped Seq from 4600 to 4604
-Skipped Seq from 4614 to 4620
-Skipped Seq from 4630 to 4636
-Skipped Seq from 4647 to 4653
-Skipped Seq from 4669 to 4676
-Skipped Seq from 4762 to 4776
-Number of times throttled: 1
-Received: 14346 / 14461 packets
-Start time: 1315133058.102636
-End time: 1315133075.109231
-Duration: 17.006595
+My IP address is 10.0.0.16Skipped Seq from 4 to 7
+Recovered out of order packet from 22 to 5
+Recovered out of order packet from 22 to 6
+Skipped Seq from 2513 to 2518
+Skipped Seq from 6300 to 6307
+Skipped Seq from 6434 to 6437
+Skipped Seq from 6474 to 6482
+Skipped Seq from 6504 to 6520
+Skipped Seq from 6534 to 6541
+Skipped Seq from 6586 to 6589
+Skipped Seq from 6854 to 6856
+Skipped Seq from 6866 to 6874
+Skipped Seq from 6902 to 6908
+Skipped Seq from 6917 to 6937
+Skipped Seq from 6945 to 6950
+Skipped Seq from 7089 to 7104
+Skipped Seq from 7120 to 7127
+Skipped Seq from 7146 to 7161
+Skipped Seq from 10524 to 10575
+Number of times throttled: 2
+Received: 14299 / 14461 packets
+Start time: 1315408414.600267
+End time: 1315408431.775597
+Duration: 17.175330

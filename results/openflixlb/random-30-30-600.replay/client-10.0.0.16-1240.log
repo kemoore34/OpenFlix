@@ -1,12 +1,33 @@
 Starting client at 10.0.0.16:1240 with timeout:10
-My IP address is 10.0.0.16Skipped Seq from 2 to 5
-Recovered out of order packet from 8 to 3
-Recovered out of order packet from 8 to 4
-Skipped Seq from 15083 to 15099
-Skipped Seq from 21937 to 21951
-Skipped Seq from 35546 to 35553
+My IP address is 10.0.0.16Skipped Seq from 15445 to 15464
+Skipped Seq from 21936 to 21945
+Skipped Seq from 22363 to 22368
+Skipped Seq from 22401 to 22404
+Skipped Seq from 22417 to 22420
+Skipped Seq from 22440 to 22443
+Skipped Seq from 24468 to 24472
+Skipped Seq from 24537 to 24542
+Skipped Seq from 31239 to 31241
+Skipped Seq from 34528 to 34530
+Skipped Seq from 34562 to 34574
+Skipped Seq from 38285 to 38292
+Skipped Seq from 38292 to 38295
+Skipped Seq from 38295 to 38297
+Skipped Seq from 38297 to 38299
+Skipped Seq from 38299 to 38301
+Skipped Seq from 38304 to 38312
+Skipped Seq from 38314 to 38320
+Skipped Seq from 38320 to 38324
+Skipped Seq from 38326 to 38330
+Skipped Seq from 38330 to 38336
+Skipped Seq from 38336 to 38341
+Skipped Seq from 38343 to 38347
+Skipped Seq from 38347 to 38351
+Skipped Seq from 38351 to 38353
+Skipped Seq from 38353 to 38357
+Skipped Seq from 38357 to 38362
 Number of times throttled: 0
-Received: 38330 / 38364 packets
-Start time: 1315133915.616196
-End time: 1315133970.864970
-Duration: 55.248774
+Received: 38255 / 38364 packets
+Start time: 1315409263.217328
+End time: 1315409319.706567
+Duration: 56.489239

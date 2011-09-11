@@ -109,6 +109,7 @@ class BandwidthMonitor:
         
     def recordBandwidth(self):
         # Measure bandwidth at every 0.5 sec
+        self.lock.acquire()
         curTime = time.time()
         diff_time = curTime - self.timer.start_time
         # Adjust timer to sync with the interval
@@ -118,9 +119,9 @@ class BandwidthMonitor:
         self.timer.start_time = curTime
         self.timer.start()
 
-        self.lock.acquire()
         client_stats = self.func()
-        self.stats.append((curTime - self.begin_time, client_stats))
+        if client_stats:
+            self.stats.append((curTime - self.begin_time, client_stats))
         self.lock.release()
 
     def start(self):
@@ -129,8 +130,8 @@ class BandwidthMonitor:
         self.timer.start()
 
     def cancel(self):
-        self.timer.cancel()
         self.lock.acquire()
+        self.timer.cancel()
         try:
             f = open('/tmp/bandwidth', 'a')
             for stats in self.stats:
@@ -537,6 +538,10 @@ class HierarchicalTreeNet(object):
             all_stats = do_dpctl_ports(ac_sw, listenPort + ac_sw_id - 1)
 
             d = len(self.topo.clients) / len(self.topo.access)
+
+            if len(all_stats) < d + 1:
+                continue
+
             # Print client attached to each port
             for dd in range(d):
                 cc_id = self.topo.clients[0] + d*aa + dd

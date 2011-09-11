@@ -1,55 +1,31 @@
 Starting client at 10.0.0.23:1238 with timeout:10
-My IP address is 10.0.0.23Skipped Seq from 1520 to 1522
-Skipped Seq from 1522 to 1525
-Skipped Seq from 1526 to 1531
-Skipped Seq from 1533 to 1536
-Skipped Seq from 1538 to 1540
-Skipped Seq from 1540 to 1543
-Skipped Seq from 1544 to 1546
-Skipped Seq from 1552 to 1554
-Skipped Seq from 1555 to 1557
-Skipped Seq from 1560 to 1562
-Skipped Seq from 1566 to 1568
-Skipped Seq from 1568 to 1570
-Skipped Seq from 1570 to 1574
-Skipped Seq from 1575 to 1577
-Skipped Seq from 1595 to 1597
-Skipped Seq from 1598 to 1600
-Skipped Seq from 1602 to 1604
-Skipped Seq from 1604 to 1607
-Skipped Seq from 1608 to 1612
-Skipped Seq from 1614 to 1616
-Skipped Seq from 1621 to 1624
-Skipped Seq from 1625 to 1628
-Skipped Seq from 1634 to 1636
-Skipped Seq from 1645 to 1647
-Skipped Seq from 1647 to 1652
-Skipped Seq from 1654 to 1657
-Skipped Seq from 1658 to 1661
-Skipped Seq from 1661 to 1663
-Skipped Seq from 1667 to 1669
+My IP address is 10.0.0.23Skipped Seq from 1614 to 1617
+Skipped Seq from 1617 to 1620
+Skipped Seq from 1621 to 1625
+Skipped Seq from 1625 to 1629
+Skipped Seq from 1629 to 1634
+Skipped Seq from 1634 to 1638
+Skipped Seq from 1638 to 1644
+Skipped Seq from 1644 to 1660
+Skipped Seq from 1660 to 1662
+Skipped Seq from 1665 to 1670
 Skipped Seq from 1674 to 1676
-Skipped Seq from 1678 to 1681
-Skipped Seq from 1681 to 1683
-Skipped Seq from 1684 to 1686
-Skipped Seq from 1686 to 1688
-Skipped Seq from 1689 to 1692
-Skipped Seq from 1693 to 1695
-Skipped Seq from 1697 to 1701
-Skipped Seq from 1702 to 1707
-Skipped Seq from 1708 to 1710
-Skipped Seq from 1714 to 1716
-Skipped Seq from 1721 to 1724
-Skipped Seq from 1727 to 1729
-Skipped Seq from 1736 to 1738
-Skipped Seq from 1738 to 1741
-Skipped Seq from 1741 to 1743
-Skipped Seq from 1747 to 1749
-Skipped Seq from 1750 to 1752
-Skipped Seq from 1756 to 1759
-Skipped Seq from 1761 to 1763
+Skipped Seq from 1676 to 1682
+Skipped Seq from 1682 to 1687
+Skipped Seq from 1687 to 1689
+Skipped Seq from 1695 to 1697
+Skipped Seq from 1701 to 1703
+Skipped Seq from 1703 to 1705
+Skipped Seq from 1709 to 1711
+Skipped Seq from 1712 to 1715
+Skipped Seq from 1735 to 1738
+Skipped Seq from 1739 to 1742
+Skipped Seq from 1743 to 1745
+Skipped Seq from 1746 to 1748
+Skipped Seq from 1754 to 1756
+Skipped Seq from 1768 to 1770
 Number of times throttled: 0
-Received: 1693 / 1770 packets
-Start time: 1315209169.757047
-End time: 1315209172.756640
-Duration: 2.999593
+Received: 1703 / 1770 packets
+Start time: 1315410069.647362
+End time: 1315410072.615566
+Duration: 2.968204

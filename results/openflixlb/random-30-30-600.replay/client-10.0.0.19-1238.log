@@ -1,10 +1,43 @@
 Starting client at 10.0.0.19:1238 with timeout:10
-My IP address is 10.0.0.19Skipped Seq from 1072 to 1125
-Skipped Seq from 1129 to 1134
-Skipped Seq from 1145 to 1153
-Skipped Seq from 1307 to 1319
+My IP address is 10.0.0.19Skipped Seq from 2288 to 2290
+Skipped Seq from 2290 to 2292
+Skipped Seq from 2292 to 2294
+Skipped Seq from 2327 to 2330
+Skipped Seq from 2335 to 2337
+Skipped Seq from 2337 to 2340
+Skipped Seq from 2343 to 2345
+Skipped Seq from 2359 to 2362
+Skipped Seq from 2367 to 2369
+Skipped Seq from 2390 to 2392
+Skipped Seq from 2403 to 2405
+Skipped Seq from 2405 to 2407
+Skipped Seq from 2419 to 2424
+Skipped Seq from 2425 to 2427
+Skipped Seq from 2453 to 2459
+Skipped Seq from 2459 to 2461
+Skipped Seq from 2466 to 2469
+Skipped Seq from 2473 to 2475
+Skipped Seq from 2476 to 2478
+Skipped Seq from 2479 to 2484
+Skipped Seq from 2486 to 2488
+Skipped Seq from 2495 to 2499
+Skipped Seq from 2516 to 2520
+Skipped Seq from 2545 to 2548
+Skipped Seq from 2548 to 2551
+Skipped Seq from 2554 to 2556
+Skipped Seq from 2573 to 2577
+Skipped Seq from 2577 to 2580
+Skipped Seq from 2604 to 2606
+Skipped Seq from 2607 to 2610
+Skipped Seq from 2622 to 2626
+Skipped Seq from 2640 to 2643
+Skipped Seq from 2659 to 2661
+Skipped Seq from 2661 to 2664
+Skipped Seq from 2664 to 2667
+Skipped Seq from 2670 to 2675
+Skipped Seq from 2684 to 2686
 Number of times throttled: 1
-Received: 2620 / 2694 packets
-Start time: 1315133803.065072
-End time: 1315133816.317582
-Duration: 13.252510
+Received: 2625 / 2694 packets
+Start time: 1315409153.280487
+End time: 1315409167.528057
+Duration: 14.247570

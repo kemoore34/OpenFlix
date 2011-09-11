@@ -1,6 +1,14 @@
 Starting client at 10.0.0.18:1234 with timeout:10
-My IP address is 10.0.0.18Number of times throttled: 0
-Received: 6253 / 6253 packets
-Start time: 1315133485.987169
-End time: 1315133503.455896
-Duration: 17.468727
+My IP address is 10.0.0.18Skipped Seq from 4 to 8
+Recovered out of order packet from 24 to 5
+Recovered out of order packet from 24 to 6
+Recovered out of order packet from 24 to 7
+Skipped Seq from 257 to 259
+Skipped Seq from 4821 to 4836
+Skipped Seq from 5753 to 5765
+Skipped Seq from 5765 to 5779
+Number of times throttled: 0
+Received: 6214 / 6253 packets
+Start time: 1315408838.728844
+End time: 1315408856.222090
+Duration: 17.493246

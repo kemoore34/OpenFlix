@@ -1,12 +1,20 @@
 Starting client at 10.0.0.17:1238 with timeout:10
-My IP address is 10.0.0.17Skipped Seq from 2 to 4
-Recovered out of order packet from 8 to 3
-Skipped Seq from 3730 to 3732
-Skipped Seq from 3735 to 3737
-Skipped Seq from 3737 to 3741
-Skipped Seq from 3741 to 3746
+My IP address is 10.0.0.17Skipped Seq from 4 to 9
+Recovered out of order packet from 10 to 5
+Recovered out of order packet from 18 to 6
+Recovered out of order packet from 18 to 7
+Recovered out of order packet from 18 to 8
+Skipped Seq from 3693 to 3695
+Skipped Seq from 3701 to 3703
+Skipped Seq from 3706 to 3708
+Skipped Seq from 3708 to 3711
+Skipped Seq from 3711 to 3714
+Skipped Seq from 3716 to 3718
+Skipped Seq from 3726 to 3728
+Skipped Seq from 3728 to 3731
+Skipped Seq from 3741 to 3743
 Number of times throttled: 0
 Received: 3737 / 3753 packets
-Start time: 1315210427.633493
-End time: 1315210443.237573
-Duration: 15.604080
+Start time: 1315411346.652895
+End time: 1315411362.302075
+Duration: 15.649180

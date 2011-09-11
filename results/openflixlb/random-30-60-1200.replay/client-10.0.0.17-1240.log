@@ -1,41 +1,35 @@
 Starting client at 10.0.0.17:1240 with timeout:10
-My IP address is 10.0.0.17Skipped Seq from 7569 to 7571
-Skipped Seq from 7584 to 7590
-Skipped Seq from 7607 to 7621
-Skipped Seq from 7639 to 7652
-Skipped Seq from 7734 to 7749
-Skipped Seq from 7753 to 7766
-Skipped Seq from 7833 to 7837
-Skipped Seq from 7846 to 7850
-Skipped Seq from 7927 to 7936
-Skipped Seq from 7948 to 7954
-Skipped Seq from 7968 to 7982
-Skipped Seq from 7994 to 8005
-Skipped Seq from 8044 to 8055
-Skipped Seq from 8080 to 8085
-Skipped Seq from 8098 to 8104
-Skipped Seq from 8118 to 8127
-Skipped Seq from 8139 to 8155
-Skipped Seq from 8173 to 8179
-Skipped Seq from 8189 to 8195
-Skipped Seq from 8202 to 8218
-Skipped Seq from 8327 to 8342
-Skipped Seq from 8360 to 8363
-Skipped Seq from 8505 to 8509
-Skipped Seq from 8512 to 8525
-Skipped Seq from 8588 to 8607
-Skipped Seq from 8619 to 8622
-Skipped Seq from 8624 to 8629
-Skipped Seq from 16563 to 16572
-Skipped Seq from 18906 to 18919
-Skipped Seq from 18977 to 18982
-Skipped Seq from 19026 to 19056
-Skipped Seq from 19066 to 19094
-Skipped Seq from 19094 to 19096
-Skipped Seq from 19104 to 19125
-Skipped Seq from 19331 to 19340
-Number of times throttled: 2
-Received: 25206 / 25536 packets
-Start time: 1315210564.708334
-End time: 1315210604.801830
-Duration: 40.093496
+My IP address is 10.0.0.17Skipped Seq from 3158 to 3165
+Skipped Seq from 3173 to 3181
+Skipped Seq from 3188 to 3210
+Skipped Seq from 3220 to 3228
+Skipped Seq from 3237 to 3242
+Skipped Seq from 3297 to 3304
+Skipped Seq from 3315 to 3321
+Skipped Seq from 3568 to 3584
+Skipped Seq from 3602 to 3618
+Skipped Seq from 3641 to 3656
+Skipped Seq from 3666 to 3676
+Skipped Seq from 3779 to 3806
+Skipped Seq from 10633 to 10636
+Skipped Seq from 10668 to 10687
+Skipped Seq from 10691 to 10704
+Skipped Seq from 10716 to 10740
+Skipped Seq from 10827 to 10830
+Skipped Seq from 10849 to 10863
+Skipped Seq from 10975 to 10984
+Skipped Seq from 11081 to 11084
+Skipped Seq from 11084 to 11087
+Skipped Seq from 11093 to 11110
+Skipped Seq from 11152 to 11164
+Skipped Seq from 11203 to 11215
+Skipped Seq from 11261 to 11291
+Skipped Seq from 11414 to 11417
+Skipped Seq from 11603 to 11632
+Skipped Seq from 11883 to 11890
+Skipped Seq from 14752 to 14787
+Number of times throttled: 4
+Received: 25182 / 25536 packets
+Start time: 1315411481.724805
+End time: 1315411521.811956
+Duration: 40.087151

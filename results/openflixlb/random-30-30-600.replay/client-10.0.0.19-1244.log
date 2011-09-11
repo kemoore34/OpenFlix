@@ -1,6 +1,18 @@
 Starting client at 10.0.0.19:1244 with timeout:10
-My IP address is 10.0.0.19Number of times throttled: 0
-Received: 997 / 997 packets
-Start time: 1315134144.714940
-End time: 1315134155.974814
-Duration: 11.259874
+My IP address is 10.0.0.19Skipped Seq from 2 to 4
+Recovered out of order packet from 5 to 3
+Skipped Seq from 946 to 949
+Skipped Seq from 951 to 956
+Skipped Seq from 959 to 964
+Skipped Seq from 964 to 966
+Skipped Seq from 966 to 968
+Skipped Seq from 974 to 976
+Skipped Seq from 978 to 980
+Skipped Seq from 980 to 984
+Skipped Seq from 984 to 993
+Skipped Seq from 993 to 995
+Number of times throttled: 0
+Received: 970 / 997 packets
+Start time: 1315409492.844903
+End time: 1315409505.183031
+Duration: 12.338128

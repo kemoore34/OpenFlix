@@ -1,10 +1,8 @@
 Starting client at 10.0.0.14:1237 with timeout:10
-My IP address is 10.0.0.14Skipped Seq from 2 to 6
-Recovered out of order packet from 7 to 3
-Recovered out of order packet from 7 to 4
-Recovered out of order packet from 7 to 5
+My IP address is 10.0.0.14Skipped Seq from 2195 to 2201
+Skipped Seq from 5535 to 5547
 Number of times throttled: 0
-Received: 16255 / 16255 packets
-Start time: 1315210357.946548
-End time: 1315210387.136422
-Duration: 29.189874
+Received: 16239 / 16255 packets
+Start time: 1315411276.273915
+End time: 1315411305.474402
+Duration: 29.200487

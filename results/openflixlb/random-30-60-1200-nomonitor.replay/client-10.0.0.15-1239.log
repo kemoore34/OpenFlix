@@ -1,0 +1,22 @@
+Starting client at 10.0.0.15:1239 with timeout:10
+My IP address is 10.0.0.15Skipped Seq from 2 to 7
+Recovered out of order packet from 13 to 3
+Recovered out of order packet from 16 to 4
+Recovered out of order packet from 16 to 5
+Recovered out of order packet from 16 to 6
+Skipped Seq from 459 to 465
+Skipped Seq from 477 to 480
+Skipped Seq from 496 to 512
+Skipped Seq from 532 to 552
+Skipped Seq from 578 to 585
+Skipped Seq from 636 to 640
+Skipped Seq from 669 to 687
+Skipped Seq from 695 to 706
+Skipped Seq from 715 to 737
+Skipped Seq from 754 to 796
+Skipped Seq from 915 to 953
+Number of times throttled: 2
+Received: 14043 / 14219 packets
+Start time: 1315210582.809886
+End time: 1315210609.575185
+Duration: 26.765299

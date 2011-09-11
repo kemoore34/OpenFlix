@@ -1,24 +1,290 @@
 Starting client at 10.0.0.25:1236 with timeout:10
-My IP address is 10.0.0.25Skipped Seq from 26607 to 26612
-Skipped Seq from 26616 to 26619
-Skipped Seq from 26625 to 26627
-Skipped Seq from 26631 to 26635
-Skipped Seq from 26635 to 26642
-Skipped Seq from 26643 to 26650
-Skipped Seq from 26650 to 26657
-Skipped Seq from 26658 to 26663
-Skipped Seq from 26667 to 26672
-Skipped Seq from 26676 to 26680
-Skipped Seq from 26683 to 26687
-Skipped Seq from 26687 to 26689
-Skipped Seq from 26692 to 26697
-Skipped Seq from 26697 to 26701
-Skipped Seq from 26702 to 26706
-Skipped Seq from 26711 to 26714
-Skipped Seq from 26714 to 26716
-Skipped Seq from 26717 to 26719
-Number of times throttled: 0
-Received: 26667 / 26725 packets
-Start time: 1315210360.346439
-End time: 1315210402.986203
-Duration: 42.639764
+My IP address is 10.0.0.25Skipped Seq from 1 to 20
+Recovered out of order packet from 27 to 2
+Recovered out of order packet from 27 to 3
+Recovered out of order packet from 27 to 4
+Recovered out of order packet from 27 to 5
+Recovered out of order packet from 27 to 6
+Recovered out of order packet from 27 to 7
+Recovered out of order packet from 27 to 8
+Recovered out of order packet from 27 to 9
+Recovered out of order packet from 27 to 10
+Recovered out of order packet from 27 to 11
+Recovered out of order packet from 27 to 12
+Recovered out of order packet from 27 to 13
+Recovered out of order packet from 27 to 14
+Recovered out of order packet from 27 to 15
+Recovered out of order packet from 27 to 16
+Recovered out of order packet from 27 to 17
+Recovered out of order packet from 27 to 18
+Recovered out of order packet from 27 to 19
+Skipped Seq from 258 to 262
+Skipped Seq from 20009 to 20011
+Skipped Seq from 20011 to 20014
+Skipped Seq from 20014 to 20018
+Skipped Seq from 20029 to 20031
+Skipped Seq from 20032 to 20038
+Skipped Seq from 20038 to 20045
+Skipped Seq from 20045 to 20048
+Skipped Seq from 20048 to 20051
+Skipped Seq from 20051 to 20053
+Skipped Seq from 20053 to 20055
+Skipped Seq from 20060 to 20062
+Skipped Seq from 20063 to 20065
+Skipped Seq from 20066 to 20070
+Skipped Seq from 20070 to 20078
+Skipped Seq from 20080 to 20082
+Skipped Seq from 20083 to 20088
+Skipped Seq from 20088 to 20090
+Skipped Seq from 20094 to 20097
+Skipped Seq from 20098 to 20100
+Skipped Seq from 20100 to 20102
+Skipped Seq from 20104 to 20106
+Skipped Seq from 20109 to 20111
+Skipped Seq from 20112 to 20115
+Skipped Seq from 20115 to 20121
+Skipped Seq from 20121 to 20125
+Skipped Seq from 20125 to 20127
+Skipped Seq from 20128 to 20131
+Skipped Seq from 20131 to 20133
+Skipped Seq from 20133 to 20135
+Skipped Seq from 20135 to 20141
+Skipped Seq from 20141 to 20144
+Skipped Seq from 20146 to 20148
+Skipped Seq from 20148 to 20150
+Skipped Seq from 20153 to 20156
+Skipped Seq from 20158 to 20160
+Skipped Seq from 20160 to 20164
+Skipped Seq from 20164 to 20171
+Skipped Seq from 20171 to 20175
+Skipped Seq from 20175 to 20178
+Skipped Seq from 20183 to 20185
+Skipped Seq from 20187 to 20189
+Skipped Seq from 20190 to 20192
+Skipped Seq from 20192 to 20194
+Skipped Seq from 20194 to 20197
+Skipped Seq from 20201 to 20203
+Skipped Seq from 20203 to 20205
+Skipped Seq from 20205 to 20207
+Skipped Seq from 20207 to 20212
+Skipped Seq from 20214 to 20217
+Skipped Seq from 20218 to 20221
+Skipped Seq from 20227 to 20233
+Skipped Seq from 20233 to 20236
+Skipped Seq from 20240 to 20243
+Skipped Seq from 20243 to 20247
+Skipped Seq from 20247 to 20249
+Skipped Seq from 20249 to 20251
+Skipped Seq from 20253 to 20256
+Skipped Seq from 20256 to 20259
+Skipped Seq from 20260 to 20262
+Skipped Seq from 20264 to 20266
+Skipped Seq from 20266 to 20269
+Skipped Seq from 20269 to 20273
+Skipped Seq from 20273 to 20282
+Skipped Seq from 20283 to 20287
+Skipped Seq from 20293 to 20295
+Skipped Seq from 20296 to 20298
+Skipped Seq from 20304 to 20307
+Skipped Seq from 20307 to 20309
+Skipped Seq from 20310 to 20312
+Skipped Seq from 20312 to 20318
+Skipped Seq from 20319 to 20321
+Skipped Seq from 20321 to 20325
+Skipped Seq from 20325 to 20327
+Skipped Seq from 20327 to 20331
+Skipped Seq from 20332 to 20334
+Skipped Seq from 20334 to 20337
+Skipped Seq from 20337 to 20346
+Skipped Seq from 20346 to 20348
+Skipped Seq from 20348 to 20353
+Skipped Seq from 20353 to 20357
+Skipped Seq from 20357 to 20361
+Skipped Seq from 20361 to 20363
+Skipped Seq from 20363 to 20365
+Skipped Seq from 20368 to 20370
+Skipped Seq from 20379 to 20381
+Skipped Seq from 20381 to 20384
+Skipped Seq from 20385 to 20390
+Skipped Seq from 20390 to 20392
+Skipped Seq from 20398 to 20400
+Skipped Seq from 20402 to 20406
+Skipped Seq from 20410 to 20412
+Skipped Seq from 20415 to 20417
+Skipped Seq from 20421 to 20427
+Skipped Seq from 20427 to 20433
+Skipped Seq from 20435 to 20437
+Skipped Seq from 20438 to 20440
+Skipped Seq from 20441 to 20443
+Skipped Seq from 20445 to 20447
+Skipped Seq from 20448 to 20453
+Skipped Seq from 20453 to 20456
+Skipped Seq from 20458 to 20460
+Skipped Seq from 20463 to 20466
+Skipped Seq from 20466 to 20472
+Skipped Seq from 20472 to 20474
+Skipped Seq from 20475 to 20479
+Skipped Seq from 20479 to 20481
+Skipped Seq from 20481 to 20484
+Skipped Seq from 20485 to 20488
+Skipped Seq from 20488 to 20496
+Skipped Seq from 20496 to 20502
+Skipped Seq from 20502 to 20504
+Skipped Seq from 20505 to 20509
+Skipped Seq from 20509 to 20516
+Skipped Seq from 20524 to 20529
+Skipped Seq from 20529 to 20534
+Skipped Seq from 20534 to 20540
+Skipped Seq from 20540 to 20548
+Skipped Seq from 20554 to 20558
+Skipped Seq from 20558 to 20567
+Skipped Seq from 20567 to 20575
+Skipped Seq from 20575 to 20583
+Skipped Seq from 20583 to 20593
+Skipped Seq from 20593 to 20598
+Skipped Seq from 20598 to 20602
+Skipped Seq from 20602 to 20612
+Skipped Seq from 20612 to 20618
+Skipped Seq from 20618 to 20624
+Skipped Seq from 20624 to 20627
+Skipped Seq from 20628 to 20630
+Skipped Seq from 20632 to 20634
+Skipped Seq from 20636 to 20639
+Skipped Seq from 20639 to 20642
+Skipped Seq from 20642 to 20646
+Skipped Seq from 20648 to 20653
+Skipped Seq from 20654 to 20657
+Skipped Seq from 20657 to 20659
+Skipped Seq from 20662 to 20664
+Skipped Seq from 20669 to 20672
+Skipped Seq from 20672 to 20675
+Skipped Seq from 20675 to 20679
+Skipped Seq from 20679 to 20684
+Skipped Seq from 20684 to 20687
+Skipped Seq from 20687 to 20692
+Skipped Seq from 20697 to 20700
+Skipped Seq from 20703 to 20705
+Skipped Seq from 20706 to 20709
+Skipped Seq from 20709 to 20711
+Skipped Seq from 20713 to 20717
+Skipped Seq from 20717 to 20719
+Skipped Seq from 20719 to 20721
+Skipped Seq from 20721 to 20723
+Skipped Seq from 20724 to 20726
+Skipped Seq from 20726 to 20728
+Skipped Seq from 20728 to 20731
+Skipped Seq from 20731 to 20735
+Skipped Seq from 20735 to 20737
+Skipped Seq from 20737 to 20739
+Skipped Seq from 20739 to 20741
+Skipped Seq from 20741 to 20745
+Skipped Seq from 20747 to 20749
+Skipped Seq from 20753 to 20756
+Skipped Seq from 20757 to 20761
+Skipped Seq from 20767 to 20777
+Skipped Seq from 20777 to 20779
+Skipped Seq from 20781 to 20783
+Skipped Seq from 20783 to 20786
+Skipped Seq from 20788 to 20790
+Skipped Seq from 20790 to 20792
+Skipped Seq from 20792 to 20798
+Skipped Seq from 20800 to 20805
+Skipped Seq from 20805 to 20808
+Skipped Seq from 20808 to 20810
+Skipped Seq from 20812 to 20815
+Skipped Seq from 20817 to 20819
+Skipped Seq from 20823 to 20825
+Skipped Seq from 20825 to 20827
+Skipped Seq from 20831 to 20833
+Skipped Seq from 20833 to 20838
+Skipped Seq from 20838 to 20841
+Skipped Seq from 20841 to 20843
+Skipped Seq from 20843 to 20848
+Skipped Seq from 20848 to 20850
+Skipped Seq from 20850 to 20852
+Skipped Seq from 20853 to 20859
+Skipped Seq from 20859 to 20861
+Skipped Seq from 20861 to 20863
+Skipped Seq from 20863 to 20867
+Skipped Seq from 20868 to 20872
+Skipped Seq from 20872 to 20876
+Skipped Seq from 20876 to 20878
+Skipped Seq from 20878 to 20880
+Skipped Seq from 20881 to 20883
+Skipped Seq from 20884 to 20886
+Skipped Seq from 20887 to 20891
+Skipped Seq from 20891 to 20893
+Skipped Seq from 20893 to 20898
+Skipped Seq from 20898 to 20906
+Skipped Seq from 20906 to 20908
+Skipped Seq from 20908 to 20912
+Skipped Seq from 20917 to 20919
+Skipped Seq from 20921 to 20924
+Skipped Seq from 20926 to 20928
+Skipped Seq from 20928 to 20930
+Skipped Seq from 20933 to 20935
+Skipped Seq from 20939 to 20944
+Skipped Seq from 20944 to 20947
+Skipped Seq from 20947 to 20949
+Skipped Seq from 20950 to 20955
+Skipped Seq from 20958 to 20960
+Skipped Seq from 20960 to 20965
+Skipped Seq from 20965 to 20969
+Skipped Seq from 20969 to 20971
+Skipped Seq from 20971 to 20975
+Skipped Seq from 20975 to 20979
+Skipped Seq from 20980 to 20982
+Skipped Seq from 20982 to 20984
+Skipped Seq from 20984 to 20986
+Skipped Seq from 20989 to 20993
+Skipped Seq from 20993 to 20996
+Skipped Seq from 20997 to 20999
+Skipped Seq from 21000 to 21002
+Skipped Seq from 21005 to 21008
+Skipped Seq from 21008 to 21011
+Skipped Seq from 21011 to 21019
+Skipped Seq from 21019 to 21022
+Skipped Seq from 21022 to 21030
+Skipped Seq from 21031 to 21033
+Skipped Seq from 21035 to 21037
+Skipped Seq from 21041 to 21043
+Skipped Seq from 21045 to 21047
+Skipped Seq from 21048 to 21050
+Skipped Seq from 21050 to 21054
+Skipped Seq from 21055 to 21057
+Skipped Seq from 21057 to 21059
+Skipped Seq from 21061 to 21063
+Skipped Seq from 21067 to 21069
+Skipped Seq from 21071 to 21073
+Skipped Seq from 21073 to 21076
+Skipped Seq from 21076 to 21079
+Skipped Seq from 21080 to 21089
+Skipped Seq from 21089 to 21093
+Skipped Seq from 21093 to 21096
+Skipped Seq from 21097 to 21099
+Skipped Seq from 21102 to 21104
+Skipped Seq from 21104 to 21106
+Skipped Seq from 21106 to 21108
+Skipped Seq from 21109 to 21111
+Skipped Seq from 21112 to 21114
+Skipped Seq from 21116 to 21119
+Skipped Seq from 21120 to 21126
+Skipped Seq from 21127 to 21131
+Skipped Seq from 21131 to 21141
+Skipped Seq from 21141 to 21143
+Skipped Seq from 21149 to 21154
+Skipped Seq from 21154 to 21159
+Skipped Seq from 21160 to 21162
+Skipped Seq from 21162 to 21166
+Skipped Seq from 21166 to 21168
+Skipped Seq from 21168 to 21175
+Skipped Seq from 21175 to 21179
+Skipped Seq from 21179 to 21181
+Skipped Seq from 21183 to 21187
+Skipped Seq from 21202 to 21204
+Skipped Seq from 21207 to 21209
+Number of times throttled: 2
+Received: 26085 / 26725 packets
+Start time: 1315411278.607742
+End time: 1315411320.473719
+Duration: 41.865977

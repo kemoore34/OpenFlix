@@ -1,125 +1,93 @@
-Sep 04 03:51:03|00001|openflowd|INFO|Open vSwitch version 1.1.0pre2
-Sep 04 03:51:03|00002|openflowd|INFO|OpenFlow protocol version 0x01
-Sep 04 03:51:03|00003|ofproto|INFO|using datapath ID 00000023208e4718
-Sep 04 03:51:03|00004|ofproto|INFO|datapath ID changed to 0000000000000008
-Sep 04 03:51:03|00005|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
-Sep 04 03:51:03|00006|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
-Sep 04 03:51:03|00007|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 1 seconds before reconnect
-Sep 04 03:51:03|00008|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
-Sep 04 03:51:03|00009|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
-Sep 04 03:51:03|00010|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
-Sep 04 03:51:05|00011|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
-Sep 04 03:51:05|00012|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connected
-Sep 04 03:51:05|00013|ofp_util|WARN|received Nicira extension message of unknown type 8
-Sep 04 03:51:05|00014|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:51:05|00015|ofp_util|INFO| pre: wildcards=0xffffffff  in_port=    0  dl_src=00:00:50:d6:cc:08  dl_dst=60:73:06:08:04:00  dl_vlan=  256  dl_vlan_pcp=  0  dl_type=     0  nw_tos=0x80  nw_proto=0x7f  nw_src=         0  nw_dst=0xe8d4cc08  tp_src=    0  tp_dst=    0
-Sep 04 03:51:05|00016|ofp_util|INFO|post: wildcards= 0x23fffff  in_port=    0  dl_src=00:00:00:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=  256  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:51:10|00017|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:51:10|00018|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001b  nw_dst= 0xa00001d  tp_src= 1234  tp_dst=56226
-Sep 04 03:51:10|00019|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:51:10|00020|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:51:10|00021|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001b  nw_dst= 0xa00001d  tp_src= 1234  tp_dst=56226
-Sep 04 03:51:10|00022|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:51:10|00023|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:51:10|00024|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001b  nw_dst= 0xa00001d  tp_src= 1234  tp_dst=56226
-Sep 04 03:51:10|00025|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:52:07|00026|ofp_util|INFO|Dropped 26 log messages in last 53 seconds due to excessive rate
-Sep 04 03:52:07|00027|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:52:07|00028|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos= 0x4  nw_proto=   0  nw_src= 0xa000017  nw_dst= 0xa00001d  tp_src= 1235  tp_dst=44305
-Sep 04 03:52:07|00029|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:53:18|00030|ofp_util|INFO|Dropped 37 log messages in last 71 seconds due to excessive rate
-Sep 04 03:53:18|00031|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:53:18|00032|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:19  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos= 0x4  nw_proto=   0  nw_src= 0xa000019  nw_dst= 0xa00001d  tp_src= 1234  tp_dst=33975
-Sep 04 03:53:18|00033|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:19  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:54:20|00034|ofp_util|INFO|Dropped 5 log messages in last 62 seconds due to excessive rate
-Sep 04 03:54:20|00035|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:54:20|00036|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:16  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000016  nw_dst= 0xa00001f  tp_src= 1238  tp_dst=58536
-Sep 04 03:54:20|00037|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:16  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:55:44|00038|ofp_util|INFO|Dropped 18 log messages in last 84 seconds due to excessive rate
-Sep 04 03:55:44|00039|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:55:44|00040|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000014  nw_dst= 0xa000020  tp_src= 1238  tp_dst=42893
-Sep 04 03:55:44|00041|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:56:23|00042|ofp_util|INFO|Dropped 6 log messages in last 39 seconds due to excessive rate
-Sep 04 03:56:23|00043|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:56:23|00044|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:15  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000015  nw_dst= 0xa00001d  tp_src= 1239  tp_dst=55663
-Sep 04 03:56:23|00045|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:15  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:57:10|00046|ofp_util|INFO|Dropped 13 log messages in last 47 seconds due to excessive rate
-Sep 04 03:57:10|00047|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:57:10|00048|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000017  nw_dst= 0xa000020  tp_src= 1241  tp_dst=44118
-Sep 04 03:57:10|00049|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:58:22|00050|ofp_util|INFO|Dropped 31 log messages in last 72 seconds due to excessive rate
-Sep 04 03:58:22|00051|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:58:22|00052|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:13  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=0xc0  nw_proto=   0  nw_src= 0xa000013  nw_dst= 0xa00001f  tp_src=    3  tp_dst=    3
-Sep 04 03:58:22|00053|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:13  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 03:59:27|00054|ofp_util|INFO|Dropped 2 log messages in last 45 seconds due to excessive rate
-Sep 04 03:59:27|00055|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 03:59:27|00056|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:13  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000013  nw_dst= 0xa000020  tp_src= 1242  tp_dst=38019
-Sep 04 03:59:27|00057|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:13  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 04:00:25|00058|ofp_util|INFO|Dropped 5 log messages in last 57 seconds due to excessive rate
-Sep 04 04:00:25|00059|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 04:00:25|00060|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000017  nw_dst= 0xa00001d  tp_src= 1245  tp_dst=38195
-Sep 04 04:00:25|00061|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 04:01:19|00062|ofp_util|INFO|Dropped 1 log messages in last 54 seconds due to excessive rate
-Sep 04 04:01:19|00063|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 04:01:19|00064|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000014  nw_dst= 0xa000020  tp_src= 1242  tp_dst=58229
-Sep 04 04:01:19|00065|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 04:02:12|00066|ofp_util|INFO|Dropped 12 log messages in last 53 seconds due to excessive rate
-Sep 04 04:02:12|00067|ofp_util|INFO|normalization changed ofp_match, details:
-Sep 04 04:02:12|00068|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:16  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000016  nw_dst= 0xa00001d  tp_src= 1244  tp_dst=55588
-Sep 04 04:02:12|00069|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:16  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
-Sep 04 04:03:41|00070|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connection closed by peer
-Sep 04 04:03:41|00071|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
-Sep 04 04:03:41|00072|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
-Sep 04 04:03:41|00073|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
-Sep 04 04:03:41|00074|timeval|WARN|13 ms poll interval (0 ms user, 4 ms system) is over 20 times the weighted mean interval 1 ms (1565 samples)
-Sep 04 04:03:41|00075|timeval|WARN|context switches: 3 voluntary, 0 involuntary
-Sep 04 04:03:41|00076|coverage|INFO|Event coverage (epoch 1565/entire run), hash=2be76fa3:
-Sep 04 04:03:41|00077|coverage|INFO|poll_fd_wait                 8 /     13898
-Sep 04 04:03:41|00078|coverage|INFO|util_xalloc                 32 /     32406
-Sep 04 04:03:41|00079|coverage|INFO|vconn_open                   1 /         4
-Sep 04 04:03:41|00080|coverage|INFO|stream_open                  1 /         4
-Sep 04 04:03:41|00081|coverage|INFO|facet_changed_rule           0 /       108
-Sep 04 04:03:41|00082|coverage|INFO|facet_revalidate             0 /       740
-Sep 04 04:03:41|00083|coverage|INFO|ofproto_del_rule             0 /        68
-Sep 04 04:03:41|00084|coverage|INFO|ofproto_error                0 /         1
-Sep 04 04:03:41|00085|coverage|INFO|ofproto_expiration           0 /       757
-Sep 04 04:03:41|00086|coverage|INFO|ofproto_expired              0 /        63
-Sep 04 04:03:41|00087|coverage|INFO|ofproto_ofp2odp              0 /       818
-Sep 04 04:03:41|00088|coverage|INFO|ofproto_packet_in            0 /        47
-Sep 04 04:03:41|00089|coverage|INFO|ofproto_recv_openflow        0 /       524
-Sep 04 04:03:41|00090|coverage|INFO|ofproto_update_port          0 /         8
-Sep 04 04:03:41|00091|coverage|INFO|pktbuf_retrieved             0 /         3
-Sep 04 04:03:41|00092|coverage|INFO|dpif_flow_flush              0 /         1
-Sep 04 04:03:41|00093|coverage|INFO|dpif_flow_put                0 /        92
-Sep 04 04:03:41|00094|coverage|INFO|dpif_flow_del                0 /        81
-Sep 04 04:03:41|00095|coverage|INFO|dpif_flow_query_list         0 /       757
-Sep 04 04:03:41|00096|coverage|INFO|dpif_flow_query_list_n       0 /      1639
-Sep 04 04:03:41|00097|coverage|INFO|dpif_execute                 0 /        92
-Sep 04 04:03:41|00098|coverage|INFO|dpif_purge                   0 /         1
-Sep 04 04:03:41|00099|coverage|INFO|flow_extract                 0 /       139
-Sep 04 04:03:41|00100|coverage|INFO|hmap_expand                  0 /        23
-Sep 04 04:03:41|00101|coverage|INFO|poll_zero_timeout            0 /         5
-Sep 04 04:03:41|00102|coverage|INFO|rconn_overflow               0 /        20
-Sep 04 04:03:41|00103|coverage|INFO|rconn_queued                 0 /       229
-Sep 04 04:03:41|00104|coverage|INFO|rconn_sent                   0 /       229
-Sep 04 04:03:41|00105|coverage|INFO|vconn_received               0 /       525
-Sep 04 04:03:41|00106|coverage|INFO|vconn_sent                   0 /       230
-Sep 04 04:03:41|00107|coverage|INFO|netdev_get_hwaddr            0 /        17
-Sep 04 04:03:41|00108|coverage|INFO|netdev_ethtool               0 /        17
-Sep 04 04:03:41|00109|coverage|INFO|netlink_received             0 /       205
-Sep 04 04:03:41|00110|coverage|INFO|rtnetlink_changed            0 /       205
-Sep 04 04:03:41|00111|coverage|INFO|pstream_open                 0 /         1
-Sep 04 04:03:41|00112|coverage|INFO|50 events never hit
-Sep 04 04:03:42|00113|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth1 failed: No such device
-Sep 04 04:03:43|00114|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth2 failed: No such device
-Sep 04 04:03:43|00115|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
-Sep 04 04:03:43|00116|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
-Sep 04 04:03:43|00117|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
-Sep 04 04:03:45|00118|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth3 failed: No such device
-Sep 04 04:03:46|00119|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth4 failed: No such device
-Sep 04 04:03:47|00120|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
-Sep 04 04:03:47|00121|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
-Sep 04 04:03:47|00122|rconn|INFO|dp7<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
-Sep 04 04:03:51|00123|dpif_linux|WARN|system@dp7: read failed: No such device
-Sep 04 04:03:51|00124|ofproto|ERR|system@dp7: datapath was destroyed externally
+Sep 07 08:20:10|00001|openflowd|INFO|Open vSwitch version 1.1.0pre2
+Sep 07 08:20:10|00002|openflowd|INFO|OpenFlow protocol version 0x01
+Sep 07 08:20:10|00003|ofproto|INFO|using datapath ID 0000002320912fa7
+Sep 07 08:20:10|00004|ofproto|INFO|datapath ID changed to 0000000000000008
+Sep 07 08:20:10|00005|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:20:10|00006|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Sep 07 08:20:10|00007|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 1 seconds before reconnect
+Sep 07 08:20:11|00008|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:20:11|00009|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Sep 07 08:20:11|00010|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Sep 07 08:20:13|00011|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:20:13|00012|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Sep 07 08:20:13|00013|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Sep 07 08:20:17|00014|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:20:17|00015|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connected
+Sep 07 08:20:17|00016|ofp_util|WARN|received Nicira extension message of unknown type 8
+Sep 07 08:20:17|00017|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:20:17|00018|ofp_util|INFO| pre: wildcards=0xffffffff  in_port=    0  dl_src=00:00:0a:00:00:00  dl_dst=ff:ff:ff:ff:00:00  dl_vlan=    0  dl_vlan_pcp=  9  dl_type= 0x909  nw_tos=0x4a  nw_proto=0x41  nw_src=0x4e0a0000  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:20:17|00019|ofp_util|INFO|post: wildcards= 0x23fffff  in_port=    0  dl_src=00:00:00:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=    0  dl_vlan_pcp=  9  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:20:24|00020|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:20:24|00021|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001b  nw_dst= 0xa00001d  tp_src= 1234  tp_dst=48003
+Sep 07 08:20:24|00022|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:20:24|00023|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:20:24|00024|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001b  nw_dst= 0xa00001d  tp_src= 1234  tp_dst=48003
+Sep 07 08:20:24|00025|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:20:27|00026|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:20:27|00027|ofp_util|INFO| pre: wildcards=      0x30  in_port=    5  dl_src=00:00:00:00:00:0f  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00000f  nw_dst= 0xa00001f  tp_src= 1234  tp_dst=59104
+Sep 07 08:20:27|00028|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    5  dl_src=00:00:00:00:00:0f  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:21:21|00029|ofp_util|INFO|Dropped 14 log messages in last 55 seconds due to excessive rate
+Sep 07 08:21:21|00030|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:21:21|00031|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:18  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos= 0x4  nw_proto=   0  nw_src= 0xa000018  nw_dst= 0xa000020  tp_src= 1235  tp_dst=52277
+Sep 07 08:21:21|00032|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:18  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:22:17|00033|ofp_util|INFO|Dropped 12 log messages in last 56 seconds due to excessive rate
+Sep 07 08:22:17|00034|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:22:17|00035|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:11  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000011  nw_dst= 0xa00001e  tp_src= 1236  tp_dst=52231
+Sep 07 08:22:17|00036|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:11  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:23:25|00037|ofp_util|INFO|Dropped 29 log messages in last 67 seconds due to excessive rate
+Sep 07 08:23:25|00038|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:23:25|00039|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000017  nw_dst= 0xa00001e  tp_src= 1237  tp_dst=41023
+Sep 07 08:23:25|00040|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:17  dl_dst=00:00:00:00:00:1e  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:24:21|00041|ofp_util|INFO|Dropped 36 log messages in last 57 seconds due to excessive rate
+Sep 07 08:24:21|00042|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:24:21|00043|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos= 0x4  nw_proto=   0  nw_src= 0xa00001c  nw_dst= 0xa00001f  tp_src= 1237  tp_dst=39727
+Sep 07 08:24:21|00044|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:25:30|00045|ofp_util|INFO|Dropped 18 log messages in last 69 seconds due to excessive rate
+Sep 07 08:25:30|00046|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:25:30|00047|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001b  nw_dst= 0xa000020  tp_src= 1237  tp_dst=33414
+Sep 07 08:25:30|00048|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1b  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:26:21|00049|ofp_util|INFO|Dropped 32 log messages in last 50 seconds due to excessive rate
+Sep 07 08:26:21|00050|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:26:21|00051|ofp_util|INFO| pre: wildcards=      0x30  in_port=    5  dl_src=00:00:00:00:00:0f  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00000f  nw_dst= 0xa00001d  tp_src= 1240  tp_dst=52929
+Sep 07 08:26:21|00052|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    5  dl_src=00:00:00:00:00:0f  dl_dst=00:00:00:00:00:1d  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:27:37|00053|ofp_util|INFO|Dropped 33 log messages in last 77 seconds due to excessive rate
+Sep 07 08:27:37|00054|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:27:37|00055|ofp_util|INFO| pre: wildcards=      0x30  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00001c  nw_dst= 0xa000020  tp_src= 1242  tp_dst=36782
+Sep 07 08:27:37|00056|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    8  dl_src=00:00:00:00:00:1c  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:28:26|00057|ofp_util|INFO|Dropped 11 log messages in last 49 seconds due to excessive rate
+Sep 07 08:28:26|00058|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:28:26|00059|ofp_util|INFO| pre: wildcards=      0x30  in_port=    5  dl_src=00:00:00:00:00:0f  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa00000f  nw_dst= 0xa000020  tp_src= 1241  tp_dst=47107
+Sep 07 08:28:26|00060|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    5  dl_src=00:00:00:00:00:0f  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:29:19|00061|ofp_util|INFO|Dropped 33 log messages in last 53 seconds due to excessive rate
+Sep 07 08:29:19|00062|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:29:19|00063|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:18  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000018  nw_dst= 0xa000020  tp_src= 1243  tp_dst=59433
+Sep 07 08:29:19|00064|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:18  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:30:27|00065|ofp_util|INFO|Dropped 15 log messages in last 67 seconds due to excessive rate
+Sep 07 08:30:27|00066|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:30:27|00067|ofp_util|INFO| pre: wildcards=      0x30  in_port=    6  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src= 0xa000014  nw_dst= 0xa000020  tp_src= 1242  tp_dst=50189
+Sep 07 08:30:27|00068|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    6  dl_src=00:00:00:00:00:14  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:31:24|00069|ofp_util|INFO|Dropped 28 log messages in last 58 seconds due to excessive rate
+Sep 07 08:31:24|00070|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:31:24|00071|ofp_util|INFO| pre: wildcards=      0x30  in_port=    7  dl_src=00:00:00:00:00:19  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos= 0x4  nw_proto=   0  nw_src= 0xa000019  nw_dst= 0xa000020  tp_src= 1239  tp_dst=45884
+Sep 07 08:31:24|00072|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    7  dl_src=00:00:00:00:00:19  dl_dst=00:00:00:00:00:20  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:32:21|00073|ofp_util|INFO|Dropped 41 log messages in last 57 seconds due to excessive rate
+Sep 07 08:32:21|00074|ofp_util|INFO|normalization changed ofp_match, details:
+Sep 07 08:32:21|00075|ofp_util|INFO| pre: wildcards=      0x30  in_port=    5  dl_src=00:00:00:00:00:0e  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos= 0x4  nw_proto=   0  nw_src= 0xa00000e  nw_dst= 0xa00001f  tp_src= 1245  tp_dst=59245
+Sep 07 08:32:21|00076|ofp_util|INFO|post: wildcards=  0x2ffff0  in_port=    5  dl_src=00:00:00:00:00:0e  dl_dst=00:00:00:00:00:1f  dl_vlan=65535  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Sep 07 08:32:49|00077|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connection closed by peer
+Sep 07 08:32:50|00078|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:32:50|00079|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Sep 07 08:32:50|00080|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Sep 07 08:32:50|00081|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth1 failed: No such device
+Sep 07 08:32:52|00082|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth2 failed: No such device
+Sep 07 08:32:52|00083|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:32:52|00084|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Sep 07 08:32:52|00085|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Sep 07 08:32:53|00086|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth3 failed: No such device
+Sep 07 08:32:55|00087|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth4 failed: No such device
+Sep 07 08:32:56|00088|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Sep 07 08:32:56|00089|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Sep 07 08:32:56|00090|rconn|INFO|dp7<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
+Sep 07 08:33:00|00091|dpif_linux|WARN|system@dp7: read failed: No such device
+Sep 07 08:33:00|00092|ofproto|ERR|system@dp7: datapath was destroyed externally
 ovs-openflowd: unrecoverable datapath error (No such device)

@@ -1,18 +1,30 @@
 Starting client at 10.0.0.18:1243 with timeout:10
-My IP address is 10.0.0.18Skipped Seq from 5530 to 5563
-Skipped Seq from 5598 to 5602
-Skipped Seq from 5618 to 5620
-Skipped Seq from 5640 to 5650
-Skipped Seq from 5675 to 5678
-Skipped Seq from 5711 to 5720
-Skipped Seq from 5727 to 5737
-Skipped Seq from 5831 to 5834
-Skipped Seq from 5920 to 5930
-Skipped Seq from 5944 to 5954
-Skipped Seq from 5970 to 5982
-Skipped Seq from 5990 to 5998
-Number of times throttled: 1
-Received: 27946 / 28048 packets
-Start time: 1315209629.451746
-End time: 1315209662.445008
-Duration: 32.993262
+My IP address is 10.0.0.18Skipped Seq from 5052 to 5068
+Skipped Seq from 5078 to 5104
+Skipped Seq from 5127 to 5135
+Skipped Seq from 5153 to 5176
+Skipped Seq from 5185 to 5187
+Skipped Seq from 5252 to 5257
+Skipped Seq from 5267 to 5277
+Skipped Seq from 5280 to 5290
+Skipped Seq from 5305 to 5307
+Skipped Seq from 5336 to 5350
+Skipped Seq from 8941 to 8944
+Skipped Seq from 8973 to 8988
+Skipped Seq from 9021 to 9030
+Skipped Seq from 9161 to 9175
+Skipped Seq from 9180 to 9190
+Skipped Seq from 18911 to 18924
+Skipped Seq from 18965 to 18972
+Skipped Seq from 18986 to 18995
+Skipped Seq from 19009 to 19017
+Skipped Seq from 19034 to 19055
+Skipped Seq from 19121 to 19128
+Skipped Seq from 19178 to 19191
+Skipped Seq from 19198 to 19206
+Skipped Seq from 19251 to 19265
+Number of times throttled: 3
+Received: 27805 / 28048 packets
+Start time: 1315410535.299075
+End time: 1315410568.283317
+Duration: 32.984242

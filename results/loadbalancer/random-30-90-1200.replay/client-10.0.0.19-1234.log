@@ -1,6 +1,7 @@
 Starting client at 10.0.0.19:1234 with timeout:10
-My IP address is 10.0.0.19Number of times throttled: 0
-Received: 16601 / 16601 packets
-Start time: 1315216339.136434
-End time: 1315216358.685141
-Duration: 19.548707
+My IP address is 10.0.0.19Skipped Seq from 1994 to 2009
+Number of times throttled: 0
+Received: 16587 / 16601 packets
+Start time: 1315412388.844442
+End time: 1315412408.425835
+Duration: 19.581393

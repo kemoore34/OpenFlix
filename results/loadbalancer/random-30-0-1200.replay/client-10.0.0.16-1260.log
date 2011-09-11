@@ -1,6 +1,110 @@
 Starting client at 10.0.0.16:1260 with timeout:10
-My IP address is 10.0.0.16Number of times throttled: 0
-Received: 803 / 803 packets
-Start time: 1315248959.982746
-End time: 1315248961.312909
-Duration: 1.330163
+My IP address is 10.0.0.16Skipped Seq from 24 to 26
+Skipped Seq from 43 to 46
+Skipped Seq from 52 to 55
+Skipped Seq from 56 to 60
+Skipped Seq from 66 to 68
+Skipped Seq from 80 to 83
+Skipped Seq from 85 to 87
+Skipped Seq from 91 to 94
+Skipped Seq from 96 to 99
+Skipped Seq from 110 to 113
+Skipped Seq from 124 to 127
+Skipped Seq from 128 to 130
+Skipped Seq from 130 to 132
+Skipped Seq from 133 to 135
+Skipped Seq from 138 to 140
+Skipped Seq from 143 to 146
+Skipped Seq from 147 to 150
+Skipped Seq from 152 to 155
+Skipped Seq from 155 to 157
+Skipped Seq from 159 to 162
+Skipped Seq from 170 to 172
+Skipped Seq from 173 to 175
+Skipped Seq from 175 to 177
+Skipped Seq from 192 to 195
+Skipped Seq from 197 to 199
+Skipped Seq from 199 to 203
+Skipped Seq from 230 to 233
+Skipped Seq from 244 to 247
+Skipped Seq from 259 to 262
+Skipped Seq from 385 to 388
+Skipped Seq from 388 to 395
+Skipped Seq from 395 to 401
+Skipped Seq from 407 to 414
+Skipped Seq from 414 to 416
+Skipped Seq from 418 to 422
+Skipped Seq from 423 to 427
+Skipped Seq from 429 to 431
+Skipped Seq from 432 to 434
+Skipped Seq from 435 to 439
+Skipped Seq from 440 to 444
+Skipped Seq from 446 to 448
+Skipped Seq from 448 to 451
+Skipped Seq from 453 to 456
+Skipped Seq from 457 to 460
+Skipped Seq from 460 to 462
+Skipped Seq from 462 to 464
+Skipped Seq from 469 to 471
+Skipped Seq from 471 to 474
+Skipped Seq from 474 to 476
+Skipped Seq from 477 to 480
+Skipped Seq from 480 to 484
+Skipped Seq from 484 to 487
+Skipped Seq from 487 to 490
+Skipped Seq from 491 to 495
+Skipped Seq from 495 to 498
+Skipped Seq from 499 to 504
+Skipped Seq from 504 to 507
+Skipped Seq from 510 to 514
+Skipped Seq from 515 to 517
+Skipped Seq from 517 to 520
+Skipped Seq from 521 to 524
+Skipped Seq from 524 to 526
+Skipped Seq from 529 to 533
+Skipped Seq from 537 to 541
+Skipped Seq from 545 to 549
+Skipped Seq from 549 to 551
+Skipped Seq from 557 to 562
+Skipped Seq from 583 to 587
+Skipped Seq from 593 to 595
+Skipped Seq from 595 to 599
+Skipped Seq from 599 to 603
+Skipped Seq from 608 to 611
+Skipped Seq from 612 to 615
+Skipped Seq from 615 to 620
+Skipped Seq from 621 to 624
+Skipped Seq from 624 to 627
+Skipped Seq from 627 to 630
+Skipped Seq from 630 to 632
+Skipped Seq from 637 to 640
+Skipped Seq from 640 to 642
+Skipped Seq from 655 to 658
+Skipped Seq from 662 to 665
+Skipped Seq from 665 to 671
+Skipped Seq from 675 to 678
+Skipped Seq from 679 to 681
+Skipped Seq from 689 to 691
+Skipped Seq from 692 to 694
+Skipped Seq from 694 to 696
+Skipped Seq from 696 to 698
+Skipped Seq from 700 to 706
+Skipped Seq from 707 to 709
+Skipped Seq from 709 to 713
+Skipped Seq from 719 to 722
+Skipped Seq from 722 to 724
+Skipped Seq from 735 to 737
+Skipped Seq from 737 to 743
+Skipped Seq from 751 to 753
+Skipped Seq from 756 to 759
+Skipped Seq from 762 to 764
+Skipped Seq from 765 to 768
+Skipped Seq from 771 to 775
+Skipped Seq from 778 to 782
+Skipped Seq from 782 to 785
+Skipped Seq from 786 to 789
+Number of times throttled: 1
+Received: 587 / 803 packets
+Start time: 1315405971.101890
+End time: 1315405982.243254
+Duration: 11.141364

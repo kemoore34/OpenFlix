@@ -1,32 +1,30 @@
 Starting client at 10.0.0.13:1242 with timeout:10
-My IP address is 10.0.0.13Skipped Seq from 16758 to 16764
-Skipped Seq from 16775 to 16788
-Skipped Seq from 16810 to 16812
-Skipped Seq from 16827 to 16840
-Skipped Seq from 16913 to 16920
-Skipped Seq from 16931 to 16945
-Skipped Seq from 16955 to 16968
-Skipped Seq from 16994 to 17000
-Skipped Seq from 17102 to 17110
-Skipped Seq from 17216 to 17220
-Skipped Seq from 17277 to 17281
-Skipped Seq from 17294 to 17300
-Skipped Seq from 17486 to 17491
-Skipped Seq from 17548 to 17559
-Skipped Seq from 17574 to 17579
-Skipped Seq from 17586 to 17599
-Skipped Seq from 17613 to 17619
-Skipped Seq from 17631 to 17635
-Skipped Seq from 17657 to 17663
-Skipped Seq from 17676 to 17680
-Skipped Seq from 17690 to 17704
-Skipped Seq from 17717 to 17727
-Skipped Seq from 17734 to 17750
-Skipped Seq from 17823 to 17829
-Skipped Seq from 17867 to 17871
-Skipped Seq from 17877 to 17887
-Number of times throttled: 1
-Received: 34782 / 34966 packets
-Start time: 1315211067.083643
-End time: 1315211118.312750
-Duration: 51.229107
+My IP address is 10.0.0.13Skipped Seq from 14321 to 14324
+Skipped Seq from 14330 to 14345
+Skipped Seq from 14350 to 14355
+Skipped Seq from 14368 to 14373
+Skipped Seq from 14384 to 14391
+Skipped Seq from 14393 to 14404
+Skipped Seq from 14426 to 14443
+Skipped Seq from 14452 to 14460
+Skipped Seq from 14617 to 14623
+Skipped Seq from 14633 to 14637
+Skipped Seq from 14733 to 14738
+Skipped Seq from 14785 to 14787
+Skipped Seq from 14862 to 14918
+Skipped Seq from 14918 to 14920
+Skipped Seq from 14948 to 14980
+Skipped Seq from 15036 to 15042
+Skipped Seq from 15057 to 15064
+Skipped Seq from 15136 to 15143
+Skipped Seq from 15197 to 15205
+Skipped Seq from 15279 to 15281
+Skipped Seq from 15284 to 15292
+Skipped Seq from 15299 to 15321
+Skipped Seq from 15663 to 15672
+Skipped Seq from 22167 to 22264
+Number of times throttled: 2
+Received: 34646 / 34966 packets
+Start time: 1315411988.592890
+End time: 1315412039.781368
+Duration: 51.188478

@@ -1,19 +1,11 @@
 Starting client at 10.0.0.18:1246 with timeout:10
-My IP address is 10.0.0.18Skipped Seq from 918 to 920
-Skipped Seq from 922 to 935
-Skipped Seq from 948 to 955
-Skipped Seq from 966 to 979
-Skipped Seq from 1010 to 1025
-Skipped Seq from 1101 to 1107
-Skipped Seq from 1182 to 1191
-Skipped Seq from 1216 to 1228
-Skipped Seq from 1238 to 1260
-Skipped Seq from 1406 to 1418
-Skipped Seq from 1431 to 1437
-Skipped Seq from 1573 to 1576
-Skipped Seq from 1585 to 1615
+My IP address is 10.0.0.18Skipped Seq from 877 to 881
+Skipped Seq from 3288 to 3293
+Skipped Seq from 4424 to 4440
+Skipped Seq from 4476 to 4504
+Skipped Seq from 4522 to 4527
 Number of times throttled: 1
-Received: 7978 / 8115 packets
-Start time: 1315211227.670734
-End time: 1315211247.280735
-Duration: 19.610001
+Received: 8062 / 8115 packets
+Start time: 1315412150.781402
+End time: 1315412170.375080
+Duration: 19.593678

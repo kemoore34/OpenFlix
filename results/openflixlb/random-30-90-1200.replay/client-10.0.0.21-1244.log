@@ -1,6 +1,114 @@
 Starting client at 10.0.0.21:1244 with timeout:10
-My IP address is 10.0.0.21Number of times throttled: 0
-Received: 18404 / 18404 packets
-Start time: 1315218787.400909
-End time: 1315218819.097006
-Duration: 31.696097
+My IP address is 10.0.0.21Skipped Seq from 16280 to 16282
+Skipped Seq from 16282 to 16289
+Skipped Seq from 16289 to 16293
+Skipped Seq from 16293 to 16296
+Skipped Seq from 16297 to 16299
+Skipped Seq from 16301 to 16303
+Skipped Seq from 16306 to 16308
+Skipped Seq from 16308 to 16311
+Skipped Seq from 16311 to 16313
+Skipped Seq from 16319 to 16321
+Skipped Seq from 16322 to 16324
+Skipped Seq from 16337 to 16343
+Skipped Seq from 16343 to 16350
+Skipped Seq from 16350 to 16357
+Skipped Seq from 16357 to 16364
+Skipped Seq from 16364 to 16368
+Skipped Seq from 16368 to 16375
+Skipped Seq from 16375 to 16377
+Skipped Seq from 16378 to 16383
+Skipped Seq from 16383 to 16385
+Skipped Seq from 16385 to 16390
+Skipped Seq from 16391 to 16393
+Skipped Seq from 16410 to 16412
+Skipped Seq from 16418 to 16422
+Skipped Seq from 16424 to 16433
+Skipped Seq from 16434 to 16436
+Skipped Seq from 16437 to 16439
+Skipped Seq from 16439 to 16441
+Skipped Seq from 16441 to 16444
+Skipped Seq from 16448 to 16450
+Skipped Seq from 16455 to 16457
+Skipped Seq from 16464 to 16466
+Skipped Seq from 16467 to 16469
+Skipped Seq from 16471 to 16473
+Skipped Seq from 16475 to 16477
+Skipped Seq from 16483 to 16485
+Skipped Seq from 16487 to 16491
+Skipped Seq from 16491 to 16493
+Skipped Seq from 16494 to 16501
+Skipped Seq from 16501 to 16509
+Skipped Seq from 16509 to 16512
+Skipped Seq from 16512 to 16516
+Skipped Seq from 16525 to 16528
+Skipped Seq from 16528 to 16530
+Skipped Seq from 16531 to 16535
+Skipped Seq from 16536 to 16538
+Skipped Seq from 16538 to 16546
+Skipped Seq from 16547 to 16550
+Skipped Seq from 16552 to 16554
+Skipped Seq from 16559 to 16561
+Skipped Seq from 16563 to 16567
+Skipped Seq from 16568 to 16570
+Skipped Seq from 16570 to 16573
+Skipped Seq from 16579 to 16584
+Skipped Seq from 16585 to 16587
+Skipped Seq from 16593 to 16599
+Skipped Seq from 16601 to 16603
+Skipped Seq from 16605 to 16610
+Skipped Seq from 16610 to 16617
+Skipped Seq from 16617 to 16621
+Skipped Seq from 16621 to 16623
+Skipped Seq from 16624 to 16627
+Skipped Seq from 16627 to 16631
+Skipped Seq from 16631 to 16639
+Skipped Seq from 16639 to 16645
+Skipped Seq from 16645 to 16647
+Skipped Seq from 16653 to 16660
+Skipped Seq from 16662 to 16664
+Skipped Seq from 16670 to 16672
+Skipped Seq from 16676 to 16680
+Skipped Seq from 16680 to 16683
+Skipped Seq from 16686 to 16688
+Skipped Seq from 16689 to 16693
+Skipped Seq from 16695 to 16698
+Skipped Seq from 16699 to 16701
+Skipped Seq from 16704 to 16706
+Skipped Seq from 16723 to 16725
+Skipped Seq from 16725 to 16727
+Skipped Seq from 16730 to 16732
+Skipped Seq from 16732 to 16739
+Skipped Seq from 16740 to 16747
+Skipped Seq from 16748 to 16750
+Skipped Seq from 16752 to 16754
+Skipped Seq from 16755 to 16758
+Skipped Seq from 16759 to 16761
+Skipped Seq from 16761 to 16763
+Skipped Seq from 16772 to 16774
+Skipped Seq from 16774 to 16780
+Skipped Seq from 16780 to 16786
+Skipped Seq from 16789 to 16791
+Skipped Seq from 16793 to 16800
+Skipped Seq from 16803 to 16805
+Skipped Seq from 16810 to 16814
+Skipped Seq from 16814 to 16817
+Skipped Seq from 16817 to 16820
+Skipped Seq from 16820 to 16824
+Skipped Seq from 16829 to 16832
+Skipped Seq from 16832 to 16835
+Skipped Seq from 16835 to 16839
+Skipped Seq from 16841 to 16843
+Skipped Seq from 16844 to 16847
+Skipped Seq from 16847 to 16849
+Skipped Seq from 16851 to 16854
+Skipped Seq from 16854 to 16856
+Skipped Seq from 16857 to 16862
+Skipped Seq from 16862 to 16868
+Skipped Seq from 16868 to 16875
+Skipped Seq from 16875 to 16879
+Number of times throttled: 1
+Received: 18125 / 18404 packets
+Start time: 1315414856.071480
+End time: 1315414888.606938
+Duration: 32.535458

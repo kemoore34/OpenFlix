@@ -1,6 +1,7 @@
 Starting client at 10.0.0.23:1237 with timeout:10
-My IP address is 10.0.0.23Number of times throttled: 0
-Received: 21682 / 21682 packets
-Start time: 1315218006.915895
-End time: 1315218042.471892
-Duration: 35.555997
+My IP address is 10.0.0.23Skipped Seq from 17144 to 17146
+Number of times throttled: 0
+Received: 21681 / 21682 packets
+Start time: 1315414071.814437
+End time: 1315414107.393657
+Duration: 35.579220
