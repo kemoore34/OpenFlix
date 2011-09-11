@@ -1,0 +1,67 @@
+#!/usr/bin/env python
+# a bar plot with errorbars
+import sys
+import numpy as np
+import pylab as P
+import matplotlib.pyplot as plt
+
+def missing_datafile():
+    print "Please specify the bandwidth data file"
+    exit() 
+
+def empty_datafile():
+    print "Data file is empty"
+    exit()
+
+if len(sys.argv) < 2:
+    missing_datafile()
+
+f = open(sys.argv[1], 'r')
+idx = sys.argv[1].rfind('/')
+path = ""
+if idx != -1:
+    path = sys.argv[1][0:idx+1]
+lines = f.readlines()
+time_count = len(lines)
+cols = list()
+
+if time_count < 1:
+    empty_datafile()
+
+prev_words = None
+    
+for j in range(len(lines)):
+    words = lines[j].split(', ')
+    for i in range(len(words)):
+
+        if len(cols) <= i:
+            cols.append([])
+
+        val = float(words[i])
+
+        if prev_words != None:
+            val = val - float(prev_words[i])
+
+        if i > 0:
+            val = val / cols[0][-1]
+            val = val / 1000
+
+        cols[i].append(val)
+    prev_words = words
+
+width = 0.1
+
+for i in range(1, len(cols)):
+    plt.figure(i)
+    ind = np.arange(time_count)
+    p = plt.bar(ind, cols[i], width, color='r')
+    plt.ylabel('Throughput (KBytes per sec)')
+    plt.xlabel('seconds')
+    if i < len(cols)-1:
+        plt.title('Performance at switch '+`i`)
+        plt.savefig(path+'switch'+`i`+'.png')
+    else:
+        plt.title('Aggregate performance of the system')
+        plt.savefig(path+'switchall.png')
+
+plt.show()
