@@ -5,6 +5,7 @@ import numpy as np
 import pylab as P
 import matplotlib.pyplot as plt
 
+# Error messages
 def missing_datafile():
     print "Please specify the bandwidth data file"
     exit() 
@@ -13,8 +14,11 @@ def empty_datafile():
     print "Data file is empty"
     exit()
 
+# Error check
 if len(sys.argv) < 2:
     missing_datafile()
+
+SAVE_TO_FILE = False
 
 f = open(sys.argv[1], 'r')
 idx = sys.argv[1].rfind('/')
@@ -25,43 +29,86 @@ lines = f.readlines()
 time_count = len(lines)
 cols = list()
 
+# There must be more than 1 entry
 if time_count < 1:
     empty_datafile()
 
-prev_words = None
+prev_line = None
     
-for j in range(len(lines)):
-    words = lines[j].split(', ')
-    for i in range(len(words)):
+# Calculate rate for each interval
+for i in range(len(lines)):
+    line = lines[i].split(', ')
 
-        if len(cols) <= i:
-            cols.append([])
+    if i > 0: 
+        for j in range(len(line)):
+            # Make each comma seprated columns into a list element
+            if len(cols) <= j:
+                cols.append([])
 
-        val = float(words[i])
+            val = float(line[j])
 
-        if prev_words != None:
-            val = val - float(prev_words[i])
+            if prev_line != None:
+                val = val - float(prev_line[j])
 
-        if i > 0:
-            val = val / cols[0][-1]
-            val = val / 1000
+            if j > 0:
+                # Divide by the last time difference
+                val = (val / cols[0][-1]) / 1000
 
-        cols[i].append(val)
-    prev_words = words
+            cols[j].append(val)
+    prev_line = line
 
-width = 0.1
+width = 1
+ind = np.arange(time_count-1)
+
+# Create a spacers
+cumulative_cols = []
+for i in range(len(cols)):
+    cumulative_cols.append([])
+    if i == 0: continue
+
+    '''
+    for item in cols[i]:
+        cumulative_cols[i].append(10.0)
+    '''
+    if i == 0 or i == 1:
+        cumulative_cols.append([])
+        for item in cols[i]:
+            cumulative_cols[i].append(0)
+    else:
+        cumulative_cols.append([])
+        for x,y in zip(cumulative_cols[i-1],cols[i-1]):
+            cumulative_cols[i].append(x+y)
 
 for i in range(1, len(cols)):
     plt.figure(i)
-    ind = np.arange(time_count)
     p = plt.bar(ind, cols[i], width, color='r')
     plt.ylabel('Throughput (KBytes per sec)')
     plt.xlabel('seconds')
     if i < len(cols)-1:
         plt.title('Performance at switch '+`i`)
-        plt.savefig(path+'switch'+`i`+'.png')
+        if SAVE_TO_FILE: plt.savefig(path+'switch'+`i`+'.png')
     else:
         plt.title('Aggregate performance of the system')
-        plt.savefig(path+'switchall.png')
+        if SAVE_TO_FILE: plt.savefig(path+'switchall.png')
+
+plt.figure(len(cols)+1)
+color_list = ['#d00000', '#d00030','#d00060','#d00090','#d000c0','#d03000','#d06000','#d09000','#d0c000','#d03030','#d06060']
+# Graph every column but the timestamp
+for i in range(1, len(cols)):
+    print 'ind :', i, ':', ind
+    print 'cols', cols[i]
+    print 'cum_cols', tuple(cumulative_cols[i])
+    
+    if i == 0: continue
+    elif i == 1:
+        p = plt.bar(ind, cols[i], width, color=color_list[i%len(cols)])
+        #p = plt.bar(ind, cols[i], width, color=`float(i)/20`)
+    else:
+        p = plt.bar(ind, cols[i], width, color=color_list[i%len(cols)],
+             bottom=tuple(cumulative_cols[i]))
+        #p = plt.bar(ind, cols[i], width, color=`float(i)/20`,
+        #     bottom=tuple(cumulative_cols[i]))
+plt.title('Aggregate performance of the system')
+if SAVE_TO_FILE: plt.savefig(path+'switchaggregate.png')
 
 plt.show()

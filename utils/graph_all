@@ -1,0 +1,1 @@
+find -P ../ -name 'bandwidth' -exec ./graph {} \;
