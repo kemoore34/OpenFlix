@@ -111,6 +111,7 @@ class loadbalancer(Component):
 
     def __init__(self, ctxt):
         Component.__init__(self, ctxt)
+        print 'Starting Openflixlb load balancer'
 
         HOST, PORT = "localhost", 9999
         buf = {'server':'', 'topo':''}
@@ -176,12 +177,22 @@ class loadbalancer(Component):
         packet_src = convert_to_eaddr(packet.src)
         packet_dst = convert_to_eaddr(packet.dst)
     
+        ip_packet = packet.find('ipv4')
         udp_packet = packet.find('udp')
-        # Process only UDP packets
-        if (udp_packet == None): return
-        
-        packet_srcport = udp_packet.srcport
-        packet_dstport = udp_packet.dstport
+        tcp_packet = packet.find('tcp')
+
+        #log.info('Forwarding packet')
+
+        # Process only UDP and TCP packets
+        if udp_packet: 
+            packet_srcport = udp_packet.srcport
+            packet_dstport = udp_packet.dstport
+        elif tcp_packet:
+            packet_srcport = tcp_packet.srcport
+            packet_dstport = tcp_packet.dstport
+        else:
+            log.warning('only UDP or TCP packets are allowed.')
+            return
 
         if packet_src in self.sloc.clients.keys():
             #print 'Return path packet'
@@ -254,7 +265,7 @@ class loadbalancer(Component):
         """Packet-in handler""" 
 
         if not packet.parsed:
-            log.msg('Ignoring incomplete packet',system='loadbalancer')
+            log.warning('Ignoring incomplete packet')
             
         # don't forward lldp packets    
         if packet.type == ethernet.LLDP_TYPE:

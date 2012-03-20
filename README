@@ -3,7 +3,7 @@ Running the test script
 To run the test script 
 sudo ./openflix.py -v -o 2 -p random.replay --fastmonitor -c openflixlb
 
-sudo ./openflix.py -v -o 2 -r OUTPUT_REPLAY_FILE
+sudo ./openflix.py -v -o 2 -r OUTPUT_REPLAY_FILE -c openflixlb
 
 
 options
@@ -14,4 +14,19 @@ options
 -r :generate random traffic and test
 --fastmonitor: monitor bandwidth every 0.1 second. Otherwise default is 1 second.
 
-Development Note: Mininet link speed must be modified
+
+Ex. Debug mode testing
+1. Start Mininet
+sudo ./openflix.py -v -o 2 -c openflixlb      or      sudo ./openflix.py -v -o 3 -c openflixlb
+
+2. Open terminal at servers and clients
+xterm h10
+xterm h26
+
+3. Populate ARP table
+./setarp
+
+4. Do UDP performane test
+iperf -s -u
+iperf -c 10.0.0.10 -u -b 5M
+

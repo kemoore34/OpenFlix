@@ -181,18 +181,24 @@ class loadbalancer(Component):
     def remove_redistribute(self, dpid, inport, packet, buf, bufid):
         packet_src = convert_to_eaddr(packet.src)
         packet_dst = convert_to_eaddr(packet.dst)
-    
+ 
         ip_packet = packet.find('ipv4')
         udp_packet = packet.find('udp')
-        # Process only UDP packets
-        #if (udp_packet == None): return
-        
-        #packet_srcport = udp_packet.srcport
-        #packet_dstport = udp_packet.dstport
+        tcp_packet = packet.find('tcp')
 
-        packet_srcport = ip_packet.srcport
-        packet_dstport = ip_packet.dstport
+        #log.info('Forwarding packet')
 
+        # Process only UDP and TCP packets
+        if udp_packet: 
+            packet_srcport = udp_packet.srcport
+            packet_dstport = udp_packet.dstport
+        elif tcp_packet:
+            packet_srcport = tcp_packet.srcport
+            packet_dstport = tcp_packet.dstport
+        else:
+            log.warning('only UDP or TCP packets are allowed.')
+            return
+   
         if (packet_src, packet_dst, packet_srcport, packet_dstport) not in self.flow_table: return
 
         old_entry = self.flow_table.pop((packet_src, packet_dst, packet_srcport, packet_dstport))
