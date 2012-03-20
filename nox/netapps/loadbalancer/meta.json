@@ -1,0 +1,11 @@
+{
+    "components": [
+        {
+            "name": "loadbalancer" ,
+            "dependencies": [
+                "python"
+            ],
+            "python": "nox.netapps.loadbalancer.loadbalancer" 
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "components": [
+        {
+            "name": "openflixlb" ,
+            "dependencies": [
+                "python"
+            ],
+            "python": "nox.netapps.openflixlb.openflixlb" 
+        }
+    ]
+}
