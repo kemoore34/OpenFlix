@@ -113,6 +113,7 @@ class loadbalancer(Component):
 
     def __init__(self, ctxt):
         Component.__init__(self, ctxt)
+        print 'Starting Openflixlb load balancer'
 
         HOST, PORT = "localhost", 9999
         buf = {'server':'', 'topo':''}
@@ -184,10 +185,13 @@ class loadbalancer(Component):
         ip_packet = packet.find('ipv4')
         udp_packet = packet.find('udp')
         # Process only UDP packets
-        if (udp_packet == None): return
+        #if (udp_packet == None): return
         
-        packet_srcport = udp_packet.srcport
-        packet_dstport = udp_packet.dstport
+        #packet_srcport = udp_packet.srcport
+        #packet_dstport = udp_packet.dstport
+
+        packet_srcport = ip_packet.srcport
+        packet_dstport = ip_packet.dstport
 
         if (packet_src, packet_dst, packet_srcport, packet_dstport) not in self.flow_table: return
 
@@ -246,16 +250,27 @@ class loadbalancer(Component):
     
         ip_packet = packet.find('ipv4')
         udp_packet = packet.find('udp')
-        # Process only UDP packets
-        if (udp_packet == None): return
-        
-        packet_srcport = udp_packet.srcport
-        packet_dstport = udp_packet.dstport
+        tcp_packet = packet.find('tcp')
 
-        # Skip packets that came in the wrong way
-        if packet_src in self.sloc.clients.keys():
+        #log.info('Forwarding packet')
+
+        # Process only UDP and TCP packets
+        if udp_packet: 
+            packet_srcport = udp_packet.srcport
+            packet_dstport = udp_packet.dstport
+        elif tcp_packet:
+            packet_srcport = tcp_packet.srcport
+            packet_dstport = tcp_packet.dstport
+        else:
+            log.warning('only UDP or TCP packets are allowed.')
             return
 
+        # Allow packets coming from reverse direction. 
+        # Flip align packet info if it is coming from reverse direction
+        if packet_src in self.sloc.clients.keys():
+            log.warning('Packet reverse direction. Packet received from client.') 
+            return
+ 
         if (packet_src, packet_dst, packet_srcport, packet_dstport) in self.flow_table:
             dps = self.flow_table[(packet_src, packet_dst, packet_srcport, packet_dstport)]
             # Copy dps
@@ -331,15 +346,18 @@ class loadbalancer(Component):
         """Packet-in handler""" 
 
         if not packet.parsed:
-            log.msg('Ignoring incomplete packet',system='loadbalancer')
+            log.warning('Ignoring incomplete packet')
             
         # don't forward lldp packets    
         if packet.type == ethernet.LLDP_TYPE:
+            log.warning('Received LLDP packet, Skipping')
             return CONTINUE
         if packet.type == ethernet.ARP_TYPE:
+            log.warning('Received ARP packet, Skipping')
             return CONTINUE
         # Check if this is IP packet
         if packet.type != ethernet.IP_TYPE:
+            log.warning('Received non-IP packet, Skipping')
             return CONTINUE
 
         ip_packet = packet.find('ipv4')
