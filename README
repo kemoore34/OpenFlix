@@ -12,5 +12,6 @@ options
 -i :controller interface address in ip:port
 -p :play replay file
 -r :generate random traffic and test
---fastmonitor: monitor bandwidth every 0.1 second
+--fastmonitor: monitor bandwidth every 0.1 second. Otherwise default is 1 second.
 
+Development Note: Mininet link speed must be modified

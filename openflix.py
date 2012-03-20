@@ -205,7 +205,7 @@ class HierarchicalTreeTopo(Topo):
     '''
     global log
 
-    def __init__(self, d=4, c=1, b=2, a=2):
+    def __init__(self, e=1, d=4, c=1, b=2, a=2):
 
         super(HierarchicalTreeTopo, self).__init__()
         self.log = log
@@ -215,10 +215,10 @@ class HierarchicalTreeTopo(Topo):
         self.aggregation = range(c+1, b+c+1) # b aggregation switches
         self.access = range(b+c+1, a+b+c+1) # a access switches
         self.clients = range(a+b+c+1, (d+1)*a+b+c+1) # d*a clients, d per access switch
-        self.servers = range((d+1)*a+b+c+1, (d+1)*a+b+2*c+1) # c servers
+        self.servers = range((d+1)*a+b+c+1, (d+1)*a+b+(1+e)*c+1) # c*e servers, e per core switch
 
         log_str = ''.join(['Starting HierarchicalTreeTopo with ', 
-            '%d servers, %d core, %d aggregate, %d access switches, ' % (c, c, b, a),
+            '%d servers, %d core, %d aggregate, %d access switches, ' % (len(self.servers), c, b, a),
             'and %d clients\n' % len(self.clients)])
         if self.log: sys.stderr.write(log_str)
 
@@ -240,7 +240,7 @@ class HierarchicalTreeTopo(Topo):
         # add links
         # server <-> core
         for s in self.servers:
-            self.add_edge(s, self.core[s-self.servers[0]], Edge())
+            self.add_edge(s, self.core[(s-self.servers[0])/e], Edge())
 
         # core <-> aggregation
         for cc in self.core:
@@ -264,10 +264,10 @@ class HierarchicalTreeNet(object):
     global log
 
     # Default configuration is single core and 2 aggregates, and 4 access switches
-    def __init__(self, d=4, c=1, b=2, a=2, ctrl_addr='127.0.0.1:6633'):
+    def __init__(self, e=1, d=4, c=1, b=2, a=2, ctrl_addr='127.0.0.1:6633'):
         self.bm = None
         self.log = log
-        self.topo = HierarchicalTreeTopo(d, c, b, a)
+        self.topo = HierarchicalTreeTopo(e, d, c, b, a)
 
         ctrl_args = ctrl_addr.split(':')
         ctrl_ip = ctrl_args[0]
@@ -565,15 +565,18 @@ class HierarchicalTreeNet(object):
                 print 'Could not open file %s for writing' % filename
                 pass
 
-        # log client information
-        #if self.log: sys.stderr.write('Client location:\n')
         if self.log: sys.stderr.write('Server location:\n')
         log_str = '#Servers: Do not delete this line\n'
         if f is not None:
             f.write(log_str)
+        
+        e_val = len(self.topo.servers) / len(self.topo.core)
+        core_idx = -1 
         for s_idx in range(len(self.topo.servers)):
             server_id = self.topo.servers[s_idx]
-            switch_id = self.topo.core[s_idx]
+            if s_idx % e_val == 0:
+                core_idx = core_idx+1
+            switch_id = self.topo.core[core_idx]
             switch = self.net.idToNode[switch_id]
             log_str = '%s %s %d\n' % (self.servers[s_idx].MAC(), switch.defaultMAC, self.topo.port(server_id, switch_id)[1])
             if self.log: sys.stderr.write(log_str)
@@ -584,8 +587,6 @@ class HierarchicalTreeNet(object):
 
         if self.log: sys.stderr.write('\n')
 
-        # log server information
-        #if self.log: sys.stderr.write('Server location:\n')
         if self.log: sys.stderr.write('Client location:\n')
         log_str = '#Clients: Do not delete this line\n'
         if f is not None:
@@ -747,11 +748,11 @@ if __name__ == '__main__':
         sys.stdout.write("Topology must be either 1 or 2")
         die()
     elif options.topo == 1: 
-        mn = HierarchicalTreeNet(d=2, c=1, b=4, a=4, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(e=1, d=2, c=1, b=4, a=4, ctrl_addr=options.ctrl_addr)
     elif options.topo == 2:
-        mn = HierarchicalTreeNet(d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(e=1, d=4, c=4, b=4, a=4, ctrl_addr=options.ctrl_addr)
     elif options.topo == 3:
-        mn = HierarchicalTreeNet(d=2, c=1, b=1, a=1, ctrl_addr=options.ctrl_addr)
+        mn = HierarchicalTreeNet(e=4, d=4, c=1, b=4, a=4, ctrl_addr=options.ctrl_addr)
     else:
         sys.stdout.write('No topology given')
         die()
