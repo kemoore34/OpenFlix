@@ -16,7 +16,7 @@ class ReqGenerator(Thread):
         self.port_= port;
         self.rate_= rate;
         self.total_packets_= total_packets;
-        self.max_packet_len = 1400 #bytes
+        self.max_packet_len = packet_max_size
         self.aimd_rtt = 0.01 #seconds
     
     def run(self):
@@ -80,6 +80,7 @@ class ReqGenerator(Thread):
         print "Completed send. Transmission duration: %f"%(end_time - start_time)
         sys.exit()
         
+packet_max_size = 1400 #bytes
 if __name__ == '__main__':
     # parse options
     parser = OptionParser()
@@ -89,12 +90,22 @@ if __name__ == '__main__':
     d_str = "IP:port of the destination client address"
     parser.add_option("-d", "--destination", dest="dest_addr", type="string",
             default=None, help=d_str, metavar="DEST_ADDR")
-    r_str = "Rate. Packets sent per second. Do not set this option to send at maximum speed"
+    r_str = "Rate. Packets per second. Default is 89 which is 1Mbps"
     parser.add_option("-r", "--rate", dest="rate", type="int",
             default=-1, help=r_str)
     n_str = "Number of packets to send."
     parser.add_option("-n", "--number", dest="num", type="int",
             default=None, help=n_str)
+    rk_str = "Rate. mbps"
+    parser.add_option("--mbps", dest="rate_mbps", type="float",
+            default=0, help=rk_str)
+    nt_str = "Duration."
+    parser.add_option("--duration", dest="duration", type="int",
+            default=0, help=nt_str)
+    pkt_str = "Max packet size."
+    parser.add_option("--packet_size", dest="packet_max_size", type="int",
+            default=1400, help=pkt_str)
+ 
     (options, args) = parser.parse_args()
     
     if not options.svr_addr or not options.dest_addr or not options.rate:
@@ -102,10 +113,16 @@ if __name__ == '__main__':
 
     uri_self = options.svr_addr.split(':')
     uri = options.dest_addr.split(':')
-               
-    rate = int(options.rate)
-    num_packets = int(options.num)
-   
+
+    if options.rate_mbps:
+        rate = int((options.rate_mbps * 1000 * 1000 / 8) / packet_max_size )
+    else:
+        rate = int(options.rate)
+    if options.duration:
+        num_packets = rate * options.duration
+    else:
+        num_packets = int(options.num)
+
     rg = ReqGenerator(uri_self[0], atoi(uri_self[1]), uri[0], atoi(uri[1]), rate, num_packets)
     rg.start();
     

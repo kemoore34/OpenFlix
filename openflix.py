@@ -351,7 +351,7 @@ class HierarchicalTreeNet(object):
 
 
     # Generate random replay file and test it
-    def random_gen(self, filepath="random.replay", avgTransmit=30.0, avgWait=0, totalTime=1200.0):
+    def random_gen(self, filepath="random.replay", avgTransmit=30.0, avgWait=0, totalTime=1800.0):
         f = open(filepath, 'w')
         replay = list()
         count = 0
@@ -386,7 +386,7 @@ class HierarchicalTreeNet(object):
         f.close()
 
     # Replay a replay file
-    def replay(self, filename, packet_rate=850, timeout=10, fast_check=False):
+    def replay(self, filename, packet_rate=4, timeout=10, fast_check=False):
         terminate_time = 0.0
         curTime = 0.0
         graceTime = 10.0
@@ -454,7 +454,7 @@ class HierarchicalTreeNet(object):
                     cl = self.clients_dict[dst_addr.split(':')[0]]
                     s = self.servers_dict[src_addr.split(':')[0]]
                     #'''
-                    total_packets = int(packet_rate * (float(end_time)-float(curTime)))
+                    duration = float(end_time)-float(curTime)
 
                     if float(end_time) > terminate_time: 
                         terminate_time = float(end_time)
@@ -462,9 +462,9 @@ class HierarchicalTreeNet(object):
                     cl.cmd('arp', '-s', s.IP(), s.MAC())
                     cl.cmd('python', 'client.py', '-i', dst_addr, '-t', `timeout`, '-q', `0.05`, '-c', `meta_interval`, '&')
                     s.cmd('arp', '-s', cl.IP(), cl.MAC())
-                    s.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '-r', `packet_rate`, 
-                            '-n', `total_packets`, '&')
-                    print `curTime`, src_addr, '->', dst_addr, 'packets:', total_packets
+                    s.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '--mbps', `packet_rate`, 
+                            '--duration', `duration`, '&')
+                    print `curTime`, src_addr, '->', dst_addr, 'packets:', int(packet_rate*duration/1400)
                 f.close()
                 # Wait until all packets are sent
                 wait_time = terminate_time-curTime

@@ -65,6 +65,9 @@ class Client:
         self.f.close()
         #self.dump_log(True)
         self.ts_f.close()
+        print 'Number of time throttled: %d'%th_count
+        print 'Received: %d / %d packets'%(rcount,pcount)
+    
         sys.exit()
     
     def run(self):
@@ -181,16 +184,13 @@ i_str = "IP:port of the controller, default 127.0.0.1:1234"
 parser.add_option("-i", "--interface", dest="ctrl_addr", type="string",
         default='',
         help=i_str, metavar="LISTEN_ADDR")
-q_str = "Quality of service threshold.  Change quality when packet loss rate exceeds the given rate." 
+q_str = "Quality of service threshold.  Change quality when packet loss exceeds the given value. Ex) 0.02 = 2% loss." 
 parser.add_option("-q", "--quality", action="store", type="float", dest="quality",
         default=1.0, help=q_str)
-r_str = "Force Rate. Packets sent per second. Set a rate instead of using the rate specified in client."
-parser.add_option("-r", "--rate", dest="rate", type="int",
-        default=-1, help=r_str)
 to_str = "Timeout"
 parser.add_option("-t", "--timeout", dest="timeout",
         default=10.0, type='float', help=to_str)
-c_str = "QOS interval"
+c_str = "QOS interval in seconds"
 parser.add_option("-c", "--qosinterval", dest="interval",
         default=1.0, type='float', help=c_str)
 (options, args) = parser.parse_args()
