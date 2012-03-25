@@ -1,0 +1,43 @@
+Starting client at 10.0.0.25:1242 with timeout:10
+My IP address is 10.0.0.25Skipped Seq from 3 to 12
+Recovered out of order packet from 13 to 4
+Recovered out of order packet from 13 to 5
+Recovered out of order packet from 13 to 6
+Recovered out of order packet from 13 to 7
+Recovered out of order packet from 13 to 8
+Recovered out of order packet from 13 to 9
+Recovered out of order packet from 13 to 10
+Recovered out of order packet from 13 to 11
+Skipped Seq from 18607 to 18610
+Skipped Seq from 18625 to 18631
+Skipped Seq from 18642 to 18647
+Skipped Seq from 18691 to 18695
+Skipped Seq from 18718 to 18729
+Skipped Seq from 18772 to 18775
+Skipped Seq from 18811 to 18814
+Skipped Seq from 18823 to 18837
+Skipped Seq from 18845 to 18862
+Skipped Seq from 18868 to 18873
+Skipped Seq from 18882 to 18886
+Skipped Seq from 18890 to 18906
+Skipped Seq from 18919 to 18927
+Skipped Seq from 19238 to 19262
+Skipped Seq from 19377 to 19403
+Skipped Seq from 19410 to 19419
+Skipped Seq from 19425 to 19438
+Skipped Seq from 19448 to 19455
+Skipped Seq from 19470 to 19474
+Skipped Seq from 19547 to 19566
+Skipped Seq from 19817 to 19825
+Skipped Seq from 19834 to 19837
+Skipped Seq from 19845 to 19860
+Skipped Seq from 19861 to 19874
+Skipped Seq from 19881 to 19887
+Skipped Seq from 19888 to 19890
+Skipped Seq from 19901 to 19906
+Skipped Seq from 19922 to 19930
+Number of times throttled: 2
+Received: 46400 / 46633 packets
+Start time: 1315411983.458709
+End time: 1315412048.442180
+Duration: 64.983471

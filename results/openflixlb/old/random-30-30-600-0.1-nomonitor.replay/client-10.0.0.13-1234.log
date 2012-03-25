@@ -1,0 +1,71 @@
+Starting client at 10.0.0.13:1234 with timeout:10
+My IP address is 10.0.0.13Skipped Seq from 19471 to 19473
+Skipped Seq from 19473 to 19477
+Skipped Seq from 19477 to 19479
+Skipped Seq from 19485 to 19488
+Skipped Seq from 19488 to 19492
+Skipped Seq from 19492 to 19495
+Skipped Seq from 19495 to 19497
+Skipped Seq from 19497 to 19499
+Skipped Seq from 19500 to 19502
+Skipped Seq from 19502 to 19504
+Skipped Seq from 19504 to 19506
+Skipped Seq from 19506 to 19508
+Skipped Seq from 19511 to 19513
+Skipped Seq from 19513 to 19515
+Skipped Seq from 19515 to 19517
+Skipped Seq from 19518 to 19520
+Skipped Seq from 19521 to 19523
+Skipped Seq from 19525 to 19527
+Skipped Seq from 19528 to 19535
+Skipped Seq from 19536 to 19539
+Skipped Seq from 19539 to 19542
+Skipped Seq from 19543 to 19545
+Skipped Seq from 19545 to 19548
+Skipped Seq from 19548 to 19551
+Skipped Seq from 19551 to 19555
+Skipped Seq from 19555 to 19561
+Skipped Seq from 19562 to 19564
+Skipped Seq from 19564 to 19566
+Skipped Seq from 19566 to 19573
+Skipped Seq from 19574 to 19576
+Skipped Seq from 19580 to 19582
+Skipped Seq from 19582 to 19584
+Skipped Seq from 19587 to 19589
+Skipped Seq from 19591 to 19593
+Skipped Seq from 19593 to 19595
+Skipped Seq from 19600 to 19602
+Skipped Seq from 19607 to 19609
+Skipped Seq from 19609 to 19611
+Skipped Seq from 19611 to 19613
+Skipped Seq from 19613 to 19617
+Skipped Seq from 19617 to 19622
+Skipped Seq from 19622 to 19626
+Skipped Seq from 19626 to 19628
+Skipped Seq from 19629 to 19631
+Skipped Seq from 19633 to 19637
+Skipped Seq from 19637 to 19639
+Skipped Seq from 19663 to 19665
+Skipped Seq from 36681 to 36686
+Skipped Seq from 36718 to 36722
+Skipped Seq from 36742 to 36751
+Skipped Seq from 36754 to 36769
+Skipped Seq from 36845 to 36855
+Skipped Seq from 36871 to 36881
+Skipped Seq from 36896 to 36903
+Skipped Seq from 36914 to 36920
+Skipped Seq from 36930 to 36943
+Skipped Seq from 37233 to 37243
+Skipped Seq from 37264 to 37267
+Skipped Seq from 37277 to 37283
+Skipped Seq from 37788 to 37798
+Skipped Seq from 37865 to 37877
+Skipped Seq from 38504 to 38556
+Skipped Seq from 40102 to 40265
+Skipped Seq from 40265 to 40267
+Skipped Seq from 40328 to 40413
+Number of times throttled: 2
+Received: 43690 / 44176 packets
+Start time: 1315130313.321480
+End time: 1315130375.507752
+Duration: 62.186272

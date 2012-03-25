@@ -1,0 +1,36 @@
+Mar 24 15:29:50|00001|openflowd|INFO|Open vSwitch version 1.1.0pre2
+Mar 24 15:29:50|00002|openflowd|INFO|OpenFlow protocol version 0x01
+Mar 24 15:29:50|00003|ofproto|INFO|using datapath ID 0000002320dbdb76
+Mar 24 15:29:50|00004|ofproto|INFO|datapath ID changed to 0000000000000008
+Mar 24 15:29:50|00005|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:29:50|00006|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 15:29:50|00007|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 1 seconds before reconnect
+Mar 24 15:29:50|00008|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:29:50|00009|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 15:29:50|00010|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Mar 24 15:29:52|00011|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:29:52|00012|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 15:29:52|00013|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Mar 24 15:29:56|00014|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:29:56|00015|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connected
+Mar 24 15:29:56|00016|ofp_util|WARN|received Nicira extension message of unknown type 8
+Mar 24 15:29:56|00017|ofp_util|INFO|normalization changed ofp_match, details:
+Mar 24 15:29:56|00018|ofp_util|INFO| pre: wildcards=0xffffffff  in_port=28271  dl_src=78:2f:6e:65:74:61  dl_dst=70:70:73:2f:64:69  dl_vlan=29539  dl_vlan_pcp=111  dl_type=0x6572  nw_tos=0x79  nw_proto=0x2f  nw_src=0x74612e6a  nw_dst=0x736f6e00  tp_src=30976  tp_dst=11891
+Mar 24 15:29:56|00019|ofp_util|INFO|post: wildcards= 0x23fffff  in_port=28271  dl_src=00:00:00:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=29539  dl_vlan_pcp=111  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Mar 24 15:30:02|00020|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connection closed by peer
+Mar 24 15:30:02|00021|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:30:02|00022|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 15:30:02|00023|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Mar 24 15:30:03|00024|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth1 failed: No such device
+Mar 24 15:30:04|00025|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth2 failed: No such device
+Mar 24 15:30:04|00026|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:30:04|00027|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 15:30:04|00028|rconn|INFO|dp7<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Mar 24 15:30:05|00029|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth3 failed: No such device
+Mar 24 15:30:07|00030|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s8-eth4 failed: No such device
+Mar 24 15:30:08|00031|rconn|INFO|dp7<->tcp:127.0.0.1:6633: connecting...
+Mar 24 15:30:08|00032|rconn|WARN|dp7<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 15:30:08|00033|rconn|INFO|dp7<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
+Mar 24 15:30:12|00034|dpif_linux|WARN|system@dp7: read failed: No such device
+Mar 24 15:30:12|00035|ofproto|ERR|system@dp7: datapath was destroyed externally
+ovs-openflowd: unrecoverable datapath error (No such device)

@@ -1,0 +1,175 @@
+Mar 24 02:26:03|00001|openflowd|INFO|Open vSwitch version 1.1.0pre2
+Mar 24 02:26:03|00002|openflowd|INFO|OpenFlow protocol version 0x01
+Mar 24 02:26:03|00003|ofproto|INFO|using datapath ID 0000002320f1ed29
+Mar 24 02:26:03|00004|ofproto|INFO|datapath ID changed to 0000000000000005
+Mar 24 02:26:03|00005|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connecting...
+Mar 24 02:26:03|00006|rconn|WARN|dp4<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 02:26:03|00007|rconn|INFO|dp4<->tcp:127.0.0.1:6633: waiting 1 seconds before reconnect
+Mar 24 02:26:03|00008|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connecting...
+Mar 24 02:26:03|00009|rconn|WARN|dp4<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 02:26:03|00010|rconn|INFO|dp4<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Mar 24 02:26:05|00011|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connecting...
+Mar 24 02:26:05|00012|rconn|WARN|dp4<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 02:26:05|00013|rconn|INFO|dp4<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Mar 24 02:26:09|00014|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connecting...
+Mar 24 02:26:09|00015|rconn|WARN|dp4<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 02:26:09|00016|rconn|INFO|dp4<->tcp:127.0.0.1:6633: continuing to retry connections in the background but suppressing further logging
+Mar 24 02:26:17|00017|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connected
+Mar 24 02:26:17|00018|ofp_util|WARN|received Nicira extension message of unknown type 8
+Mar 24 02:26:17|00019|ofp_util|INFO|normalization changed ofp_match, details:
+Mar 24 02:26:17|00020|ofp_util|INFO| pre: wildcards=0xffffffff  in_port=    0  dl_src=00:00:80:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=    0  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Mar 24 02:26:17|00021|ofp_util|INFO|post: wildcards= 0x23fffff  in_port=    0  dl_src=00:00:00:00:00:00  dl_dst=00:00:00:00:00:00  dl_vlan=    0  dl_vlan_pcp=  0  dl_type=     0  nw_tos=   0  nw_proto=   0  nw_src=         0  nw_dst=         0  tp_src=    0  tp_dst=    0
+Mar 24 02:26:42|00022|timeval|WARN|9 ms poll interval (0 ms user, 0 ms system) is over 14 times the weighted mean interval 1 ms (281 samples)
+Mar 24 02:26:42|00023|coverage|INFO|Event coverage (epoch 281/entire run), hash=02feee23:
+Mar 24 02:26:42|00024|coverage|INFO|poll_fd_wait                 9 /      2293
+Mar 24 02:26:42|00025|coverage|INFO|rconn_queued                 1 /         7
+Mar 24 02:26:42|00026|coverage|INFO|rconn_sent                   1 /         7
+Mar 24 02:26:42|00027|coverage|INFO|util_xalloc                 26 /      5951
+Mar 24 02:26:42|00028|coverage|INFO|vconn_sent                   1 /         8
+Mar 24 02:26:42|00029|coverage|INFO|ofproto_error                0 /         1
+Mar 24 02:26:42|00030|coverage|INFO|ofproto_expiration           0 /        39
+Mar 24 02:26:42|00031|coverage|INFO|ofproto_packet_in            0 /        44
+Mar 24 02:26:42|00032|coverage|INFO|ofproto_recv_openflow        0 /         8
+Mar 24 02:26:42|00033|coverage|INFO|ofproto_update_port          0 /         8
+Mar 24 02:26:42|00034|coverage|INFO|dpif_flow_flush              0 /         1
+Mar 24 02:26:42|00035|coverage|INFO|dpif_flow_query_list         0 /        39
+Mar 24 02:26:42|00036|coverage|INFO|dpif_purge                   0 /         1
+Mar 24 02:26:42|00037|coverage|INFO|flow_extract                 0 /        44
+Mar 24 02:26:42|00038|coverage|INFO|hmap_expand                  0 /        15
+Mar 24 02:26:42|00039|coverage|INFO|poll_zero_timeout            0 /         5
+Mar 24 02:26:42|00040|coverage|INFO|rconn_overflow               0 /        44
+Mar 24 02:26:42|00041|coverage|INFO|vconn_open                   0 /         5
+Mar 24 02:26:42|00042|coverage|INFO|vconn_received               0 /         9
+Mar 24 02:26:42|00043|coverage|INFO|netdev_get_hwaddr            0 /        17
+Mar 24 02:26:42|00044|coverage|INFO|netdev_ethtool               0 /        17
+Mar 24 02:26:42|00045|coverage|INFO|netlink_received             0 /       217
+Mar 24 02:26:42|00046|coverage|INFO|rtnetlink_changed            0 /       217
+Mar 24 02:26:42|00047|coverage|INFO|pstream_open                 0 /         1
+Mar 24 02:26:42|00048|coverage|INFO|stream_open                  0 /         5
+Mar 24 02:26:42|00049|coverage|INFO|60 events never hit
+Mar 24 02:28:22|00050|timeval|WARN|7 ms poll interval (0 ms user, 0 ms system) is over 11 times the weighted mean interval 1 ms (419 samples)
+Mar 24 02:28:22|00051|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:28:22|00052|coverage|INFO|Event coverage (epoch 419/entire run), hash=f5eb9f92:
+Mar 24 02:28:22|00053|coverage|INFO|ofproto_recv_openflow        1 /        29
+Mar 24 02:28:22|00054|coverage|INFO|poll_fd_wait                 9 /      3535
+Mar 24 02:28:22|00055|coverage|INFO|rconn_queued                 1 /        27
+Mar 24 02:28:22|00056|coverage|INFO|rconn_sent                   1 /        27
+Mar 24 02:28:22|00057|coverage|INFO|util_xalloc                 30 /      8647
+Mar 24 02:28:22|00058|coverage|INFO|vconn_received               1 /        30
+Mar 24 02:28:22|00059|coverage|INFO|vconn_sent                   1 /        28
+Mar 24 02:28:22|00060|coverage|INFO|ofproto_error                0 /         1
+Mar 24 02:28:22|00061|coverage|INFO|ofproto_expiration           0 /       138
+Mar 24 02:28:22|00062|coverage|INFO|ofproto_packet_in            0 /        44
+Mar 24 02:28:22|00063|coverage|INFO|ofproto_update_port          0 /         8
+Mar 24 02:28:22|00064|coverage|INFO|dpif_flow_flush              0 /         1
+Mar 24 02:28:22|00065|coverage|INFO|dpif_flow_query_list         0 /       138
+Mar 24 02:28:22|00066|coverage|INFO|dpif_purge                   0 /         1
+Mar 24 02:28:22|00067|coverage|INFO|flow_extract                 0 /        44
+Mar 24 02:28:22|00068|coverage|INFO|hmap_expand                  0 /        15
+Mar 24 02:28:22|00069|coverage|INFO|poll_zero_timeout            0 /         5
+Mar 24 02:28:22|00070|coverage|INFO|rconn_overflow               0 /        44
+Mar 24 02:28:22|00071|coverage|INFO|vconn_open                   0 /         5
+Mar 24 02:28:22|00072|coverage|INFO|netdev_get_hwaddr            0 /        17
+Mar 24 02:28:22|00073|coverage|INFO|netdev_ethtool               0 /        17
+Mar 24 02:28:22|00074|coverage|INFO|netlink_received             0 /       217
+Mar 24 02:28:22|00075|coverage|INFO|rtnetlink_changed            0 /       217
+Mar 24 02:28:22|00076|coverage|INFO|pstream_open                 0 /         1
+Mar 24 02:28:22|00077|coverage|INFO|stream_open                  0 /         5
+Mar 24 02:28:22|00078|coverage|INFO|60 events never hit
+Mar 24 02:29:02|00079|timeval|WARN|8 ms poll interval (0 ms user, 4 ms system) is over 12 times the weighted mean interval 1 ms (474 samples)
+Mar 24 02:29:02|00080|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:29:02|00081|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 474
+Mar 24 02:29:32|00082|timeval|WARN|11 ms poll interval (0 ms user, 0 ms system) is over 16 times the weighted mean interval 1 ms (514 samples)
+Mar 24 02:29:32|00083|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:29:32|00084|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 514
+Mar 24 02:31:27|00085|timeval|WARN|9 ms poll interval (0 ms user, 4 ms system) is over 14 times the weighted mean interval 1 ms (671 samples)
+Mar 24 02:31:27|00086|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:31:27|00087|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 671
+Mar 24 02:32:42|00088|timeval|WARN|9 ms poll interval (0 ms user, 4 ms system) is over 14 times the weighted mean interval 1 ms (774 samples)
+Mar 24 02:32:42|00089|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:32:42|00090|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 774
+Mar 24 02:32:52|00091|timeval|WARN|8 ms poll interval (0 ms user, 4 ms system) is over 12 times the weighted mean interval 1 ms (787 samples)
+Mar 24 02:32:52|00092|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:32:52|00093|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 787
+Mar 24 02:33:27|00094|timeval|WARN|7 ms poll interval (0 ms user, 0 ms system) is over 11 times the weighted mean interval 1 ms (833 samples)
+Mar 24 02:33:27|00095|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:33:27|00096|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 833
+Mar 24 02:33:37|00097|timeval|WARN|8 ms poll interval (0 ms user, 4 ms system) is over 10 times the weighted mean interval 1 ms (845 samples)
+Mar 24 02:33:37|00098|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:33:37|00099|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 845
+Mar 24 02:33:52|00100|timeval|WARN|15 ms poll interval (0 ms user, 4 ms system) is over 24 times the weighted mean interval 1 ms (865 samples)
+Mar 24 02:33:52|00101|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:33:52|00102|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 865
+Mar 24 02:34:12|00103|timeval|WARN|15 ms poll interval (0 ms user, 0 ms system) is over 24 times the weighted mean interval 1 ms (891 samples)
+Mar 24 02:34:12|00104|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:34:12|00105|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 891
+Mar 24 02:34:37|00106|timeval|WARN|8 ms poll interval (0 ms user, 0 ms system) is over 12 times the weighted mean interval 1 ms (924 samples)
+Mar 24 02:34:37|00107|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:34:37|00108|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 924
+Mar 24 02:36:02|00109|timeval|WARN|9 ms poll interval (0 ms user, 0 ms system) is over 14 times the weighted mean interval 1 ms (1039 samples)
+Mar 24 02:36:02|00110|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:36:02|00111|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1039
+Mar 24 02:37:27|00112|timeval|WARN|6 ms poll interval (0 ms user, 0 ms system) is over 9 times the weighted mean interval 1 ms (1157 samples)
+Mar 24 02:37:27|00113|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:37:27|00114|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1157
+Mar 24 02:37:32|00115|timeval|WARN|7 ms poll interval (0 ms user, 4 ms system) is over 11 times the weighted mean interval 1 ms (1163 samples)
+Mar 24 02:37:32|00116|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:37:32|00117|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1163
+Mar 24 02:38:02|00118|timeval|WARN|6 ms poll interval (0 ms user, 0 ms system) is over 9 times the weighted mean interval 1 ms (1203 samples)
+Mar 24 02:38:02|00119|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:38:02|00120|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1203
+Mar 24 02:38:52|00121|timeval|WARN|9 ms poll interval (0 ms user, 4 ms system) is over 14 times the weighted mean interval 1 ms (1272 samples)
+Mar 24 02:38:52|00122|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:38:52|00123|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1272
+Mar 24 02:39:07|00124|timeval|WARN|6 ms poll interval (0 ms user, 0 ms system) is over 9 times the weighted mean interval 1 ms (1292 samples)
+Mar 24 02:39:07|00125|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:39:07|00126|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1292
+Mar 24 02:39:27|00127|timeval|WARN|6 ms poll interval (0 ms user, 0 ms system) is over 9 times the weighted mean interval 1 ms (1319 samples)
+Mar 24 02:39:27|00128|coverage|INFO|Skipping details of duplicate event coverage for hash=02feee23 in epoch 1319
+Mar 24 02:40:22|00129|timeval|WARN|10 ms poll interval (0 ms user, 4 ms system) is over 16 times the weighted mean interval 1 ms (1394 samples)
+Mar 24 02:40:22|00130|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:40:22|00131|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1394
+Mar 24 02:43:07|00132|timeval|WARN|9 ms poll interval (0 ms user, 0 ms system) is over 14 times the weighted mean interval 1 ms (1619 samples)
+Mar 24 02:43:07|00133|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:43:07|00134|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1619
+Mar 24 02:45:17|00135|timeval|WARN|6 ms poll interval (0 ms user, 0 ms system) is over 9 times the weighted mean interval 1 ms (1798 samples)
+Mar 24 02:45:17|00136|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:45:17|00137|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1798
+Mar 24 02:45:42|00138|timeval|WARN|10 ms poll interval (0 ms user, 4 ms system) is over 16 times the weighted mean interval 1 ms (1832 samples)
+Mar 24 02:45:42|00139|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:45:42|00140|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1832
+Mar 24 02:47:12|00141|timeval|WARN|7 ms poll interval (0 ms user, 0 ms system) is over 11 times the weighted mean interval 1 ms (1953 samples)
+Mar 24 02:47:12|00142|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:47:12|00143|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 1953
+Mar 24 02:49:02|00144|timeval|WARN|6 ms poll interval (0 ms user, 4 ms system) is over 9 times the weighted mean interval 1 ms (2106 samples)
+Mar 24 02:49:02|00145|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:49:02|00146|coverage|INFO|Skipping details of duplicate event coverage for hash=02feee23 in epoch 2106
+Mar 24 02:53:17|00147|timeval|WARN|8 ms poll interval (0 ms user, 4 ms system) is over 12 times the weighted mean interval 1 ms (2456 samples)
+Mar 24 02:53:17|00148|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:53:17|00149|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 2456
+Mar 24 02:56:07|00150|timeval|WARN|10 ms poll interval (0 ms user, 0 ms system) is over 16 times the weighted mean interval 1 ms (2690 samples)
+Mar 24 02:56:07|00151|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:56:07|00152|coverage|INFO|Skipping details of duplicate event coverage for hash=02feee23 in epoch 2690
+Mar 24 02:56:57|00153|timeval|WARN|8 ms poll interval (0 ms user, 0 ms system) is over 12 times the weighted mean interval 1 ms (2760 samples)
+Mar 24 02:56:57|00154|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:56:57|00155|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 2760
+Mar 24 02:57:02|00156|timeval|WARN|8 ms poll interval (0 ms user, 8 ms system) is over 11 times the weighted mean interval 1 ms (2766 samples)
+Mar 24 02:57:02|00157|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:57:02|00158|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 2766
+Mar 24 02:57:52|00159|timeval|WARN|8 ms poll interval (0 ms user, 0 ms system) is over 12 times the weighted mean interval 1 ms (2835 samples)
+Mar 24 02:57:52|00160|timeval|WARN|context switches: 0 voluntary, 1 involuntary
+Mar 24 02:57:52|00161|coverage|INFO|Skipping details of duplicate event coverage for hash=f5eb9f92 in epoch 2835
+Mar 24 02:58:17|00162|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connection closed by peer
+Mar 24 02:58:18|00163|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s5-eth1 failed: No such device
+Mar 24 02:58:18|00164|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connecting...
+Mar 24 02:58:18|00165|rconn|WARN|dp4<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 02:58:18|00166|rconn|INFO|dp4<->tcp:127.0.0.1:6633: waiting 2 seconds before reconnect
+Mar 24 02:58:19|00167|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s5-eth2 failed: No such device
+Mar 24 02:58:20|00168|rconn|INFO|dp4<->tcp:127.0.0.1:6633: connecting...
+Mar 24 02:58:20|00169|rconn|WARN|dp4<->tcp:127.0.0.1:6633: connection failed (Connection refused)
+Mar 24 02:58:20|00170|rconn|INFO|dp4<->tcp:127.0.0.1:6633: waiting 4 seconds before reconnect
+Mar 24 02:58:21|00171|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s5-eth3 failed: No such device
+Mar 24 02:58:22|00172|netdev_linux|WARN|ethtool command ETHTOOL_GSET on network device s5-eth4 failed: No such device
+Mar 24 02:58:23|00173|dpif_linux|WARN|system@dp4: read failed: No such device
+Mar 24 02:58:23|00174|ofproto|ERR|system@dp4: datapath was destroyed externally
+ovs-openflowd: unrecoverable datapath error (No such device)

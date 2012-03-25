@@ -1,0 +1,72 @@
+Starting client at 10.0.0.13:1234 with timeout:10
+My IP address is 10.0.0.13Skipped Seq from 9572 to 9585
+Skipped Seq from 14170 to 14185
+Skipped Seq from 17923 to 17938
+Skipped Seq from 19918 to 19920
+Skipped Seq from 19922 to 19924
+Skipped Seq from 19925 to 19927
+Skipped Seq from 19928 to 19932
+Skipped Seq from 19935 to 19938
+Skipped Seq from 19938 to 19942
+Skipped Seq from 19943 to 19945
+Skipped Seq from 19945 to 19947
+Skipped Seq from 19947 to 19949
+Skipped Seq from 19949 to 19955
+Skipped Seq from 19956 to 19958
+Skipped Seq from 19960 to 19962
+Skipped Seq from 19963 to 19965
+Skipped Seq from 19967 to 19971
+Skipped Seq from 19972 to 19976
+Skipped Seq from 19984 to 19986
+Skipped Seq from 19986 to 19988
+Skipped Seq from 19991 to 19993
+Skipped Seq from 19996 to 19998
+Skipped Seq from 19999 to 20005
+Skipped Seq from 20005 to 20013
+Skipped Seq from 20013 to 20017
+Skipped Seq from 20017 to 20022
+Skipped Seq from 20022 to 20024
+Skipped Seq from 20024 to 20029
+Skipped Seq from 20029 to 20033
+Skipped Seq from 20033 to 20038
+Skipped Seq from 20038 to 20040
+Skipped Seq from 20043 to 20045
+Skipped Seq from 20047 to 20049
+Skipped Seq from 20049 to 20051
+Skipped Seq from 20052 to 20054
+Skipped Seq from 20054 to 20056
+Skipped Seq from 20060 to 20062
+Skipped Seq from 20062 to 20065
+Skipped Seq from 20067 to 20069
+Skipped Seq from 20073 to 20075
+Skipped Seq from 20075 to 20082
+Skipped Seq from 20082 to 20085
+Skipped Seq from 20086 to 20089
+Skipped Seq from 20089 to 20091
+Skipped Seq from 20091 to 20093
+Skipped Seq from 20096 to 20100
+Skipped Seq from 20100 to 20105
+Skipped Seq from 20105 to 20109
+Skipped Seq from 20109 to 20112
+Skipped Seq from 20114 to 20117
+Skipped Seq from 20117 to 20119
+Skipped Seq from 20131 to 20133
+Skipped Seq from 21636 to 21639
+Skipped Seq from 22113 to 22157
+Skipped Seq from 38861 to 38880
+Skipped Seq from 38892 to 38900
+Skipped Seq from 38913 to 38987
+Skipped Seq from 38991 to 39002
+Skipped Seq from 39008 to 39044
+Skipped Seq from 39067 to 39096
+Skipped Seq from 39145 to 39165
+Skipped Seq from 39165 to 39213
+Skipped Seq from 39234 to 39239
+Skipped Seq from 41166 to 41169
+Skipped Seq from 41252 to 41259
+Skipped Seq from 41294 to 41302
+Number of times throttled: 3
+Received: 43733 / 44176 packets
+Start time: 1315408827.733409
+End time: 1315408889.799847
+Duration: 62.066438

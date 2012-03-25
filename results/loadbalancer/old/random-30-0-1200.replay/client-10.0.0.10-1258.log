@@ -1,0 +1,64 @@
+Starting client at 10.0.0.10:1258 with timeout:10
+My IP address is 10.0.0.10Skipped Seq from 1 to 46
+Recovered out of order packet from 60 to 2
+Recovered out of order packet from 60 to 3
+Recovered out of order packet from 60 to 4
+Recovered out of order packet from 60 to 5
+Recovered out of order packet from 60 to 6
+Recovered out of order packet from 60 to 7
+Recovered out of order packet from 60 to 8
+Recovered out of order packet from 60 to 9
+Recovered out of order packet from 60 to 10
+Recovered out of order packet from 60 to 11
+Recovered out of order packet from 60 to 12
+Recovered out of order packet from 60 to 13
+Recovered out of order packet from 60 to 14
+Recovered out of order packet from 60 to 15
+Recovered out of order packet from 60 to 16
+Recovered out of order packet from 60 to 17
+Recovered out of order packet from 60 to 18
+Recovered out of order packet from 60 to 19
+Recovered out of order packet from 60 to 20
+Recovered out of order packet from 60 to 21
+Recovered out of order packet from 60 to 22
+Recovered out of order packet from 60 to 23
+Recovered out of order packet from 60 to 24
+Recovered out of order packet from 60 to 25
+Recovered out of order packet from 60 to 26
+Recovered out of order packet from 60 to 27
+Recovered out of order packet from 60 to 28
+Recovered out of order packet from 60 to 29
+Recovered out of order packet from 60 to 30
+Recovered out of order packet from 60 to 31
+Recovered out of order packet from 60 to 32
+Recovered out of order packet from 60 to 33
+Recovered out of order packet from 60 to 34
+Recovered out of order packet from 60 to 35
+Recovered out of order packet from 60 to 36
+Recovered out of order packet from 60 to 37
+Recovered out of order packet from 60 to 38
+Recovered out of order packet from 60 to 39
+Recovered out of order packet from 60 to 40
+Recovered out of order packet from 60 to 41
+Recovered out of order packet from 68 to 42
+Recovered out of order packet from 68 to 43
+Recovered out of order packet from 68 to 44
+Recovered out of order packet from 68 to 45
+Skipped Seq from 5267 to 5269
+Skipped Seq from 9685 to 9687
+Skipped Seq from 9723 to 9728
+Skipped Seq from 9783 to 9788
+Skipped Seq from 9812 to 9826
+Skipped Seq from 9837 to 9845
+Skipped Seq from 9889 to 9892
+Skipped Seq from 10964 to 10975
+Skipped Seq from 11005 to 11008
+Skipped Seq from 11036 to 11043
+Skipped Seq from 11082 to 11084
+Skipped Seq from 11097 to 11106
+Skipped Seq from 11143 to 11155
+Number of times throttled: 0
+Received: 12069 / 12139 packets
+Start time: 1315405979.436894
+End time: 1315405994.170761
+Duration: 14.733867
