@@ -352,18 +352,19 @@ class loadbalancer(Component):
         """Packet-in handler""" 
 
         if not packet.parsed:
-            log.warning('Ignoring incomplete packet')
+            #log.warning('Ignoring incomplete packet')
+            return CONTINUE
             
         # don't forward lldp packets    
         if packet.type == ethernet.LLDP_TYPE:
-            log.warning('Received LLDP packet, Skipping')
+            #log.warning('Received LLDP packet, Skipping')
             return CONTINUE
         if packet.type == ethernet.ARP_TYPE:
-            log.warning('Received ARP packet, Skipping')
+            #log.warning('Received ARP packet, Skipping')
             return CONTINUE
         # Check if this is IP packet
         if packet.type != ethernet.IP_TYPE:
-            log.warning('Received non-IP packet, Skipping')
+            #log.warning('Received non-IP packet, Skipping')
             return CONTINUE
 
         ip_packet = packet.find('ipv4')

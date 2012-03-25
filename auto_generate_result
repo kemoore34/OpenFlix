@@ -1,16 +1,23 @@
 #!/bin/bash
 
-REPLAYS[0]="random-30-0-1200.replay"
-REPLAYS[1]="random-30-30-600.replay"
-REPLAYS[2]="random-30-60-1200.replay"
-REPLAYS[3]="random-30-90-1200.replay"
+REPLAYS[0]="random-30-0-1800.replay"
+REPLAYS[1]="random-30-90-1800.replay"
+REPLAYS[2]="random-30-0-1800.replay"
+REPLAYS[3]="random-30-90-1800.replay"
 
-TOPOLOGY[0]=1
+TOPOLOGY[0]=2
 TOPOLOGY[1]=2
-TOPOLOGY[2]=2
-TOPOLOGY[3]=2
+TOPOLOGY[2]=3
+TOPOLOGY[3]=3
 
-for index in 0 1 2 3 
+SEND_RATE[0]=0.5
+SEND_RATE[1]=1
+SEND_RATE[2]=2
+
+for index in 0 1  
 do
-    ./generate_results "${TOPOLOGY[index]}" "${REPLAYS[index]}"
+    for index2 in 0 1 2
+    do
+        ./generate_results "${TOPOLOGY[index]}" "${REPLAYS[index]}" "${SEND_RATE[index2]}"
+    done
 done

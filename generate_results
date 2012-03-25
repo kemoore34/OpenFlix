@@ -1,29 +1,29 @@
 #!/bin/bash
 
 
-if [ $# -ne 2 ]
+if [ $# -ne 3 ]
     then
-        echo "./generate_results TOPOLOGY REPLAYNAME"
+        echo "./generate_results TOPOLOGY REPLAYNAME SEND_RATE_MBPS"
         exit 0
     fi
 
-if [ ! -d results/loadbalancer/$2 ]
+if [ ! -d results/loadbalancer/$2-rate-$3 ]
     then
-        mkdir results/loadbalancer/$2
+        mkdir results/loadbalancer/$2-rate-$3
     else
-        rm results/loadbalancer/$2/*
+        rm results/loadbalancer/$2-rate-$3/*
     fi
 sudo mn -c
-sudo ./openflix.py -v -o $1 -p replay/o$1/$2 -c loadbalancer
-cp /tmp/* results/loadbalancer/$2/
+sudo ./openflix.py -v -o $1 -p replay/o$1/$2 -c loadbalancer --mbps $3
+cp /tmp/* results/loadbalancer/$2-rate-$3/
 
-if [ ! -d results/openflixlb/$2 ]
+if [ ! -d results/openflixlb/$2-rate-$3 ]
     then
-        mkdir results/openflixlb/$2
+        mkdir results/openflixlb/$2-rate-$3
     else
-        rm results/openflixlb/$2/*
+        rm results/openflixlb/$2-rate-$3/*
     fi
 sudo mn -c
-sudo ./openflix.py -v -o $1 -p replay/o$1/$2 -c openflixlb
-cp /tmp/* results/openflixlb/$2/
+sudo ./openflix.py -v -o $1 -p replay/o$1/$2 -c openflixlb --mbps $3
+cp /tmp/* results/openflixlb/$2-rate-$3/
 
