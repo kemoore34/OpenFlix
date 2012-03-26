@@ -1,0 +1,63 @@
+Starting client at 10.0.0.18:1269 with timeout:10
+My IP address is 10.0.0.18Skipped Seq from 10476 to 10478
+Skipped Seq from 10490 to 10492
+Skipped Seq from 10510 to 10512
+Skipped Seq from 10523 to 10525
+Skipped Seq from 10528 to 10530
+Skipped Seq from 10546 to 10548
+Skipped Seq from 10558 to 10560
+Skipped Seq from 10577 to 10579
+Skipped Seq from 10588 to 10590
+Skipped Seq from 10594 to 10596
+Skipped Seq from 10603 to 10605
+Skipped Seq from 10613 to 10615
+Skipped Seq from 10619 to 10621
+Skipped Seq from 10642 to 10644
+Skipped Seq from 10652 to 10654
+Skipped Seq from 10666 to 10671
+Skipped Seq from 10674 to 10676
+Skipped Seq from 10677 to 10680
+Skipped Seq from 10682 to 10686
+Skipped Seq from 10689 to 10691
+Skipped Seq from 10699 to 10701
+Skipped Seq from 10752 to 10755
+Skipped Seq from 10772 to 10774
+Skipped Seq from 10791 to 10794
+Skipped Seq from 10808 to 10810
+Skipped Seq from 10816 to 10818
+Skipped Seq from 10830 to 10832
+Skipped Seq from 10883 to 10885
+Skipped Seq from 10896 to 10900
+Skipped Seq from 10907 to 10909
+Skipped Seq from 10915 to 10917
+Skipped Seq from 10951 to 10953
+Skipped Seq from 10970 to 10973
+Skipped Seq from 10977 to 10979
+Skipped Seq from 10995 to 10997
+Skipped Seq from 11012 to 11014
+Skipped Seq from 11031 to 11033
+Skipped Seq from 11061 to 11063
+Skipped Seq from 11095 to 11097
+Skipped Seq from 11114 to 11118
+Skipped Seq from 11124 to 11127
+Skipped Seq from 11137 to 11139
+Skipped Seq from 11328 to 11330
+Skipped Seq from 11346 to 11348
+Skipped Seq from 11374 to 11376
+Skipped Seq from 11406 to 11408
+Skipped Seq from 11490 to 11492
+Skipped Seq from 11568 to 11570
+Skipped Seq from 11576 to 11578
+Skipped Seq from 11661 to 11663
+Skipped Seq from 11692 to 11694
+Skipped Seq from 11704 to 11706
+Skipped Seq from 11711 to 11713
+Skipped Seq from 11743 to 11745
+Skipped Seq from 11767 to 11769
+Skipped Seq from 11776 to 11778
+Skipped Seq from 11779 to 11781
+Number of times throttled: 3
+Received: 13543 / 13614 packets
+Start time: 1332763172.768277
+End time: 1332763249.235962
+Duration: 76.467685

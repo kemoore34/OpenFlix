@@ -1,0 +1,71 @@
+Starting client at 10.0.0.21:1287 with timeout:10
+My IP address is 10.0.0.21Skipped Seq from 1241 to 1248
+Skipped Seq from 1250 to 1252
+Skipped Seq from 1256 to 1264
+Skipped Seq from 1266 to 1268
+Skipped Seq from 1301 to 1304
+Skipped Seq from 1335 to 1337
+Skipped Seq from 1367 to 1369
+Skipped Seq from 1373 to 1375
+Skipped Seq from 1380 to 1390
+Skipped Seq from 1390 to 1393
+Skipped Seq from 1395 to 1398
+Skipped Seq from 1399 to 1401
+Skipped Seq from 1401 to 1403
+Skipped Seq from 1406 to 1408
+Skipped Seq from 1409 to 1411
+Skipped Seq from 1411 to 1413
+Skipped Seq from 1414 to 1416
+Skipped Seq from 1421 to 1424
+Skipped Seq from 1426 to 1429
+Skipped Seq from 1432 to 1434
+Skipped Seq from 1437 to 1441
+Skipped Seq from 1444 to 1448
+Skipped Seq from 1457 to 1462
+Skipped Seq from 1462 to 1466
+Skipped Seq from 1467 to 1473
+Skipped Seq from 1474 to 1477
+Skipped Seq from 1483 to 1485
+Skipped Seq from 1497 to 1500
+Skipped Seq from 1505 to 1507
+Skipped Seq from 1507 to 1509
+Skipped Seq from 1512 to 1515
+Skipped Seq from 1521 to 1525
+Skipped Seq from 1536 to 1539
+Skipped Seq from 1540 to 1542
+Skipped Seq from 1543 to 1546
+Skipped Seq from 1549 to 1551
+Skipped Seq from 1561 to 1563
+Skipped Seq from 1564 to 1566
+Skipped Seq from 1566 to 1569
+Skipped Seq from 1570 to 1573
+Skipped Seq from 1574 to 1576
+Skipped Seq from 1677 to 1706
+Skipped Seq from 1706 to 1713
+Skipped Seq from 1713 to 1720
+Skipped Seq from 1722 to 1726
+Skipped Seq from 1726 to 1728
+Skipped Seq from 1741 to 1743
+Skipped Seq from 1744 to 1751
+Skipped Seq from 1751 to 1756
+Skipped Seq from 1756 to 1760
+Skipped Seq from 1766 to 1768
+Skipped Seq from 1823 to 1825
+Skipped Seq from 1825 to 1833
+Skipped Seq from 1833 to 1837
+Skipped Seq from 1837 to 1842
+Skipped Seq from 1842 to 1844
+Skipped Seq from 1844 to 1848
+Skipped Seq from 1848 to 1850
+Skipped Seq from 1851 to 1853
+Skipped Seq from 1854 to 1856
+Skipped Seq from 1869 to 1871
+Skipped Seq from 1873 to 1875
+Skipped Seq from 1882 to 1884
+Skipped Seq from 1884 to 1886
+Skipped Seq from 1889 to 1892
+Number of times throttled: 7
+Received: 7290 / 7464 packets
+Start time: 1332759920.949167
+End time: 1332760004.311104
+Duration: 83.361937

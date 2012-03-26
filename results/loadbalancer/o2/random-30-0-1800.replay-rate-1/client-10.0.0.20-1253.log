@@ -1,0 +1,67 @@
+Starting client at 10.0.0.20:1253 with timeout:10
+My IP address is 10.0.0.20Skipped Seq from 543 to 554
+Skipped Seq from 555 to 561
+Skipped Seq from 563 to 593
+Skipped Seq from 597 to 599
+Skipped Seq from 599 to 602
+Skipped Seq from 645 to 647
+Skipped Seq from 647 to 649
+Skipped Seq from 649 to 654
+Skipped Seq from 663 to 665
+Skipped Seq from 665 to 667
+Skipped Seq from 667 to 670
+Skipped Seq from 675 to 680
+Skipped Seq from 680 to 682
+Skipped Seq from 687 to 689
+Skipped Seq from 689 to 691
+Skipped Seq from 701 to 704
+Skipped Seq from 711 to 729
+Skipped Seq from 739 to 744
+Skipped Seq from 765 to 767
+Skipped Seq from 796 to 798
+Skipped Seq from 809 to 814
+Skipped Seq from 816 to 818
+Skipped Seq from 824 to 834
+Skipped Seq from 836 to 838
+Skipped Seq from 838 to 840
+Skipped Seq from 845 to 858
+Skipped Seq from 865 to 868
+Skipped Seq from 869 to 871
+Skipped Seq from 872 to 875
+Skipped Seq from 875 to 881
+Skipped Seq from 881 to 885
+Skipped Seq from 900 to 902
+Skipped Seq from 903 to 905
+Skipped Seq from 908 to 911
+Skipped Seq from 932 to 936
+Skipped Seq from 944 to 951
+Skipped Seq from 951 to 956
+Skipped Seq from 956 to 958
+Skipped Seq from 961 to 1002
+Skipped Seq from 1006 to 1009
+Skipped Seq from 1009 to 1040
+Skipped Seq from 1040 to 1046
+Skipped Seq from 1046 to 1050
+Skipped Seq from 1050 to 1062
+Skipped Seq from 1066 to 1098
+Skipped Seq from 1101 to 1103
+Skipped Seq from 1104 to 1106
+Skipped Seq from 1106 to 1121
+Skipped Seq from 1121 to 1124
+Skipped Seq from 1124 to 1126
+Skipped Seq from 1126 to 1130
+Skipped Seq from 1130 to 1132
+Skipped Seq from 1132 to 1135
+Skipped Seq from 1135 to 1144
+Skipped Seq from 1144 to 1147
+Skipped Seq from 1147 to 1150
+Skipped Seq from 1151 to 1156
+Skipped Seq from 1156 to 1158
+Skipped Seq from 1158 to 1160
+Skipped Seq from 1160 to 1163
+Skipped Seq from 1164 to 1169
+Number of times throttled: 6
+Received: 2272 / 2591 packets
+Start time: 1332758757.201531
+End time: 1332758786.143412
+Duration: 28.941881

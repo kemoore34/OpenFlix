@@ -1,0 +1,70 @@
+Starting client at 10.0.0.27:1265 with timeout:10
+My IP address is 10.0.0.27Skipped Seq from 1 to 5
+Skipped Seq from 5 to 16
+Skipped Seq from 25 to 27
+Skipped Seq from 32 to 34
+Skipped Seq from 36 to 38
+Skipped Seq from 41 to 43
+Skipped Seq from 46 to 48
+Skipped Seq from 48 to 50
+Skipped Seq from 55 to 59
+Skipped Seq from 61 to 67
+Skipped Seq from 67 to 70
+Skipped Seq from 70 to 76
+Skipped Seq from 76 to 78
+Skipped Seq from 82 to 112
+Skipped Seq from 119 to 121
+Skipped Seq from 135 to 188
+Skipped Seq from 188 to 210
+Skipped Seq from 212 to 215
+Skipped Seq from 219 to 222
+Skipped Seq from 225 to 227
+Skipped Seq from 227 to 229
+Skipped Seq from 232 to 234
+Skipped Seq from 235 to 237
+Skipped Seq from 237 to 241
+Skipped Seq from 243 to 245
+Skipped Seq from 250 to 252
+Skipped Seq from 253 to 258
+Skipped Seq from 260 to 267
+Skipped Seq from 267 to 272
+Skipped Seq from 277 to 283
+Skipped Seq from 283 to 291
+Skipped Seq from 291 to 293
+Skipped Seq from 294 to 296
+Skipped Seq from 303 to 306
+Skipped Seq from 310 to 313
+Skipped Seq from 315 to 317
+Skipped Seq from 332 to 334
+Skipped Seq from 348 to 361
+Skipped Seq from 361 to 369
+Skipped Seq from 369 to 395
+Skipped Seq from 395 to 407
+Skipped Seq from 410 to 423
+Skipped Seq from 444 to 446
+Skipped Seq from 460 to 521
+Skipped Seq from 521 to 523
+Skipped Seq from 523 to 529
+Skipped Seq from 529 to 533
+Skipped Seq from 533 to 535
+Skipped Seq from 535 to 537
+Skipped Seq from 537 to 570
+Skipped Seq from 570 to 573
+Skipped Seq from 573 to 578
+Skipped Seq from 585 to 587
+Skipped Seq from 590 to 592
+Skipped Seq from 592 to 595
+Skipped Seq from 596 to 598
+Skipped Seq from 602 to 606
+Skipped Seq from 606 to 608
+Skipped Seq from 609 to 611
+Skipped Seq from 612 to 616
+Skipped Seq from 616 to 619
+Skipped Seq from 620 to 624
+Skipped Seq from 699 to 701
+Skipped Seq from 707 to 710
+Number of times throttled: 2
+Received: 1408 / 1791 packets
+Start time: 1332762954.720679
+End time: 1332762961.826015
+Duration: 7.105336

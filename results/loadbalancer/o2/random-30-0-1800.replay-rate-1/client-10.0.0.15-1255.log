@@ -1,0 +1,26 @@
+Starting client at 10.0.0.15:1255 with timeout:10
+My IP address is 10.0.0.15Skipped Seq from 1151 to 1153
+Skipped Seq from 1159 to 1161
+Skipped Seq from 1211 to 1213
+Skipped Seq from 1213 to 1222
+Skipped Seq from 1222 to 1241
+Skipped Seq from 1417 to 1420
+Skipped Seq from 1420 to 1427
+Skipped Seq from 1427 to 1429
+Skipped Seq from 1455 to 1457
+Skipped Seq from 1462 to 1466
+Skipped Seq from 1470 to 1475
+Skipped Seq from 1475 to 1482
+Skipped Seq from 1486 to 1488
+Skipped Seq from 1491 to 1498
+Skipped Seq from 1499 to 1503
+Skipped Seq from 1503 to 1507
+Skipped Seq from 1507 to 1510
+Skipped Seq from 1511 to 1516
+Skipped Seq from 1606 to 1608
+Skipped Seq from 1651 to 1653
+Number of times throttled: 3
+Received: 2141 / 2214 packets
+Start time: 1332758830.526959
+End time: 1332758855.383739
+Duration: 24.856780

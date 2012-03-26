@@ -1,0 +1,71 @@
+Starting client at 10.0.0.16:1272 with timeout:10
+My IP address is 10.0.0.16Skipped Seq from 1480 to 1543
+Skipped Seq from 1543 to 1545
+Skipped Seq from 1545 to 1547
+Skipped Seq from 1597 to 1599
+Skipped Seq from 1614 to 1616
+Skipped Seq from 1630 to 1632
+Skipped Seq from 1666 to 1668
+Skipped Seq from 1709 to 1711
+Skipped Seq from 1747 to 1749
+Skipped Seq from 1792 to 1794
+Skipped Seq from 1796 to 1798
+Skipped Seq from 1828 to 1830
+Skipped Seq from 1839 to 1841
+Skipped Seq from 1881 to 1885
+Skipped Seq from 1888 to 1890
+Skipped Seq from 1900 to 1902
+Skipped Seq from 1902 to 1904
+Skipped Seq from 1939 to 1941
+Skipped Seq from 1955 to 1963
+Skipped Seq from 1963 to 1970
+Skipped Seq from 1970 to 1972
+Skipped Seq from 1986 to 1988
+Skipped Seq from 2014 to 2016
+Skipped Seq from 2021 to 2023
+Skipped Seq from 2024 to 2027
+Skipped Seq from 2035 to 2037
+Skipped Seq from 2077 to 2079
+Skipped Seq from 2177 to 2179
+Skipped Seq from 2185 to 2189
+Skipped Seq from 2189 to 2191
+Skipped Seq from 2191 to 2200
+Skipped Seq from 2200 to 2221
+Skipped Seq from 2221 to 2224
+Skipped Seq from 2224 to 2247
+Skipped Seq from 2247 to 2259
+Skipped Seq from 2278 to 2280
+Skipped Seq from 2291 to 2293
+Skipped Seq from 2316 to 2318
+Skipped Seq from 2321 to 2324
+Skipped Seq from 2324 to 2327
+Skipped Seq from 2356 to 2358
+Skipped Seq from 2392 to 2394
+Skipped Seq from 2401 to 2403
+Skipped Seq from 2421 to 2423
+Skipped Seq from 2437 to 2454
+Skipped Seq from 2461 to 2463
+Skipped Seq from 2463 to 2465
+Skipped Seq from 2471 to 2476
+Skipped Seq from 2496 to 2503
+Skipped Seq from 2512 to 2518
+Skipped Seq from 2520 to 2522
+Skipped Seq from 2523 to 2525
+Skipped Seq from 2527 to 2530
+Skipped Seq from 2530 to 2536
+Skipped Seq from 2543 to 2545
+Skipped Seq from 2546 to 2548
+Skipped Seq from 2553 to 2555
+Skipped Seq from 2557 to 2559
+Skipped Seq from 2564 to 2566
+Skipped Seq from 2582 to 2584
+Skipped Seq from 2614 to 2616
+Skipped Seq from 2616 to 2618
+Skipped Seq from 2619 to 2643
+Skipped Seq from 2653 to 2655
+Skipped Seq from 2718 to 2720
+Number of times throttled: 4
+Received: 15751 / 16007 packets
+Start time: 1332763081.973105
+End time: 1332763174.857293
+Duration: 92.884188

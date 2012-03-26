@@ -1,0 +1,47 @@
+Starting client at 10.0.0.23:1234 with timeout:10
+My IP address is 10.0.0.23Skipped Seq from 1767 to 1773
+Skipped Seq from 1773 to 1776
+Skipped Seq from 1779 to 1808
+Skipped Seq from 1808 to 1813
+Skipped Seq from 1813 to 1820
+Skipped Seq from 1820 to 1831
+Skipped Seq from 1838 to 1841
+Skipped Seq from 1853 to 1858
+Skipped Seq from 1862 to 1864
+Skipped Seq from 1865 to 1868
+Skipped Seq from 1868 to 1870
+Skipped Seq from 1881 to 1884
+Skipped Seq from 1891 to 1895
+Skipped Seq from 1929 to 1931
+Skipped Seq from 1965 to 1967
+Skipped Seq from 1992 to 1994
+Skipped Seq from 2036 to 2038
+Skipped Seq from 2045 to 2048
+Skipped Seq from 2081 to 2083
+Skipped Seq from 2084 to 2095
+Skipped Seq from 2097 to 2110
+Skipped Seq from 2136 to 2142
+Skipped Seq from 2144 to 2152
+Skipped Seq from 2153 to 2168
+Skipped Seq from 2170 to 2177
+Skipped Seq from 2177 to 2181
+Skipped Seq from 2186 to 2188
+Skipped Seq from 2192 to 2195
+Skipped Seq from 2195 to 2197
+Skipped Seq from 2207 to 2209
+Skipped Seq from 2209 to 2211
+Skipped Seq from 2213 to 2217
+Skipped Seq from 2220 to 2222
+Skipped Seq from 2228 to 2231
+Skipped Seq from 2239 to 2241
+Skipped Seq from 2243 to 2246
+Skipped Seq from 2251 to 2254
+Skipped Seq from 2260 to 2262
+Skipped Seq from 2268 to 2270
+Skipped Seq from 2271 to 2273
+Skipped Seq from 2273 to 2275
+Number of times throttled: 3
+Received: 2133 / 2288 packets
+Start time: 1332758244.821280
+End time: 1332758272.846124
+Duration: 28.024844

@@ -1,0 +1,47 @@
+Starting client at 10.0.0.25:1299 with timeout:10
+My IP address is 10.0.0.25Skipped Seq from 2985 to 2987
+Skipped Seq from 2995 to 2997
+Skipped Seq from 3063 to 3113
+Skipped Seq from 3128 to 3130
+Skipped Seq from 3149 to 3151
+Skipped Seq from 3187 to 3189
+Skipped Seq from 3221 to 3223
+Skipped Seq from 3226 to 3229
+Skipped Seq from 3232 to 3235
+Skipped Seq from 3235 to 3245
+Skipped Seq from 3245 to 3253
+Skipped Seq from 3253 to 3260
+Skipped Seq from 3264 to 3271
+Skipped Seq from 3271 to 3276
+Skipped Seq from 3276 to 3278
+Skipped Seq from 3278 to 3280
+Skipped Seq from 3280 to 3282
+Skipped Seq from 3283 to 3295
+Skipped Seq from 3299 to 3301
+Skipped Seq from 3307 to 3309
+Skipped Seq from 3334 to 3336
+Skipped Seq from 3350 to 3353
+Skipped Seq from 3381 to 3383
+Skipped Seq from 3412 to 3414
+Skipped Seq from 3421 to 3425
+Skipped Seq from 3428 to 3430
+Skipped Seq from 3443 to 3445
+Skipped Seq from 3464 to 3466
+Skipped Seq from 3490 to 3492
+Skipped Seq from 3533 to 3536
+Skipped Seq from 3549 to 3551
+Skipped Seq from 3563 to 3567
+Skipped Seq from 3582 to 3595
+Skipped Seq from 3596 to 3599
+Skipped Seq from 3599 to 3601
+Skipped Seq from 3617 to 3619
+Skipped Seq from 3666 to 3668
+Skipped Seq from 3705 to 3707
+Skipped Seq from 3709 to 3711
+Skipped Seq from 3722 to 3724
+Skipped Seq from 3757 to 3759
+Number of times throttled: 3
+Received: 3622 / 3768 packets
+Start time: 1332763511.871268
+End time: 1332763535.926154
+Duration: 24.054886

@@ -1,0 +1,71 @@
+Starting client at 10.0.0.16:1264 with timeout:10
+My IP address is 10.0.0.16Skipped Seq from 6020 to 6022
+Skipped Seq from 6026 to 6045
+Skipped Seq from 6049 to 6052
+Skipped Seq from 6060 to 6062
+Skipped Seq from 6062 to 6065
+Skipped Seq from 6065 to 6067
+Skipped Seq from 6073 to 6075
+Skipped Seq from 6092 to 6094
+Skipped Seq from 6094 to 6098
+Skipped Seq from 6099 to 6114
+Skipped Seq from 6123 to 6125
+Skipped Seq from 6126 to 6129
+Skipped Seq from 6129 to 6134
+Skipped Seq from 6135 to 6166
+Skipped Seq from 6171 to 6188
+Skipped Seq from 6190 to 6193
+Skipped Seq from 6195 to 6197
+Skipped Seq from 6197 to 6203
+Skipped Seq from 6204 to 6209
+Skipped Seq from 6224 to 6226
+Skipped Seq from 6235 to 6238
+Skipped Seq from 6261 to 6263
+Skipped Seq from 6263 to 6267
+Skipped Seq from 6268 to 6271
+Skipped Seq from 6271 to 6273
+Skipped Seq from 6274 to 6276
+Skipped Seq from 6283 to 6286
+Skipped Seq from 6288 to 6364
+Skipped Seq from 6364 to 6371
+Skipped Seq from 6371 to 6378
+Skipped Seq from 6380 to 6382
+Skipped Seq from 6428 to 6430
+Skipped Seq from 6450 to 6454
+Skipped Seq from 6460 to 6462
+Skipped Seq from 6485 to 6487
+Skipped Seq from 6493 to 6495
+Skipped Seq from 6518 to 6520
+Skipped Seq from 6521 to 6526
+Skipped Seq from 6557 to 6559
+Skipped Seq from 6620 to 6622
+Skipped Seq from 6652 to 6654
+Skipped Seq from 6715 to 6717
+Skipped Seq from 6731 to 6733
+Skipped Seq from 6770 to 6772
+Skipped Seq from 6789 to 6791
+Skipped Seq from 6799 to 6801
+Skipped Seq from 6807 to 6811
+Skipped Seq from 6813 to 6815
+Skipped Seq from 6832 to 6834
+Skipped Seq from 6856 to 6858
+Skipped Seq from 6861 to 6863
+Skipped Seq from 6904 to 6906
+Skipped Seq from 6938 to 6940
+Skipped Seq from 6968 to 6970
+Skipped Seq from 7017 to 7019
+Skipped Seq from 7024 to 7026
+Skipped Seq from 7039 to 7041
+Skipped Seq from 7052 to 7054
+Skipped Seq from 7074 to 7076
+Skipped Seq from 7083 to 7085
+Skipped Seq from 7089 to 7091
+Skipped Seq from 7092 to 7094
+Skipped Seq from 7095 to 7099
+Skipped Seq from 7117 to 7119
+Skipped Seq from 7134 to 7136
+Number of times throttled: 6
+Received: 12749 / 13002 packets
+Start time: 1332764690.208347
+End time: 1332764774.168691
+Duration: 83.960344

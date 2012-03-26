@@ -1,0 +1,57 @@
+Starting client at 10.0.0.16:1237 with timeout:10
+My IP address is 10.0.0.16Skipped Seq from 674 to 678
+Skipped Seq from 679 to 682
+Skipped Seq from 682 to 684
+Skipped Seq from 685 to 688
+Skipped Seq from 691 to 702
+Skipped Seq from 706 to 775
+Skipped Seq from 808 to 820
+Skipped Seq from 831 to 840
+Skipped Seq from 840 to 848
+Skipped Seq from 848 to 850
+Skipped Seq from 854 to 856
+Skipped Seq from 869 to 871
+Skipped Seq from 880 to 895
+Skipped Seq from 936 to 938
+Skipped Seq from 964 to 966
+Skipped Seq from 1042 to 1044
+Skipped Seq from 1051 to 1057
+Skipped Seq from 1057 to 1059
+Skipped Seq from 1065 to 1068
+Skipped Seq from 1069 to 1096
+Skipped Seq from 1098 to 1111
+Skipped Seq from 1111 to 1126
+Skipped Seq from 1133 to 1135
+Skipped Seq from 1135 to 1137
+Skipped Seq from 1137 to 1163
+Skipped Seq from 1163 to 1208
+Skipped Seq from 1208 to 1216
+Skipped Seq from 1216 to 1218
+Skipped Seq from 1222 to 1224
+Skipped Seq from 1229 to 1242
+Skipped Seq from 1250 to 1253
+Skipped Seq from 1270 to 1272
+Skipped Seq from 1280 to 1282
+Skipped Seq from 1290 to 1292
+Skipped Seq from 1301 to 1303
+Skipped Seq from 1348 to 1350
+Skipped Seq from 1352 to 1355
+Skipped Seq from 1369 to 1371
+Skipped Seq from 1441 to 1444
+Skipped Seq from 1449 to 1451
+Skipped Seq from 1466 to 1468
+Skipped Seq from 1470 to 1472
+Skipped Seq from 1513 to 1517
+Skipped Seq from 1536 to 1538
+Skipped Seq from 1556 to 1558
+Skipped Seq from 1576 to 1578
+Skipped Seq from 1661 to 1663
+Skipped Seq from 1679 to 1681
+Skipped Seq from 1693 to 1695
+Skipped Seq from 1711 to 1714
+Skipped Seq from 1728 to 1730
+Number of times throttled: 5
+Received: 5077 / 5388 packets
+Start time: 1332773428.777994
+End time: 1332773458.256051
+Duration: 29.478057

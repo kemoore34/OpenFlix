@@ -1,0 +1,73 @@
+Starting client at 10.0.0.24:1296 with timeout:10
+My IP address is 10.0.0.24Skipped Seq from 2 to 4
+Skipped Seq from 15 to 17
+Skipped Seq from 24 to 28
+Skipped Seq from 36 to 38
+Skipped Seq from 46 to 48
+Skipped Seq from 53 to 57
+Skipped Seq from 64 to 69
+Skipped Seq from 69 to 73
+Skipped Seq from 78 to 80
+Skipped Seq from 92 to 96
+Skipped Seq from 107 to 109
+Skipped Seq from 111 to 115
+Skipped Seq from 131 to 134
+Skipped Seq from 134 to 136
+Skipped Seq from 137 to 140
+Skipped Seq from 155 to 157
+Skipped Seq from 187 to 189
+Skipped Seq from 189 to 195
+Skipped Seq from 206 to 208
+Skipped Seq from 217 to 219
+Skipped Seq from 225 to 227
+Skipped Seq from 243 to 245
+Skipped Seq from 259 to 261
+Skipped Seq from 261 to 263
+Skipped Seq from 263 to 265
+Skipped Seq from 279 to 281
+Skipped Seq from 287 to 290
+Skipped Seq from 290 to 294
+Skipped Seq from 298 to 305
+Skipped Seq from 305 to 312
+Skipped Seq from 312 to 329
+Skipped Seq from 331 to 333
+Skipped Seq from 334 to 336
+Skipped Seq from 336 to 338
+Skipped Seq from 339 to 345
+Skipped Seq from 345 to 348
+Skipped Seq from 350 to 352
+Skipped Seq from 352 to 354
+Skipped Seq from 354 to 357
+Skipped Seq from 358 to 361
+Skipped Seq from 363 to 365
+Skipped Seq from 366 to 368
+Skipped Seq from 373 to 375
+Skipped Seq from 378 to 380
+Skipped Seq from 384 to 386
+Skipped Seq from 387 to 390
+Skipped Seq from 392 to 394
+Skipped Seq from 395 to 397
+Skipped Seq from 399 to 401
+Skipped Seq from 402 to 405
+Skipped Seq from 420 to 423
+Skipped Seq from 423 to 425
+Skipped Seq from 430 to 432
+Skipped Seq from 473 to 475
+Skipped Seq from 476 to 483
+Skipped Seq from 490 to 493
+Skipped Seq from 494 to 496
+Skipped Seq from 506 to 511
+Skipped Seq from 511 to 523
+Skipped Seq from 525 to 529
+Skipped Seq from 534 to 536
+Skipped Seq from 538 to 547
+Skipped Seq from 548 to 554
+Skipped Seq from 556 to 558
+Skipped Seq from 560 to 562
+Skipped Seq from 564 to 566
+Skipped Seq from 578 to 580
+Number of times throttled: 2
+Received: 737 / 893 packets
+Start time: 1332765535.015383
+End time: 1332765547.837530
+Duration: 12.822147

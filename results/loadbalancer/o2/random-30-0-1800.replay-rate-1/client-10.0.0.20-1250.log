@@ -1,0 +1,67 @@
+Starting client at 10.0.0.20:1250 with timeout:10
+My IP address is 10.0.0.20Skipped Seq from 744 to 746
+Skipped Seq from 752 to 754
+Skipped Seq from 788 to 791
+Skipped Seq from 791 to 795
+Skipped Seq from 796 to 798
+Skipped Seq from 803 to 805
+Skipped Seq from 805 to 808
+Skipped Seq from 808 to 810
+Skipped Seq from 812 to 815
+Skipped Seq from 815 to 817
+Skipped Seq from 820 to 822
+Skipped Seq from 823 to 827
+Skipped Seq from 830 to 832
+Skipped Seq from 836 to 848
+Skipped Seq from 848 to 851
+Skipped Seq from 862 to 864
+Skipped Seq from 865 to 867
+Skipped Seq from 869 to 871
+Skipped Seq from 871 to 873
+Skipped Seq from 877 to 879
+Skipped Seq from 893 to 895
+Skipped Seq from 919 to 921
+Skipped Seq from 926 to 928
+Skipped Seq from 928 to 932
+Skipped Seq from 932 to 934
+Skipped Seq from 937 to 939
+Skipped Seq from 943 to 945
+Skipped Seq from 951 to 955
+Skipped Seq from 955 to 957
+Skipped Seq from 957 to 966
+Skipped Seq from 990 to 993
+Skipped Seq from 998 to 1001
+Skipped Seq from 1001 to 1004
+Skipped Seq from 1004 to 1009
+Skipped Seq from 1009 to 1022
+Skipped Seq from 1022 to 1026
+Skipped Seq from 1026 to 1028
+Skipped Seq from 1028 to 1030
+Skipped Seq from 1030 to 1042
+Skipped Seq from 1042 to 1044
+Skipped Seq from 1044 to 1051
+Skipped Seq from 1054 to 1073
+Skipped Seq from 1073 to 1089
+Skipped Seq from 1089 to 1091
+Skipped Seq from 1123 to 1127
+Skipped Seq from 1183 to 1199
+Skipped Seq from 1200 to 1229
+Skipped Seq from 1231 to 1244
+Skipped Seq from 1244 to 1246
+Skipped Seq from 1246 to 1249
+Skipped Seq from 1251 to 1275
+Skipped Seq from 1275 to 1279
+Skipped Seq from 1279 to 1296
+Skipped Seq from 1306 to 1308
+Skipped Seq from 1315 to 1317
+Skipped Seq from 1330 to 1332
+Skipped Seq from 1335 to 1337
+Skipped Seq from 1360 to 1362
+Skipped Seq from 1413 to 1415
+Skipped Seq from 1415 to 1417
+Skipped Seq from 1425 to 1427
+Number of times throttled: 6
+Received: 2062 / 2311 packets
+Start time: 1332758698.935275
+End time: 1332758724.473667
+Duration: 25.538392
