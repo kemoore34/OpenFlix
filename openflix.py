@@ -296,60 +296,6 @@ class HierarchicalTreeNet(object):
         self.log_server_loc('/tmp/server_loc.txt')
         self.log_topology('/tmp/topo.txt')
 
-    # Deprecated
-    # Test numConn connections
-    def test(self, numConn=1):
-        total_packets = 900000 
-        send_rate = 850
-        timeout = 10
-        cl_count = 0
-        for cl in self.clients:
-            cl.cmd('python', 'client.py', '-i', cl.IP()+':1234', '-t', `timeout`, '-q', `0.02`, '&>singletest.output', '&')
-            cl.cmd('arp', '-s', self.servers[0].IP(), self.servers[0].MAC())
-            self.servers[0].cmd('arp', '-s', cl.IP(), cl.MAC())
-            cl_count += 1
-            if cl_count >= numConn: break
-
-        os.system('rm -rf /tmp/time_log.txt')
-        time.sleep(1)
-        if self.log: sys.stderr.write('Running test traffic...\n')
-
-        # Send packets 
-        cl_count = 0
-        server_port = 1234
-        for cl in self.clients: 
-            output = self.servers[0].cmd('python' ,'server.py', '-i', self.servers[0].IP()+':'+str(server_port), 
-                                         '-d', cl.IP()+':1234', '-r', `send_rate`, '-n', `total_packets`, '&')
-            server_port += 1
-            cl_count += 1
-            if cl_count >= numConn: break
-
-        start_time = time.time()
-        time.sleep(float(total_packets)/send_rate)
-
-        # Print packet statistics for each client
-        filelist = os.listdir('/tmp/')
-        recvCount = 0
-        totalCount = 0
-        for filename in filelist:
-            if filename.startswith('client-'):
-                while True:
-                    f = open('/tmp/'+filename, 'r')
-                    lines = f.readlines()
-                    f.close()
-                    if len(lines):
-                        lastline = lines.pop()
-                        if lastline.startswith('Received'):
-                            tokens = lastline.split()
-                            recvCount += int(tokens[1])
-                            totalCount += int(tokens[3])
-                            break
-                    else:
-                        time.sleep(1)
-        print 'Received ' + `recvCount` + ' / ' + `totalCount`
-        print 'Experiment took ' + `(time.time()-start_time)` + 'secs.'
-
-
     # Generate random replay file and test it
     def random_gen(self, filepath="random.replay", avgTransmit=30.0, avgWait=0, totalTime=1800.0):
         f = open(filepath, 'w')
@@ -464,7 +410,7 @@ class HierarchicalTreeNet(object):
                     s.cmd('arp', '-s', cl.IP(), cl.MAC())
                     s.cmd('python' ,'server.py', '-i', src_addr, '-d', dst_addr, '--mbps', `packet_rate`, 
                             '--duration', `duration`, '&')
-                    print `curTime`, src_addr, '->', dst_addr, 'packets:', int(packet_rate*duration/1400)
+                    print `curTime`, src_addr, '->', dst_addr, 'packets:', int(packet_rate/8*1000*1000*duration/1400)
                 f.close()
                 # Wait until all packets are sent
                 wait_time = terminate_time-curTime
@@ -719,6 +665,9 @@ if __name__ == '__main__':
     r_str = "Replay traffic"
     parser.add_option("-p", "--replay", type="string", dest="replay",
             default=None, help=r_str)
+    mbps_str = "Max send rate in mbps"
+    parser.add_option("--mbps", type="float", dest="mbps", 
+            default=4.0, help=mbps_str)
     rand_str = "Genrate random traffic"
     parser.add_option("-r", "--random", type="string", dest="random",
             default=None, help=rand_str)
@@ -780,7 +729,7 @@ if __name__ == '__main__':
 
     if options.replay:
         time.sleep(5)
-        mn.replay(options.replay, fast_check = options.fast_check)
+        mn.replay(options.replay, packet_rate = options.mbps, fast_check = options.fast_check)
     elif options.test:
         time.sleep(5)
         mn.test(numConn=1)
