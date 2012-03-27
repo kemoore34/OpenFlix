@@ -1,0 +1,67 @@
+Starting client at 10.0.0.10:1279 with timeout:10
+My IP address is 10.0.0.10Skipped Seq from 0 to 3
+Skipped Seq from 3 to 12
+Skipped Seq from 15 to 41
+Skipped Seq from 41 to 44
+Skipped Seq from 45 to 62
+Skipped Seq from 70 to 72
+Skipped Seq from 86 to 93
+Skipped Seq from 110 to 129
+Skipped Seq from 140 to 158
+Skipped Seq from 163 to 165
+Skipped Seq from 172 to 187
+Skipped Seq from 198 to 238
+Skipped Seq from 248 to 250
+Skipped Seq from 250 to 271
+Skipped Seq from 276 to 301
+Skipped Seq from 301 to 304
+Skipped Seq from 306 to 319
+Skipped Seq from 319 to 321
+Skipped Seq from 332 to 334
+Skipped Seq from 345 to 347
+Skipped Seq from 2085 to 2089
+Skipped Seq from 2089 to 2093
+Skipped Seq from 2094 to 2097
+Skipped Seq from 2097 to 2103
+Skipped Seq from 2103 to 2110
+Skipped Seq from 2110 to 2115
+Skipped Seq from 2117 to 2120
+Skipped Seq from 2120 to 2123
+Skipped Seq from 2124 to 2130
+Skipped Seq from 2130 to 2133
+Skipped Seq from 2134 to 2143
+Skipped Seq from 2144 to 2150
+Skipped Seq from 2150 to 2192
+Skipped Seq from 2192 to 2195
+Skipped Seq from 2195 to 2206
+Skipped Seq from 2209 to 2211
+Skipped Seq from 2212 to 2214
+Skipped Seq from 2240 to 2245
+Skipped Seq from 2279 to 2294
+Skipped Seq from 2313 to 2339
+Skipped Seq from 2339 to 2341
+Skipped Seq from 2342 to 2345
+Skipped Seq from 2345 to 2349
+Skipped Seq from 2363 to 2365
+Skipped Seq from 2374 to 2396
+Skipped Seq from 2397 to 2399
+Skipped Seq from 2417 to 2429
+Skipped Seq from 2439 to 2441
+Skipped Seq from 2443 to 2456
+Skipped Seq from 2456 to 2458
+Skipped Seq from 2459 to 2462
+Skipped Seq from 2462 to 2464
+Skipped Seq from 2466 to 2468
+Skipped Seq from 2469 to 2472
+Skipped Seq from 2474 to 2476
+Skipped Seq from 2477 to 2479
+Skipped Seq from 2480 to 2483
+Skipped Seq from 2487 to 2490
+Skipped Seq from 2490 to 2492
+Skipped Seq from 2492 to 2494
+Skipped Seq from 2494 to 2501
+Number of times throttled: 6
+Received: 2071 / 2504 packets
+Start time: 1332762144.188711
+End time: 1332762181.964515
+Duration: 37.775804

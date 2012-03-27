@@ -1,0 +1,59 @@
+Starting client at 10.0.0.21:1245 with timeout:10
+My IP address is 10.0.0.21Skipped Seq from 1 to 4
+Recovered out of order packet from 4 to 2
+Recovered out of order packet from 4 to 3
+Skipped Seq from 1898 to 1900
+Skipped Seq from 1919 to 1921
+Skipped Seq from 1950 to 1952
+Skipped Seq from 1975 to 1977
+Skipped Seq from 1984 to 1986
+Skipped Seq from 1997 to 1999
+Skipped Seq from 2008 to 2010
+Skipped Seq from 2083 to 2085
+Skipped Seq from 2094 to 2096
+Skipped Seq from 2112 to 2114
+Skipped Seq from 2162 to 2164
+Skipped Seq from 2175 to 2177
+Skipped Seq from 2199 to 2201
+Skipped Seq from 2217 to 2219
+Skipped Seq from 2226 to 2228
+Skipped Seq from 2244 to 2246
+Skipped Seq from 2264 to 2266
+Skipped Seq from 2284 to 2286
+Skipped Seq from 2303 to 2305
+Skipped Seq from 2321 to 2323
+Skipped Seq from 2331 to 2333
+Skipped Seq from 2349 to 2351
+Skipped Seq from 2362 to 2364
+Skipped Seq from 2378 to 2380
+Skipped Seq from 2396 to 2398
+Skipped Seq from 2562 to 2564
+Skipped Seq from 2578 to 2580
+Skipped Seq from 2627 to 2629
+Skipped Seq from 2693 to 2695
+Skipped Seq from 2713 to 2715
+Skipped Seq from 2731 to 2733
+Skipped Seq from 2741 to 2743
+Skipped Seq from 2764 to 2766
+Skipped Seq from 2780 to 2782
+Skipped Seq from 2816 to 2818
+Skipped Seq from 2936 to 2938
+Skipped Seq from 2946 to 2948
+Skipped Seq from 2985 to 2987
+Skipped Seq from 2996 to 2998
+Skipped Seq from 3015 to 3017
+Skipped Seq from 3027 to 3029
+Skipped Seq from 3058 to 3060
+Skipped Seq from 3077 to 3079
+Skipped Seq from 3179 to 3181
+Skipped Seq from 3225 to 3227
+Skipped Seq from 3271 to 3273
+Skipped Seq from 3277 to 3279
+Skipped Seq from 3293 to 3295
+Skipped Seq from 3331 to 3333
+Skipped Seq from 3346 to 3348
+Number of times throttled: 1
+Received: 5208 / 5258 packets
+Start time: 1332765659.616769
+End time: 1332765697.364451
+Duration: 37.747682

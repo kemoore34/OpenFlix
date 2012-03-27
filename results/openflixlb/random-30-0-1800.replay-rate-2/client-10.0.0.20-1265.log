@@ -1,0 +1,65 @@
+Starting client at 10.0.0.20:1265 with timeout:10
+My IP address is 10.0.0.20Skipped Seq from 893 to 895
+Skipped Seq from 909 to 911
+Skipped Seq from 930 to 932
+Skipped Seq from 952 to 954
+Skipped Seq from 972 to 974
+Skipped Seq from 982 to 990
+Skipped Seq from 994 to 1002
+Skipped Seq from 1012 to 1014
+Skipped Seq from 1047 to 1049
+Skipped Seq from 1065 to 1067
+Skipped Seq from 1087 to 1089
+Skipped Seq from 1106 to 1108
+Skipped Seq from 1125 to 1127
+Skipped Seq from 1131 to 1135
+Skipped Seq from 1142 to 1144
+Skipped Seq from 1147 to 1149
+Skipped Seq from 1160 to 1162
+Skipped Seq from 1171 to 1173
+Skipped Seq from 1173 to 1176
+Skipped Seq from 1191 to 1193
+Skipped Seq from 1200 to 1202
+Skipped Seq from 1203 to 1207
+Skipped Seq from 1212 to 1214
+Skipped Seq from 1216 to 1218
+Skipped Seq from 1218 to 1227
+Skipped Seq from 1232 to 1249
+Skipped Seq from 1256 to 1258
+Skipped Seq from 1258 to 1272
+Skipped Seq from 1273 to 1289
+Skipped Seq from 1292 to 1294
+Skipped Seq from 1295 to 1297
+Skipped Seq from 1301 to 1303
+Skipped Seq from 1320 to 1322
+Skipped Seq from 1338 to 1340
+Skipped Seq from 1352 to 1354
+Skipped Seq from 1373 to 1375
+Skipped Seq from 1383 to 1385
+Skipped Seq from 1450 to 1452
+Skipped Seq from 1467 to 1469
+Skipped Seq from 1485 to 1487
+Skipped Seq from 1553 to 1555
+Skipped Seq from 1609 to 1612
+Skipped Seq from 1636 to 1638
+Skipped Seq from 1650 to 1652
+Skipped Seq from 1665 to 1667
+Skipped Seq from 1686 to 1688
+Skipped Seq from 1704 to 1706
+Skipped Seq from 1722 to 1724
+Skipped Seq from 1749 to 1751
+Skipped Seq from 1767 to 1769
+Skipped Seq from 1815 to 1817
+Skipped Seq from 1883 to 1885
+Skipped Seq from 1904 to 1906
+Skipped Seq from 1947 to 1949
+Skipped Seq from 1965 to 1967
+Skipped Seq from 1979 to 1981
+Skipped Seq from 1992 to 1994
+Skipped Seq from 2017 to 2019
+Skipped Seq from 2031 to 2033
+Number of times throttled: 3
+Received: 6466 / 6591 packets
+Start time: 1332766580.815987
+End time: 1332766630.512351
+Duration: 49.696364

@@ -1,0 +1,68 @@
+Starting client at 10.0.0.23:1287 with timeout:10
+My IP address is 10.0.0.23Skipped Seq from 1 to 3
+Skipped Seq from 21 to 23
+Skipped Seq from 24 to 26
+Skipped Seq from 34 to 36
+Skipped Seq from 60 to 64
+Skipped Seq from 66 to 78
+Skipped Seq from 83 to 85
+Skipped Seq from 121 to 123
+Skipped Seq from 123 to 128
+Skipped Seq from 128 to 138
+Skipped Seq from 138 to 140
+Skipped Seq from 140 to 143
+Skipped Seq from 143 to 145
+Skipped Seq from 146 to 148
+Skipped Seq from 153 to 162
+Skipped Seq from 168 to 170
+Skipped Seq from 201 to 203
+Skipped Seq from 222 to 225
+Skipped Seq from 2824 to 2826
+Skipped Seq from 2864 to 2866
+Skipped Seq from 2904 to 2906
+Skipped Seq from 2931 to 2933
+Skipped Seq from 2948 to 2950
+Skipped Seq from 2951 to 2953
+Skipped Seq from 2954 to 2957
+Skipped Seq from 2968 to 2970
+Skipped Seq from 2970 to 2972
+Skipped Seq from 2983 to 2985
+Skipped Seq from 2989 to 2992
+Skipped Seq from 2992 to 3020
+Skipped Seq from 3022 to 3046
+Skipped Seq from 3087 to 3090
+Skipped Seq from 3125 to 3127
+Skipped Seq from 3167 to 3169
+Skipped Seq from 3175 to 3186
+Skipped Seq from 3193 to 3207
+Skipped Seq from 3208 to 3210
+Skipped Seq from 3220 to 3223
+Skipped Seq from 3223 to 3227
+Skipped Seq from 3230 to 3243
+Skipped Seq from 3244 to 3247
+Skipped Seq from 3302 to 3304
+Skipped Seq from 3308 to 3317
+Skipped Seq from 3321 to 3323
+Skipped Seq from 3342 to 3345
+Skipped Seq from 3346 to 3348
+Skipped Seq from 3348 to 3352
+Skipped Seq from 3352 to 3356
+Skipped Seq from 3356 to 3359
+Skipped Seq from 3359 to 3363
+Skipped Seq from 3367 to 3370
+Skipped Seq from 3376 to 3378
+Skipped Seq from 3379 to 3393
+Skipped Seq from 3393 to 3395
+Skipped Seq from 3397 to 3399
+Skipped Seq from 3400 to 3402
+Skipped Seq from 3408 to 3410
+Skipped Seq from 3418 to 3420
+Skipped Seq from 3421 to 3424
+Skipped Seq from 3424 to 3427
+Skipped Seq from 3436 to 3438
+Skipped Seq from 3445 to 3447
+Number of times throttled: 6
+Received: 3906 / 4117 packets
+Start time: 1332760563.179506
+End time: 1332760606.523123
+Duration: 43.343617
