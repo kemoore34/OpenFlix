@@ -1,0 +1,49 @@
+Starting client at 10.0.0.24:1257 with timeout:10
+My IP address is 10.0.0.24Skipped Seq from 1 to 4
+Recovered out of order packet from 7 to 2
+Recovered out of order packet from 7 to 3
+Skipped Seq from 819 to 822
+Skipped Seq from 822 to 827
+Skipped Seq from 827 to 832
+Skipped Seq from 832 to 836
+Skipped Seq from 837 to 839
+Skipped Seq from 839 to 851
+Skipped Seq from 852 to 857
+Skipped Seq from 857 to 859
+Skipped Seq from 859 to 863
+Skipped Seq from 863 to 866
+Skipped Seq from 867 to 869
+Skipped Seq from 869 to 888
+Skipped Seq from 890 to 900
+Skipped Seq from 901 to 903
+Skipped Seq from 903 to 906
+Skipped Seq from 907 to 910
+Skipped Seq from 911 to 915
+Skipped Seq from 917 to 920
+Skipped Seq from 920 to 924
+Skipped Seq from 924 to 927
+Skipped Seq from 927 to 932
+Skipped Seq from 933 to 937
+Skipped Seq from 939 to 943
+Skipped Seq from 943 to 949
+Skipped Seq from 949 to 953
+Skipped Seq from 954 to 958
+Skipped Seq from 958 to 962
+Skipped Seq from 962 to 964
+Skipped Seq from 964 to 968
+Skipped Seq from 969 to 971
+Skipped Seq from 971 to 974
+Skipped Seq from 974 to 977
+Skipped Seq from 977 to 980
+Skipped Seq from 980 to 982
+Skipped Seq from 983 to 986
+Skipped Seq from 988 to 993
+Skipped Seq from 993 to 999
+Skipped Seq from 999 to 1002
+Skipped Seq from 1002 to 1008
+Skipped Seq from 1008 to 1011
+Number of times throttled: 1
+Received: 877 / 1012 packets
+Start time: 1332839511.380395
+End time: 1332839528.524682
+Duration: 17.144287

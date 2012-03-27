@@ -1,0 +1,21 @@
+Starting client at 10.0.0.27:1269 with timeout:10
+My IP address is 10.0.0.27Skipped Seq from 270 to 272
+Skipped Seq from 273 to 276
+Skipped Seq from 276 to 282
+Skipped Seq from 282 to 286
+Skipped Seq from 286 to 293
+Skipped Seq from 293 to 295
+Skipped Seq from 295 to 306
+Skipped Seq from 306 to 311
+Skipped Seq from 312 to 315
+Skipped Seq from 317 to 323
+Skipped Seq from 323 to 326
+Skipped Seq from 328 to 332
+Skipped Seq from 334 to 337
+Skipped Seq from 337 to 339
+Skipped Seq from 341 to 344
+Number of times throttled: 0
+Received: 298 / 350 packets
+Start time: 1332836293.045443
+End time: 1332836304.907075
+Duration: 11.861632

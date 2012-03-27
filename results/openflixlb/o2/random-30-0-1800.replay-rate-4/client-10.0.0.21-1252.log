@@ -1,0 +1,76 @@
+Starting client at 10.0.0.21:1252 with timeout:10
+My IP address is 10.0.0.21Skipped Seq from 0 to 111
+Skipped Seq from 111 to 123
+Skipped Seq from 125 to 132
+Skipped Seq from 132 to 144
+Skipped Seq from 144 to 146
+Skipped Seq from 146 to 158
+Skipped Seq from 158 to 162
+Skipped Seq from 162 to 166
+Skipped Seq from 166 to 169
+Skipped Seq from 169 to 171
+Skipped Seq from 172 to 175
+Skipped Seq from 178 to 183
+Skipped Seq from 185 to 188
+Skipped Seq from 188 to 200
+Skipped Seq from 202 to 204
+Skipped Seq from 205 to 212
+Skipped Seq from 214 to 216
+Skipped Seq from 216 to 219
+Skipped Seq from 220 to 229
+Skipped Seq from 230 to 232
+Skipped Seq from 232 to 237
+Skipped Seq from 239 to 245
+Skipped Seq from 246 to 249
+Skipped Seq from 250 to 253
+Skipped Seq from 253 to 255
+Skipped Seq from 255 to 258
+Skipped Seq from 258 to 260
+Skipped Seq from 260 to 263
+Skipped Seq from 263 to 267
+Skipped Seq from 270 to 272
+Skipped Seq from 272 to 274
+Skipped Seq from 277 to 281
+Skipped Seq from 282 to 285
+Skipped Seq from 288 to 292
+Skipped Seq from 292 to 294
+Skipped Seq from 294 to 297
+Skipped Seq from 297 to 300
+Skipped Seq from 300 to 303
+Skipped Seq from 306 to 308
+Skipped Seq from 308 to 312
+Skipped Seq from 312 to 314
+Skipped Seq from 315 to 320
+Skipped Seq from 321 to 323
+Skipped Seq from 323 to 328
+Skipped Seq from 329 to 333
+Skipped Seq from 335 to 338
+Skipped Seq from 338 to 344
+Skipped Seq from 344 to 357
+Skipped Seq from 359 to 364
+Skipped Seq from 364 to 371
+Skipped Seq from 371 to 374
+Skipped Seq from 374 to 377
+Skipped Seq from 377 to 379
+Skipped Seq from 381 to 385
+Skipped Seq from 386 to 392
+Skipped Seq from 393 to 395
+Skipped Seq from 397 to 399
+Skipped Seq from 399 to 401
+Skipped Seq from 401 to 596
+Skipped Seq from 596 to 668
+Skipped Seq from 668 to 719
+Skipped Seq from 719 to 721
+Skipped Seq from 721 to 730
+Skipped Seq from 730 to 738
+Skipped Seq from 738 to 746
+Skipped Seq from 746 to 766
+Skipped Seq from 766 to 772
+Skipped Seq from 772 to 774
+Skipped Seq from 774 to 780
+Skipped Seq from 781 to 867
+Number of times throttled: 1
+Received: 116 / 918 packets
+Start time: 1332837499.175299
+End time: 1332837511.004172
+Duration: 11.828873

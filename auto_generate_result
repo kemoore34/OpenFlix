@@ -13,10 +13,12 @@ TOPOLOGY[3]=3
 SEND_RATE[0]=0.5
 SEND_RATE[1]=1
 SEND_RATE[2]=2
+SEND_RATE[3]=4
+SEND_RATE[4]=8
 
-for index in 0 1  
+for index in 0 1
 do
-    for index2 in 0 1 2
+    for index2 in 3 4
     do
         ./generate_results "${TOPOLOGY[index]}" "${REPLAYS[index]}" "${SEND_RATE[index2]}"
     done

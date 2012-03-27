@@ -1,0 +1,73 @@
+Starting client at 10.0.0.19:1253 with timeout:10
+My IP address is 10.0.0.19Skipped Seq from 3 to 6
+Recovered out of order packet from 8 to 4
+Recovered out of order packet from 8 to 5
+Skipped Seq from 3640 to 3692
+Skipped Seq from 3692 to 3708
+Skipped Seq from 3708 to 3730
+Skipped Seq from 3730 to 3777
+Skipped Seq from 3777 to 3824
+Skipped Seq from 3824 to 3831
+Skipped Seq from 3831 to 3861
+Skipped Seq from 3861 to 3932
+Skipped Seq from 3932 to 3969
+Skipped Seq from 3969 to 4051
+Skipped Seq from 4051 to 4105
+Skipped Seq from 4105 to 4174
+Skipped Seq from 4174 to 4191
+Skipped Seq from 4191 to 4267
+Skipped Seq from 4267 to 4380
+Skipped Seq from 4380 to 4503
+Skipped Seq from 4503 to 4518
+Skipped Seq from 4518 to 4590
+Skipped Seq from 4590 to 4606
+Skipped Seq from 4606 to 4655
+Skipped Seq from 4655 to 4664
+Skipped Seq from 4664 to 4685
+Skipped Seq from 4685 to 4702
+Skipped Seq from 4702 to 4721
+Skipped Seq from 4721 to 4723
+Skipped Seq from 4723 to 4733
+Skipped Seq from 4733 to 4737
+Skipped Seq from 4737 to 4761
+Skipped Seq from 4761 to 4779
+Skipped Seq from 4779 to 4783
+Skipped Seq from 4783 to 4790
+Skipped Seq from 4790 to 4805
+Skipped Seq from 4805 to 4851
+Skipped Seq from 4851 to 4862
+Skipped Seq from 4862 to 4878
+Skipped Seq from 4878 to 4881
+Skipped Seq from 4881 to 4883
+Skipped Seq from 4883 to 4885
+Skipped Seq from 4885 to 4919
+Skipped Seq from 4919 to 4925
+Skipped Seq from 4925 to 4927
+Skipped Seq from 4953 to 4955
+Skipped Seq from 4985 to 4987
+Skipped Seq from 4988 to 4990
+Skipped Seq from 4991 to 4993
+Skipped Seq from 4993 to 4995
+Skipped Seq from 4995 to 4997
+Skipped Seq from 5001 to 5003
+Skipped Seq from 5005 to 5007
+Skipped Seq from 5012 to 5014
+Skipped Seq from 5019 to 5021
+Skipped Seq from 5025 to 5027
+Skipped Seq from 5037 to 5039
+Skipped Seq from 5041 to 5043
+Skipped Seq from 5044 to 5046
+Skipped Seq from 5046 to 5048
+Skipped Seq from 5048 to 5070
+Skipped Seq from 5071 to 5093
+Skipped Seq from 5093 to 5095
+Skipped Seq from 5095 to 5097
+Skipped Seq from 5097 to 5103
+Skipped Seq from 5103 to 5116
+Skipped Seq from 5116 to 5118
+Skipped Seq from 5118 to 5139
+Number of times throttled: 4
+Received: 3796 / 5141 packets
+Start time: 1332837824.671112
+End time: 1332837853.183491
+Duration: 28.512379

@@ -1,0 +1,9 @@
+Starting client at 10.0.0.24:1288 with timeout:10
+My IP address is 10.0.0.24Skipped Seq from 4 to 7
+Recovered out of order packet from 8 to 5
+Recovered out of order packet from 8 to 6
+Number of times throttled: 0
+Received: 1158 / 1158 packets
+Start time: 1332838597.154613
+End time: 1332838611.900934
+Duration: 14.746321

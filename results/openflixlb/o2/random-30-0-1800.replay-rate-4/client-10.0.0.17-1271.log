@@ -1,0 +1,71 @@
+Starting client at 10.0.0.17:1271 with timeout:10
+My IP address is 10.0.0.17Skipped Seq from 1 to 3
+Recovered out of order packet from 4 to 2
+Skipped Seq from 851 to 853
+Skipped Seq from 856 to 858
+Skipped Seq from 866 to 868
+Skipped Seq from 873 to 876
+Skipped Seq from 881 to 887
+Skipped Seq from 891 to 894
+Skipped Seq from 896 to 900
+Skipped Seq from 907 to 909
+Skipped Seq from 932 to 938
+Skipped Seq from 938 to 943
+Skipped Seq from 943 to 949
+Skipped Seq from 950 to 953
+Skipped Seq from 953 to 959
+Skipped Seq from 959 to 962
+Skipped Seq from 962 to 964
+Skipped Seq from 964 to 966
+Skipped Seq from 966 to 969
+Skipped Seq from 972 to 975
+Skipped Seq from 985 to 988
+Skipped Seq from 1000 to 1004
+Skipped Seq from 1004 to 1006
+Skipped Seq from 1006 to 1011
+Skipped Seq from 1011 to 1017
+Skipped Seq from 1021 to 1026
+Skipped Seq from 1033 to 1038
+Skipped Seq from 1040 to 1042
+Skipped Seq from 1044 to 1049
+Skipped Seq from 1050 to 1054
+Skipped Seq from 1055 to 1058
+Skipped Seq from 1058 to 1060
+Skipped Seq from 1074 to 1076
+Skipped Seq from 1078 to 1080
+Skipped Seq from 1087 to 1089
+Skipped Seq from 1091 to 1093
+Skipped Seq from 1094 to 1096
+Skipped Seq from 1096 to 1098
+Skipped Seq from 1109 to 1114
+Skipped Seq from 1115 to 1121
+Skipped Seq from 1125 to 1128
+Skipped Seq from 1135 to 1138
+Skipped Seq from 1145 to 1147
+Skipped Seq from 1148 to 1151
+Skipped Seq from 1153 to 1158
+Skipped Seq from 1158 to 1166
+Skipped Seq from 1171 to 1173
+Skipped Seq from 1178 to 1180
+Skipped Seq from 1180 to 1182
+Skipped Seq from 1182 to 1187
+Skipped Seq from 1187 to 1191
+Skipped Seq from 1193 to 1195
+Skipped Seq from 1195 to 1197
+Skipped Seq from 1199 to 1201
+Skipped Seq from 1207 to 1209
+Skipped Seq from 1210 to 1214
+Skipped Seq from 1220 to 1222
+Skipped Seq from 1226 to 1228
+Skipped Seq from 1233 to 1235
+Skipped Seq from 1235 to 1238
+Skipped Seq from 1240 to 1242
+Skipped Seq from 1248 to 1250
+Skipped Seq from 1255 to 1258
+Skipped Seq from 1258 to 1260
+Skipped Seq from 1260 to 1262
+Number of times throttled: 1
+Received: 1122 / 1262 packets
+Start time: 1332838195.908222
+End time: 1332838212.366534
+Duration: 16.458312

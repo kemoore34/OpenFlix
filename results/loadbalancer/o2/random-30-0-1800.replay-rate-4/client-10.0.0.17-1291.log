@@ -1,0 +1,71 @@
+Starting client at 10.0.0.17:1291 with timeout:10
+My IP address is 10.0.0.17Skipped Seq from 0 to 4
+Skipped Seq from 4 to 8
+Skipped Seq from 9 to 12
+Skipped Seq from 12 to 18
+Skipped Seq from 18 to 21
+Skipped Seq from 21 to 28
+Skipped Seq from 28 to 32
+Skipped Seq from 32 to 42
+Skipped Seq from 42 to 48
+Skipped Seq from 48 to 54
+Skipped Seq from 54 to 56
+Skipped Seq from 57 to 61
+Skipped Seq from 61 to 65
+Skipped Seq from 65 to 70
+Skipped Seq from 70 to 75
+Skipped Seq from 75 to 78
+Skipped Seq from 78 to 82
+Skipped Seq from 82 to 84
+Skipped Seq from 84 to 87
+Skipped Seq from 88 to 96
+Skipped Seq from 96 to 98
+Skipped Seq from 99 to 102
+Skipped Seq from 102 to 104
+Skipped Seq from 104 to 109
+Skipped Seq from 112 to 114
+Skipped Seq from 114 to 119
+Skipped Seq from 119 to 121
+Skipped Seq from 121 to 124
+Skipped Seq from 124 to 133
+Skipped Seq from 133 to 135
+Skipped Seq from 136 to 138
+Skipped Seq from 142 to 145
+Skipped Seq from 145 to 148
+Skipped Seq from 148 to 154
+Skipped Seq from 154 to 156
+Skipped Seq from 156 to 159
+Skipped Seq from 159 to 166
+Skipped Seq from 166 to 168
+Skipped Seq from 168 to 178
+Skipped Seq from 178 to 181
+Skipped Seq from 181 to 190
+Skipped Seq from 190 to 194
+Skipped Seq from 195 to 199
+Skipped Seq from 199 to 201
+Skipped Seq from 202 to 204
+Skipped Seq from 204 to 206
+Skipped Seq from 206 to 209
+Skipped Seq from 210 to 214
+Skipped Seq from 214 to 219
+Skipped Seq from 223 to 225
+Skipped Seq from 225 to 228
+Skipped Seq from 228 to 240
+Skipped Seq from 242 to 247
+Skipped Seq from 247 to 250
+Skipped Seq from 252 to 254
+Skipped Seq from 254 to 256
+Skipped Seq from 256 to 259
+Skipped Seq from 262 to 265
+Skipped Seq from 266 to 269
+Skipped Seq from 270 to 273
+Skipped Seq from 273 to 275
+Skipped Seq from 275 to 280
+Skipped Seq from 280 to 282
+Skipped Seq from 282 to 287
+Skipped Seq from 296 to 299
+Number of times throttled: 1
+Received: 1112 / 1309 packets
+Start time: 1332836796.785754
+End time: 1332836800.372233
+Duration: 3.586479

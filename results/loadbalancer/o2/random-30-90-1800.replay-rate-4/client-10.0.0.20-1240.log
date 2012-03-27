@@ -1,0 +1,46 @@
+Starting client at 10.0.0.20:1240 with timeout:10
+My IP address is 10.0.0.20Skipped Seq from 7409 to 7443
+Skipped Seq from 7446 to 7448
+Skipped Seq from 7451 to 7464
+Skipped Seq from 7464 to 7489
+Skipped Seq from 7489 to 7498
+Skipped Seq from 7501 to 7503
+Skipped Seq from 7511 to 7514
+Skipped Seq from 7520 to 7575
+Skipped Seq from 7582 to 7610
+Skipped Seq from 7614 to 7672
+Skipped Seq from 7683 to 7685
+Skipped Seq from 7686 to 7726
+Skipped Seq from 7727 to 7734
+Skipped Seq from 7752 to 7754
+Skipped Seq from 7755 to 7772
+Skipped Seq from 7772 to 7774
+Skipped Seq from 7774 to 7776
+Skipped Seq from 7785 to 7787
+Skipped Seq from 7793 to 7798
+Skipped Seq from 7798 to 7804
+Skipped Seq from 7804 to 7806
+Skipped Seq from 7819 to 7821
+Skipped Seq from 7837 to 7857
+Skipped Seq from 7863 to 7865
+Skipped Seq from 7870 to 7905
+Skipped Seq from 7907 to 7977
+Skipped Seq from 7980 to 8016
+Skipped Seq from 8016 to 8035
+Skipped Seq from 8039 to 8092
+Skipped Seq from 8093 to 8095
+Skipped Seq from 8115 to 8117
+Skipped Seq from 8117 to 8134
+Skipped Seq from 8134 to 8136
+Skipped Seq from 8147 to 8149
+Skipped Seq from 8158 to 8162
+Skipped Seq from 8168 to 8170
+Skipped Seq from 8188 to 8198
+Skipped Seq from 8212 to 8214
+Skipped Seq from 8233 to 8235
+Skipped Seq from 8256 to 8258
+Number of times throttled: 2
+Received: 7699 / 8264 packets
+Start time: 1332843396.401217
+End time: 1332843432.504726
+Duration: 36.103509

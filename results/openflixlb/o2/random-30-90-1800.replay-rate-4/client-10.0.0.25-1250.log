@@ -1,0 +1,49 @@
+Starting client at 10.0.0.25:1250 with timeout:10
+My IP address is 10.0.0.25Skipped Seq from 0 to 6
+Recovered out of order packet from 7 to 3
+Recovered out of order packet from 7 to 4
+Skipped Seq from 20990 to 20992
+Skipped Seq from 21003 to 21005
+Skipped Seq from 21035 to 21039
+Skipped Seq from 21039 to 21041
+Skipped Seq from 21043 to 21045
+Skipped Seq from 21080 to 21082
+Skipped Seq from 21102 to 21104
+Skipped Seq from 21147 to 21149
+Skipped Seq from 21168 to 21170
+Skipped Seq from 21195 to 21197
+Skipped Seq from 21238 to 21240
+Skipped Seq from 21258 to 21260
+Skipped Seq from 21280 to 21282
+Skipped Seq from 21314 to 21316
+Skipped Seq from 21322 to 21325
+Skipped Seq from 21325 to 21327
+Skipped Seq from 21344 to 21346
+Skipped Seq from 21362 to 21364
+Skipped Seq from 21382 to 21384
+Skipped Seq from 21384 to 21387
+Skipped Seq from 21395 to 21397
+Skipped Seq from 21401 to 21403
+Skipped Seq from 21423 to 21425
+Skipped Seq from 21465 to 21467
+Skipped Seq from 21487 to 21489
+Skipped Seq from 21519 to 21521
+Skipped Seq from 21538 to 21542
+Skipped Seq from 21546 to 21548
+Skipped Seq from 21569 to 21571
+Skipped Seq from 21599 to 21601
+Skipped Seq from 21641 to 21643
+Skipped Seq from 21662 to 21664
+Skipped Seq from 21695 to 21697
+Skipped Seq from 21725 to 21727
+Skipped Seq from 21746 to 21748
+Skipped Seq from 21758 to 21760
+Skipped Seq from 21799 to 21801
+Skipped Seq from 21821 to 21823
+Skipped Seq from 21840 to 21842
+Skipped Seq from 21873 to 21875
+Number of times throttled: 1
+Received: 21826 / 21875 packets
+Start time: 1332809623.083497
+End time: 1332809697.301818
+Duration: 74.218321

@@ -1,0 +1,76 @@
+Starting client at 10.0.0.13:1245 with timeout:10
+My IP address is 10.0.0.13Skipped Seq from 1 to 3
+Recovered out of order packet from 4 to 2
+Skipped Seq from 638 to 640
+Skipped Seq from 640 to 642
+Skipped Seq from 642 to 644
+Skipped Seq from 645 to 647
+Skipped Seq from 647 to 649
+Skipped Seq from 649 to 652
+Skipped Seq from 654 to 656
+Skipped Seq from 656 to 661
+Skipped Seq from 662 to 668
+Skipped Seq from 668 to 670
+Skipped Seq from 671 to 675
+Skipped Seq from 675 to 677
+Skipped Seq from 677 to 680
+Skipped Seq from 680 to 683
+Skipped Seq from 683 to 686
+Skipped Seq from 688 to 692
+Skipped Seq from 692 to 695
+Skipped Seq from 698 to 702
+Skipped Seq from 702 to 705
+Skipped Seq from 705 to 710
+Skipped Seq from 710 to 712
+Skipped Seq from 714 to 716
+Skipped Seq from 717 to 722
+Skipped Seq from 726 to 728
+Skipped Seq from 728 to 730
+Skipped Seq from 730 to 732
+Skipped Seq from 738 to 740
+Skipped Seq from 744 to 749
+Skipped Seq from 751 to 753
+Skipped Seq from 757 to 759
+Skipped Seq from 760 to 764
+Skipped Seq from 764 to 766
+Skipped Seq from 767 to 772
+Skipped Seq from 773 to 776
+Skipped Seq from 776 to 781
+Skipped Seq from 782 to 786
+Skipped Seq from 787 to 790
+Skipped Seq from 790 to 794
+Skipped Seq from 795 to 799
+Skipped Seq from 799 to 803
+Skipped Seq from 807 to 812
+Skipped Seq from 812 to 817
+Skipped Seq from 818 to 820
+Skipped Seq from 820 to 833
+Skipped Seq from 833 to 840
+Skipped Seq from 840 to 854
+Skipped Seq from 854 to 859
+Skipped Seq from 864 to 867
+Skipped Seq from 870 to 873
+Skipped Seq from 873 to 875
+Skipped Seq from 876 to 878
+Skipped Seq from 880 to 882
+Skipped Seq from 883 to 888
+Skipped Seq from 891 to 894
+Skipped Seq from 894 to 902
+Skipped Seq from 903 to 906
+Skipped Seq from 909 to 911
+Skipped Seq from 913 to 916
+Skipped Seq from 917 to 919
+Skipped Seq from 923 to 925
+Skipped Seq from 925 to 928
+Skipped Seq from 928 to 932
+Skipped Seq from 933 to 935
+Skipped Seq from 937 to 940
+Skipped Seq from 942 to 946
+Skipped Seq from 946 to 948
+Skipped Seq from 952 to 955
+Skipped Seq from 955 to 961
+Number of times throttled: 1
+Received: 786 / 963 packets
+Start time: 1332837360.526906
+End time: 1332837374.209742
+Duration: 13.682836

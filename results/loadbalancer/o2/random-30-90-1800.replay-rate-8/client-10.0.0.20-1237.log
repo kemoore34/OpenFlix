@@ -1,0 +1,81 @@
+Starting client at 10.0.0.20:1237 with timeout:10
+My IP address is 10.0.0.20Skipped Seq from 0 to 4
+Recovered out of order packet from 4 to 3
+Skipped Seq from 1912 to 1914
+Skipped Seq from 1914 to 1916
+Skipped Seq from 1916 to 1918
+Skipped Seq from 1918 to 1921
+Skipped Seq from 1921 to 1923
+Skipped Seq from 1924 to 1927
+Skipped Seq from 1927 to 1929
+Skipped Seq from 1930 to 1932
+Skipped Seq from 1932 to 1935
+Skipped Seq from 1935 to 1937
+Skipped Seq from 1937 to 1939
+Skipped Seq from 1939 to 1941
+Skipped Seq from 1941 to 1944
+Skipped Seq from 1945 to 1947
+Skipped Seq from 1947 to 1949
+Skipped Seq from 1949 to 1952
+Skipped Seq from 1953 to 1955
+Skipped Seq from 1955 to 1958
+Skipped Seq from 1958 to 1960
+Skipped Seq from 1960 to 1962
+Skipped Seq from 1962 to 1964
+Skipped Seq from 1964 to 1966
+Skipped Seq from 1966 to 1968
+Skipped Seq from 1968 to 1970
+Skipped Seq from 1971 to 1974
+Skipped Seq from 1974 to 1977
+Skipped Seq from 1978 to 1980
+Skipped Seq from 1980 to 1983
+Skipped Seq from 1984 to 1987
+Skipped Seq from 1988 to 1991
+Skipped Seq from 1991 to 1993
+Skipped Seq from 1993 to 1995
+Skipped Seq from 1995 to 1997
+Skipped Seq from 1997 to 1999
+Skipped Seq from 1999 to 2001
+Skipped Seq from 2001 to 2003
+Skipped Seq from 2004 to 2008
+Skipped Seq from 2009 to 2011
+Skipped Seq from 2011 to 2014
+Skipped Seq from 2014 to 2016
+Skipped Seq from 2017 to 2020
+Skipped Seq from 2020 to 2022
+Skipped Seq from 2022 to 2024
+Skipped Seq from 2024 to 2026
+Skipped Seq from 2026 to 2028
+Skipped Seq from 2028 to 2030
+Skipped Seq from 2030 to 2033
+Skipped Seq from 2034 to 2036
+Skipped Seq from 2036 to 2039
+Skipped Seq from 2039 to 2041
+Skipped Seq from 2041 to 2043
+Skipped Seq from 2044 to 2046
+Skipped Seq from 2046 to 2049
+Skipped Seq from 2049 to 2051
+Skipped Seq from 2052 to 2055
+Skipped Seq from 2055 to 2057
+Skipped Seq from 2058 to 2061
+Skipped Seq from 2061 to 2063
+Skipped Seq from 2063 to 2065
+Skipped Seq from 2065 to 2067
+Skipped Seq from 2067 to 2069
+Skipped Seq from 2069 to 2071
+Skipped Seq from 2071 to 2074
+Skipped Seq from 2074 to 2076
+Skipped Seq from 2077 to 2080
+Skipped Seq from 2080 to 2082
+Skipped Seq from 2082 to 2084
+Skipped Seq from 2084 to 2086
+Skipped Seq from 2086 to 2088
+Skipped Seq from 2088 to 2090
+Skipped Seq from 2090 to 2093
+Skipped Seq from 2094 to 2096
+Skipped Seq from 2096 to 2099
+Number of times throttled: 0
+Received: 2001 / 2100 packets
+Start time: 1332846798.478520
+End time: 1332846804.346305
+Duration: 5.867785
