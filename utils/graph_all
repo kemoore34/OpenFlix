@@ -1,1 +1,1 @@
-find -P ../ -name 'bandwidth' -exec ./graph {} \;
+find -P . -name 'bandwidth' -exec /home/openflow/OpenFlix/utils/graph {} \;

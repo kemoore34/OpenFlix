@@ -1,8 +1,0 @@
-Starting client at 10.0.0.18:1245 with timeout:10
-My IP address is 10.0.0.18Skipped Seq from 1 to 3
-Recovered out of order packet from 3 to 2
-Number of times throttled: 0
-Received: 3969 / 3969 packets
-Start time: 1332805388.067034
-End time: 1332805410.801560
-Duration: 22.734526
