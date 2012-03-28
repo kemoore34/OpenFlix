@@ -1,0 +1,69 @@
+Starting client at 10.0.0.24:1281 with timeout:10
+My IP address is 10.0.0.24Skipped Seq from 1 to 4
+Skipped Seq from 42 to 44
+Skipped Seq from 82 to 84
+Skipped Seq from 124 to 126
+Skipped Seq from 152 to 154
+Skipped Seq from 169 to 171
+Skipped Seq from 266 to 268
+Skipped Seq from 274 to 276
+Skipped Seq from 296 to 299
+Skipped Seq from 308 to 310
+Skipped Seq from 324 to 330
+Skipped Seq from 353 to 356
+Skipped Seq from 356 to 359
+Skipped Seq from 386 to 388
+Skipped Seq from 410 to 413
+Skipped Seq from 416 to 418
+Skipped Seq from 419 to 421
+Skipped Seq from 421 to 423
+Skipped Seq from 423 to 425
+Skipped Seq from 425 to 428
+Skipped Seq from 443 to 445
+Skipped Seq from 459 to 461
+Skipped Seq from 467 to 469
+Skipped Seq from 474 to 477
+Skipped Seq from 487 to 489
+Skipped Seq from 494 to 496
+Skipped Seq from 503 to 505
+Skipped Seq from 2053 to 2062
+Skipped Seq from 2063 to 2090
+Skipped Seq from 2100 to 2102
+Skipped Seq from 2113 to 2120
+Skipped Seq from 2128 to 2136
+Skipped Seq from 2138 to 2140
+Skipped Seq from 2141 to 2145
+Skipped Seq from 2145 to 2148
+Skipped Seq from 2152 to 2154
+Skipped Seq from 2169 to 2178
+Skipped Seq from 2180 to 2182
+Skipped Seq from 2183 to 2191
+Skipped Seq from 2191 to 2195
+Skipped Seq from 2202 to 2204
+Skipped Seq from 2205 to 2207
+Skipped Seq from 2216 to 2218
+Skipped Seq from 2279 to 2281
+Skipped Seq from 2318 to 2320
+Skipped Seq from 2323 to 2326
+Skipped Seq from 2350 to 2352
+Skipped Seq from 2383 to 2385
+Skipped Seq from 2392 to 2394
+Skipped Seq from 2401 to 2403
+Skipped Seq from 2443 to 2445
+Skipped Seq from 2449 to 2495
+Skipped Seq from 2495 to 2507
+Skipped Seq from 2507 to 2511
+Skipped Seq from 2511 to 2524
+Skipped Seq from 2532 to 2566
+Skipped Seq from 2578 to 2580
+Skipped Seq from 2581 to 2583
+Skipped Seq from 2583 to 2588
+Skipped Seq from 2588 to 2590
+Skipped Seq from 2596 to 2602
+Skipped Seq from 2604 to 2606
+Skipped Seq from 2606 to 2608
+Number of times throttled: 8
+Received: 2894 / 3136 packets
+Start time: 1332762402.474301
+End time: 1332762444.843826
+Duration: 42.369525

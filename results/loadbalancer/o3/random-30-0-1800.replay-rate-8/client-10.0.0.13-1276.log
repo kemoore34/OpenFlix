@@ -1,0 +1,66 @@
+Starting client at 10.0.0.13:1276 with timeout:10
+My IP address is 10.0.0.13Skipped Seq from 1 to 23
+Recovered out of order packet from 31 to 2
+Recovered out of order packet from 31 to 3
+Recovered out of order packet from 31 to 4
+Recovered out of order packet from 31 to 5
+Recovered out of order packet from 31 to 6
+Recovered out of order packet from 31 to 7
+Recovered out of order packet from 31 to 8
+Recovered out of order packet from 31 to 9
+Recovered out of order packet from 31 to 10
+Recovered out of order packet from 31 to 11
+Recovered out of order packet from 31 to 12
+Recovered out of order packet from 31 to 13
+Recovered out of order packet from 31 to 14
+Recovered out of order packet from 31 to 15
+Recovered out of order packet from 31 to 16
+Recovered out of order packet from 31 to 17
+Recovered out of order packet from 31 to 18
+Recovered out of order packet from 31 to 19
+Recovered out of order packet from 31 to 20
+Recovered out of order packet from 31 to 21
+Recovered out of order packet from 31 to 22
+Skipped Seq from 330 to 339
+Skipped Seq from 339 to 374
+Skipped Seq from 374 to 392
+Skipped Seq from 483 to 493
+Skipped Seq from 493 to 510
+Skipped Seq from 510 to 529
+Skipped Seq from 529 to 545
+Skipped Seq from 545 to 563
+Skipped Seq from 563 to 584
+Skipped Seq from 584 to 586
+Skipped Seq from 693 to 711
+Skipped Seq from 711 to 742
+Skipped Seq from 742 to 756
+Skipped Seq from 756 to 773
+Skipped Seq from 930 to 943
+Skipped Seq from 943 to 978
+Skipped Seq from 978 to 996
+Skipped Seq from 996 to 1016
+Skipped Seq from 1016 to 1026
+Skipped Seq from 1063 to 1076
+Skipped Seq from 1076 to 1096
+Skipped Seq from 1096 to 1113
+Skipped Seq from 1113 to 1130
+Skipped Seq from 1130 to 1145
+Skipped Seq from 1145 to 1156
+Skipped Seq from 1168 to 1186
+Skipped Seq from 1186 to 1205
+Skipped Seq from 1205 to 1225
+Skipped Seq from 1225 to 1243
+Skipped Seq from 1243 to 1261
+Skipped Seq from 1261 to 1280
+Skipped Seq from 1297 to 1313
+Skipped Seq from 1313 to 1328
+Skipped Seq from 1328 to 1331
+Skipped Seq from 1357 to 1361
+Skipped Seq from 1361 to 1393
+Skipped Seq from 1393 to 1431
+Skipped Seq from 1431 to 1441
+Number of times throttled: 3
+Received: 7120 / 7746 packets
+Start time: 1332843714.965419
+End time: 1332843728.980887
+Duration: 14.015468

@@ -1,0 +1,70 @@
+Starting client at 10.0.0.11:1284 with timeout:10
+My IP address is 10.0.0.11Skipped Seq from 0 to 3
+Skipped Seq from 3 to 21
+Skipped Seq from 21 to 28
+Skipped Seq from 28 to 30
+Skipped Seq from 30 to 34
+Skipped Seq from 34 to 42
+Skipped Seq from 42 to 44
+Skipped Seq from 44 to 46
+Skipped Seq from 46 to 69
+Skipped Seq from 69 to 71
+Skipped Seq from 71 to 82
+Skipped Seq from 82 to 84
+Skipped Seq from 84 to 93
+Skipped Seq from 93 to 108
+Skipped Seq from 108 to 118
+Skipped Seq from 118 to 121
+Skipped Seq from 121 to 123
+Skipped Seq from 123 to 126
+Skipped Seq from 126 to 129
+Skipped Seq from 129 to 134
+Skipped Seq from 135 to 137
+Skipped Seq from 137 to 140
+Skipped Seq from 140 to 144
+Skipped Seq from 144 to 147
+Skipped Seq from 147 to 149
+Skipped Seq from 150 to 153
+Skipped Seq from 153 to 156
+Skipped Seq from 156 to 159
+Skipped Seq from 159 to 162
+Skipped Seq from 162 to 165
+Skipped Seq from 166 to 169
+Skipped Seq from 169 to 172
+Skipped Seq from 173 to 176
+Skipped Seq from 176 to 179
+Skipped Seq from 179 to 183
+Skipped Seq from 183 to 186
+Skipped Seq from 186 to 191
+Skipped Seq from 191 to 207
+Skipped Seq from 207 to 209
+Skipped Seq from 209 to 213
+Skipped Seq from 213 to 218
+Skipped Seq from 220 to 223
+Skipped Seq from 228 to 231
+Skipped Seq from 231 to 233
+Skipped Seq from 233 to 235
+Skipped Seq from 236 to 238
+Skipped Seq from 238 to 241
+Skipped Seq from 242 to 244
+Skipped Seq from 244 to 246
+Skipped Seq from 247 to 249
+Skipped Seq from 249 to 251
+Skipped Seq from 255 to 257
+Skipped Seq from 272 to 274
+Skipped Seq from 277 to 279
+Skipped Seq from 287 to 289
+Skipped Seq from 289 to 433
+Skipped Seq from 438 to 440
+Skipped Seq from 484 to 486
+Skipped Seq from 516 to 518
+Skipped Seq from 2166 to 2168
+Skipped Seq from 2222 to 2224
+Skipped Seq from 2268 to 2270
+Skipped Seq from 2300 to 2302
+Skipped Seq from 2309 to 2311
+Number of times throttled: 4
+Received: 2216 / 2557 packets
+Start time: 1332760333.317028
+End time: 1332760362.113565
+Duration: 28.796537

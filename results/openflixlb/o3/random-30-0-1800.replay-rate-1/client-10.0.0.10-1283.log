@@ -1,0 +1,65 @@
+Starting client at 10.0.0.10:1283 with timeout:10
+My IP address is 10.0.0.10Skipped Seq from 1082 to 1084
+Skipped Seq from 1092 to 1094
+Skipped Seq from 1099 to 1103
+Skipped Seq from 1111 to 1113
+Skipped Seq from 1140 to 1142
+Skipped Seq from 1169 to 1171
+Skipped Seq from 1184 to 1186
+Skipped Seq from 1187 to 1189
+Skipped Seq from 1189 to 1194
+Skipped Seq from 1212 to 1214
+Skipped Seq from 1219 to 1237
+Skipped Seq from 1291 to 1293
+Skipped Seq from 1295 to 1298
+Skipped Seq from 1298 to 1300
+Skipped Seq from 1303 to 1306
+Skipped Seq from 1313 to 1315
+Skipped Seq from 1319 to 1321
+Skipped Seq from 1322 to 1325
+Skipped Seq from 1431 to 1438
+Skipped Seq from 1453 to 1455
+Skipped Seq from 1491 to 1495
+Skipped Seq from 1495 to 1498
+Skipped Seq from 1498 to 1500
+Skipped Seq from 1500 to 1502
+Skipped Seq from 1510 to 1514
+Skipped Seq from 1515 to 1517
+Skipped Seq from 1518 to 1520
+Skipped Seq from 1520 to 1523
+Skipped Seq from 1523 to 1526
+Skipped Seq from 1532 to 1534
+Skipped Seq from 1535 to 1537
+Skipped Seq from 1543 to 1546
+Skipped Seq from 1546 to 1548
+Skipped Seq from 5845 to 5847
+Skipped Seq from 5847 to 5849
+Skipped Seq from 5851 to 5859
+Skipped Seq from 5860 to 5873
+Skipped Seq from 5873 to 5876
+Skipped Seq from 5879 to 5881
+Skipped Seq from 5885 to 5887
+Skipped Seq from 5895 to 5898
+Skipped Seq from 5906 to 5925
+Skipped Seq from 5928 to 5931
+Skipped Seq from 5932 to 5934
+Skipped Seq from 5942 to 5944
+Skipped Seq from 5985 to 5987
+Skipped Seq from 5995 to 5997
+Skipped Seq from 6013 to 6015
+Skipped Seq from 6059 to 6061
+Skipped Seq from 6074 to 6076
+Skipped Seq from 6076 to 6078
+Skipped Seq from 6098 to 6100
+Skipped Seq from 6126 to 6128
+Skipped Seq from 6141 to 6143
+Skipped Seq from 6217 to 6219
+Skipped Seq from 6220 to 6222
+Skipped Seq from 6257 to 6259
+Skipped Seq from 6302 to 6304
+Skipped Seq from 6332 to 6334
+Number of times throttled: 8
+Received: 7754 / 7887 packets
+Start time: 1332762242.013177
+End time: 1332762338.521827
+Duration: 96.508650

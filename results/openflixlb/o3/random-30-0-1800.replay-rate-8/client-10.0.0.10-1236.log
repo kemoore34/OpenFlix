@@ -1,0 +1,115 @@
+Starting client at 10.0.0.10:1236 with timeout:10
+My IP address is 10.0.0.10Skipped Seq from 17 to 23
+Recovered out of order packet from 33 to 18
+Recovered out of order packet from 33 to 19
+Recovered out of order packet from 33 to 20
+Recovered out of order packet from 33 to 21
+Recovered out of order packet from 33 to 22
+Skipped Seq from 329 to 332
+Skipped Seq from 332 to 335
+Skipped Seq from 335 to 341
+Skipped Seq from 341 to 346
+Skipped Seq from 346 to 349
+Skipped Seq from 349 to 355
+Skipped Seq from 355 to 361
+Skipped Seq from 361 to 364
+Skipped Seq from 364 to 370
+Skipped Seq from 370 to 374
+Skipped Seq from 374 to 378
+Skipped Seq from 378 to 381
+Skipped Seq from 401 to 436
+Skipped Seq from 436 to 439
+Skipped Seq from 440 to 453
+Skipped Seq from 453 to 468
+Skipped Seq from 468 to 475
+Skipped Seq from 479 to 493
+Skipped Seq from 493 to 512
+Skipped Seq from 512 to 521
+Skipped Seq from 522 to 538
+Skipped Seq from 538 to 555
+Skipped Seq from 555 to 575
+Skipped Seq from 575 to 581
+Skipped Seq from 648 to 662
+Skipped Seq from 662 to 680
+Skipped Seq from 680 to 702
+Skipped Seq from 704 to 706
+Skipped Seq from 706 to 726
+Skipped Seq from 726 to 745
+Skipped Seq from 745 to 764
+Skipped Seq from 764 to 779
+Skipped Seq from 779 to 799
+Skipped Seq from 799 to 813
+Skipped Seq from 822 to 838
+Skipped Seq from 838 to 861
+Skipped Seq from 861 to 865
+Skipped Seq from 902 to 918
+Skipped Seq from 918 to 932
+Skipped Seq from 1005 to 1022
+Skipped Seq from 1022 to 1026
+Skipped Seq from 1037 to 1052
+Skipped Seq from 1054 to 1068
+Skipped Seq from 1068 to 1085
+Skipped Seq from 1085 to 1103
+Skipped Seq from 1103 to 1122
+Skipped Seq from 1122 to 1129
+Skipped Seq from 1129 to 1145
+Skipped Seq from 1145 to 1163
+Skipped Seq from 1165 to 1177
+Skipped Seq from 1177 to 1192
+Skipped Seq from 1195 to 1207
+Skipped Seq from 1222 to 1224
+Skipped Seq from 1289 to 1308
+Skipped Seq from 1308 to 1316
+Skipped Seq from 1351 to 1353
+Skipped Seq from 1353 to 1375
+Skipped Seq from 1375 to 1379
+Skipped Seq from 1441 to 1444
+Skipped Seq from 1444 to 1452
+Skipped Seq from 1452 to 1459
+Skipped Seq from 1459 to 1490
+Skipped Seq from 1490 to 1526
+Skipped Seq from 1577 to 1581
+Skipped Seq from 1581 to 1585
+Skipped Seq from 1585 to 1592
+Skipped Seq from 1592 to 1598
+Skipped Seq from 1598 to 1604
+Skipped Seq from 1604 to 1606
+Skipped Seq from 1606 to 1615
+Skipped Seq from 1615 to 1621
+Skipped Seq from 1621 to 1623
+Skipped Seq from 1624 to 1628
+Skipped Seq from 1660 to 1669
+Skipped Seq from 1669 to 1697
+Skipped Seq from 1697 to 1705
+Skipped Seq from 1709 to 1737
+Skipped Seq from 1737 to 1762
+Skipped Seq from 1854 to 1882
+Skipped Seq from 1882 to 1890
+Skipped Seq from 1928 to 1930
+Skipped Seq from 1930 to 1933
+Skipped Seq from 1933 to 1937
+Skipped Seq from 1937 to 1941
+Skipped Seq from 1941 to 1945
+Skipped Seq from 1945 to 1949
+Skipped Seq from 1949 to 1952
+Skipped Seq from 1953 to 1955
+Skipped Seq from 1955 to 1957
+Skipped Seq from 1962 to 1965
+Skipped Seq from 1965 to 1967
+Skipped Seq from 1967 to 1977
+Skipped Seq from 1977 to 2015
+Skipped Seq from 2015 to 2041
+Skipped Seq from 2076 to 2080
+Skipped Seq from 2080 to 2105
+Skipped Seq from 2213 to 2225
+Skipped Seq from 2274 to 2285
+Skipped Seq from 2285 to 2302
+Skipped Seq from 2302 to 2307
+Skipped Seq from 2420 to 2425
+Skipped Seq from 2425 to 2430
+Skipped Seq from 2615 to 2618
+Number of times throttled: 3
+Received: 1562 / 2625 packets
+Start time: 1332844793.970741
+End time: 1332844808.680489
+Duration: 14.709748

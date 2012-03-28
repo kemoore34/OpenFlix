@@ -1,0 +1,70 @@
+Starting client at 10.0.0.23:1236 with timeout:10
+My IP address is 10.0.0.23Skipped Seq from 4 to 8
+Skipped Seq from 8 to 10
+Skipped Seq from 12 to 20
+Skipped Seq from 20 to 24
+Skipped Seq from 26 to 29
+Skipped Seq from 29 to 34
+Skipped Seq from 36 to 39
+Skipped Seq from 41 to 45
+Skipped Seq from 45 to 53
+Skipped Seq from 54 to 56
+Skipped Seq from 58 to 60
+Skipped Seq from 62 to 67
+Skipped Seq from 67 to 70
+Skipped Seq from 77 to 79
+Skipped Seq from 79 to 84
+Skipped Seq from 84 to 86
+Skipped Seq from 92 to 94
+Skipped Seq from 98 to 101
+Skipped Seq from 101 to 106
+Skipped Seq from 107 to 113
+Skipped Seq from 113 to 116
+Skipped Seq from 116 to 118
+Skipped Seq from 123 to 129
+Skipped Seq from 131 to 135
+Skipped Seq from 135 to 139
+Skipped Seq from 139 to 141
+Skipped Seq from 144 to 148
+Skipped Seq from 150 to 153
+Skipped Seq from 154 to 157
+Skipped Seq from 157 to 159
+Skipped Seq from 159 to 164
+Skipped Seq from 183 to 189
+Skipped Seq from 203 to 206
+Skipped Seq from 207 to 212
+Skipped Seq from 212 to 214
+Skipped Seq from 214 to 221
+Skipped Seq from 221 to 224
+Skipped Seq from 227 to 240
+Skipped Seq from 241 to 243
+Skipped Seq from 243 to 245
+Skipped Seq from 245 to 249
+Skipped Seq from 249 to 252
+Skipped Seq from 257 to 265
+Skipped Seq from 265 to 267
+Skipped Seq from 268 to 271
+Skipped Seq from 273 to 280
+Skipped Seq from 280 to 283
+Skipped Seq from 285 to 294
+Skipped Seq from 300 to 303
+Skipped Seq from 303 to 305
+Skipped Seq from 306 to 309
+Skipped Seq from 321 to 323
+Skipped Seq from 324 to 326
+Skipped Seq from 326 to 331
+Skipped Seq from 331 to 333
+Skipped Seq from 333 to 335
+Skipped Seq from 336 to 340
+Skipped Seq from 341 to 351
+Skipped Seq from 351 to 357
+Skipped Seq from 357 to 364
+Skipped Seq from 365 to 367
+Skipped Seq from 373 to 376
+Skipped Seq from 381 to 383
+Skipped Seq from 383 to 385
+Number of times throttled: 0
+Received: 198 / 389 packets
+Start time: 1332835190.623544
+End time: 1332835201.538501
+Duration: 10.914957

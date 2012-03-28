@@ -1,0 +1,66 @@
+Starting client at 10.0.0.12:1241 with timeout:10
+My IP address is 10.0.0.12Skipped Seq from 3080 to 3082
+Skipped Seq from 3086 to 3093
+Skipped Seq from 3096 to 3107
+Skipped Seq from 3108 to 3112
+Skipped Seq from 3113 to 3116
+Skipped Seq from 3117 to 3119
+Skipped Seq from 3127 to 3129
+Skipped Seq from 3139 to 3141
+Skipped Seq from 3151 to 3153
+Skipped Seq from 3162 to 3164
+Skipped Seq from 3166 to 3180
+Skipped Seq from 3180 to 3182
+Skipped Seq from 3182 to 3189
+Skipped Seq from 3189 to 3191
+Skipped Seq from 3196 to 3206
+Skipped Seq from 3206 to 3208
+Skipped Seq from 3208 to 3211
+Skipped Seq from 3211 to 3213
+Skipped Seq from 3215 to 3217
+Skipped Seq from 3227 to 3231
+Skipped Seq from 3231 to 3241
+Skipped Seq from 3241 to 3243
+Skipped Seq from 3243 to 3247
+Skipped Seq from 3247 to 3250
+Skipped Seq from 3250 to 3253
+Skipped Seq from 3254 to 3256
+Skipped Seq from 3256 to 3259
+Skipped Seq from 3259 to 3262
+Skipped Seq from 3265 to 3267
+Skipped Seq from 3267 to 3279
+Skipped Seq from 3285 to 3297
+Skipped Seq from 3299 to 3301
+Skipped Seq from 3305 to 3318
+Skipped Seq from 3322 to 3324
+Skipped Seq from 3325 to 3337
+Skipped Seq from 3346 to 3358
+Skipped Seq from 3359 to 3361
+Skipped Seq from 3364 to 3377
+Skipped Seq from 3381 to 3383
+Skipped Seq from 3383 to 3391
+Skipped Seq from 3391 to 3394
+Skipped Seq from 3394 to 3398
+Skipped Seq from 3399 to 3410
+Skipped Seq from 3415 to 3417
+Skipped Seq from 3418 to 3430
+Skipped Seq from 3438 to 3450
+Skipped Seq from 3451 to 3453
+Skipped Seq from 3458 to 3469
+Skipped Seq from 3475 to 3490
+Skipped Seq from 3494 to 3511
+Skipped Seq from 3513 to 3515
+Skipped Seq from 3515 to 3529
+Skipped Seq from 3530 to 3543
+Skipped Seq from 3544 to 3546
+Skipped Seq from 3546 to 3564
+Skipped Seq from 3565 to 3582
+Skipped Seq from 3585 to 3602
+Skipped Seq from 3604 to 3620
+Skipped Seq from 3621 to 3641
+Skipped Seq from 3642 to 3654
+Number of times throttled: 2
+Received: 3287 / 3654 packets
+Start time: 1332808962.100262
+End time: 1332808985.265872
+Duration: 23.165610

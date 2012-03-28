@@ -1,0 +1,70 @@
+Starting client at 10.0.0.20:1271 with timeout:10
+My IP address is 10.0.0.20Skipped Seq from 0 to 2
+Recovered out of order packet from 2 to 1
+Skipped Seq from 4446 to 4454
+Skipped Seq from 4454 to 4457
+Skipped Seq from 4463 to 4467
+Skipped Seq from 4484 to 4486
+Skipped Seq from 4511 to 4513
+Skipped Seq from 4542 to 4544
+Skipped Seq from 4545 to 4547
+Skipped Seq from 4547 to 4549
+Skipped Seq from 4549 to 4553
+Skipped Seq from 4553 to 4562
+Skipped Seq from 4562 to 4566
+Skipped Seq from 4568 to 4572
+Skipped Seq from 4572 to 4576
+Skipped Seq from 4576 to 4581
+Skipped Seq from 4581 to 4585
+Skipped Seq from 4585 to 4587
+Skipped Seq from 4593 to 4596
+Skipped Seq from 4597 to 4604
+Skipped Seq from 4617 to 4630
+Skipped Seq from 4631 to 4633
+Skipped Seq from 4633 to 4635
+Skipped Seq from 4636 to 4638
+Skipped Seq from 4639 to 4641
+Skipped Seq from 4641 to 4645
+Skipped Seq from 4646 to 4648
+Skipped Seq from 4651 to 4653
+Skipped Seq from 4659 to 4661
+Skipped Seq from 4667 to 4669
+Skipped Seq from 4671 to 4673
+Skipped Seq from 4703 to 4705
+Skipped Seq from 4717 to 4761
+Skipped Seq from 4761 to 4789
+Skipped Seq from 4789 to 4794
+Skipped Seq from 4794 to 4800
+Skipped Seq from 4800 to 4810
+Skipped Seq from 4810 to 4813
+Skipped Seq from 4819 to 4821
+Skipped Seq from 4821 to 4824
+Skipped Seq from 4825 to 4827
+Skipped Seq from 4828 to 4833
+Skipped Seq from 4837 to 4839
+Skipped Seq from 4845 to 4850
+Skipped Seq from 4850 to 4854
+Skipped Seq from 4882 to 4884
+Skipped Seq from 4928 to 4930
+Skipped Seq from 4951 to 4961
+Skipped Seq from 4972 to 4974
+Skipped Seq from 5011 to 5013
+Skipped Seq from 5038 to 5040
+Skipped Seq from 9330 to 9332
+Skipped Seq from 9339 to 9360
+Skipped Seq from 9363 to 9365
+Skipped Seq from 9381 to 9400
+Skipped Seq from 9407 to 9423
+Skipped Seq from 9423 to 9447
+Skipped Seq from 9452 to 9454
+Skipped Seq from 9471 to 9473
+Skipped Seq from 9475 to 9477
+Skipped Seq from 9481 to 9483
+Skipped Seq from 9492 to 9501
+Skipped Seq from 9518 to 9520
+Skipped Seq from 9531 to 9533
+Number of times throttled: 9
+Received: 9411 / 9701 packets
+Start time: 1332759914.170030
+End time: 1332760025.827980
+Duration: 111.657950

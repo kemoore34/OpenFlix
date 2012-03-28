@@ -1,0 +1,72 @@
+Starting client at 10.0.0.25:1240 with timeout:10
+My IP address is 10.0.0.25Skipped Seq from 0 to 3
+Skipped Seq from 6 to 11
+Skipped Seq from 11 to 14
+Skipped Seq from 14 to 18
+Skipped Seq from 18 to 23
+Skipped Seq from 23 to 32
+Skipped Seq from 32 to 44
+Skipped Seq from 44 to 49
+Skipped Seq from 49 to 51
+Skipped Seq from 51 to 54
+Skipped Seq from 54 to 56
+Skipped Seq from 2498 to 2523
+Skipped Seq from 2525 to 2527
+Skipped Seq from 2527 to 2557
+Skipped Seq from 2565 to 2567
+Skipped Seq from 2577 to 2579
+Skipped Seq from 2592 to 2594
+Skipped Seq from 2605 to 2607
+Skipped Seq from 2611 to 2613
+Skipped Seq from 2614 to 2616
+Skipped Seq from 2622 to 2626
+Skipped Seq from 2627 to 2629
+Skipped Seq from 2632 to 2637
+Skipped Seq from 2637 to 2639
+Skipped Seq from 2639 to 2641
+Skipped Seq from 2641 to 2643
+Skipped Seq from 2652 to 2654
+Skipped Seq from 2699 to 2701
+Skipped Seq from 2731 to 2733
+Skipped Seq from 2772 to 2774
+Skipped Seq from 2842 to 2844
+Skipped Seq from 2847 to 2849
+Skipped Seq from 2852 to 2855
+Skipped Seq from 2860 to 2862
+Skipped Seq from 2862 to 2864
+Skipped Seq from 2868 to 2870
+Skipped Seq from 2870 to 2873
+Skipped Seq from 2873 to 2880
+Skipped Seq from 2882 to 2884
+Skipped Seq from 2902 to 2904
+Skipped Seq from 2906 to 2908
+Skipped Seq from 2911 to 2913
+Skipped Seq from 2942 to 2945
+Skipped Seq from 2948 to 2950
+Skipped Seq from 2971 to 2976
+Skipped Seq from 2983 to 2985
+Skipped Seq from 2987 to 2989
+Skipped Seq from 2991 to 2994
+Skipped Seq from 2996 to 2998
+Skipped Seq from 2998 to 3000
+Skipped Seq from 3003 to 3006
+Skipped Seq from 3008 to 3010
+Skipped Seq from 3014 to 3016
+Skipped Seq from 3017 to 3020
+Skipped Seq from 3022 to 3024
+Skipped Seq from 3024 to 3028
+Skipped Seq from 3029 to 3032
+Skipped Seq from 3032 to 3034
+Skipped Seq from 3034 to 3036
+Skipped Seq from 3036 to 3040
+Skipped Seq from 3040 to 3042
+Skipped Seq from 3042 to 3049
+Skipped Seq from 3049 to 3052
+Skipped Seq from 3052 to 3054
+Skipped Seq from 3054 to 3057
+Skipped Seq from 3066 to 3069
+Number of times throttled: 5
+Received: 3612 / 3792 packets
+Start time: 1332760912.314604
+End time: 1332760963.329880
+Duration: 51.015276

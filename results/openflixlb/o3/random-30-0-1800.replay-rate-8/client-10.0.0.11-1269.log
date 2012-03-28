@@ -1,0 +1,71 @@
+Starting client at 10.0.0.11:1269 with timeout:10
+My IP address is 10.0.0.11Skipped Seq from 1 to 23
+Recovered out of order packet from 31 to 2
+Recovered out of order packet from 31 to 3
+Recovered out of order packet from 31 to 4
+Recovered out of order packet from 31 to 5
+Recovered out of order packet from 31 to 6
+Recovered out of order packet from 31 to 7
+Recovered out of order packet from 31 to 8
+Recovered out of order packet from 31 to 9
+Recovered out of order packet from 31 to 10
+Recovered out of order packet from 31 to 11
+Recovered out of order packet from 31 to 12
+Recovered out of order packet from 31 to 13
+Recovered out of order packet from 31 to 14
+Recovered out of order packet from 31 to 15
+Recovered out of order packet from 31 to 16
+Recovered out of order packet from 31 to 17
+Recovered out of order packet from 31 to 18
+Recovered out of order packet from 31 to 19
+Recovered out of order packet from 31 to 20
+Recovered out of order packet from 31 to 21
+Recovered out of order packet from 31 to 22
+Skipped Seq from 224 to 232
+Skipped Seq from 263 to 271
+Skipped Seq from 271 to 291
+Skipped Seq from 291 to 297
+Skipped Seq from 317 to 322
+Skipped Seq from 322 to 330
+Skipped Seq from 330 to 349
+Skipped Seq from 349 to 369
+Skipped Seq from 370 to 383
+Skipped Seq from 383 to 398
+Skipped Seq from 398 to 402
+Skipped Seq from 436 to 443
+Skipped Seq from 443 to 460
+Skipped Seq from 462 to 474
+Skipped Seq from 474 to 478
+Skipped Seq from 483 to 486
+Skipped Seq from 486 to 493
+Skipped Seq from 499 to 517
+Skipped Seq from 519 to 525
+Skipped Seq from 525 to 545
+Skipped Seq from 545 to 551
+Skipped Seq from 571 to 573
+Skipped Seq from 573 to 593
+Skipped Seq from 593 to 610
+Skipped Seq from 610 to 622
+Skipped Seq from 640 to 650
+Skipped Seq from 650 to 662
+Skipped Seq from 665 to 680
+Skipped Seq from 691 to 714
+Skipped Seq from 740 to 758
+Skipped Seq from 758 to 766
+Skipped Seq from 767 to 776
+Skipped Seq from 776 to 782
+Skipped Seq from 782 to 802
+Skipped Seq from 802 to 839
+Skipped Seq from 839 to 850
+Skipped Seq from 891 to 904
+Skipped Seq from 904 to 938
+Skipped Seq from 938 to 953
+Skipped Seq from 974 to 1000
+Skipped Seq from 1000 to 1003
+Skipped Seq from 1557 to 1577
+Skipped Seq from 1577 to 1579
+Number of times throttled: 2
+Received: 2305 / 2821 packets
+Start time: 1332846751.567275
+End time: 1332846766.703226
+Duration: 15.135951

@@ -1,0 +1,69 @@
+Starting client at 10.0.0.22:1234 with timeout:10
+My IP address is 10.0.0.22Skipped Seq from 823 to 833
+Skipped Seq from 833 to 847
+Skipped Seq from 847 to 858
+Skipped Seq from 870 to 876
+Skipped Seq from 876 to 894
+Skipped Seq from 894 to 912
+Skipped Seq from 912 to 928
+Skipped Seq from 928 to 939
+Skipped Seq from 1072 to 1078
+Skipped Seq from 1078 to 1086
+Skipped Seq from 1159 to 1163
+Skipped Seq from 1163 to 1177
+Skipped Seq from 1183 to 1187
+Skipped Seq from 1187 to 1204
+Skipped Seq from 1222 to 1232
+Skipped Seq from 1232 to 1251
+Skipped Seq from 1251 to 1269
+Skipped Seq from 1374 to 1381
+Skipped Seq from 1381 to 1396
+Skipped Seq from 1396 to 1400
+Skipped Seq from 1409 to 1412
+Skipped Seq from 1412 to 1422
+Skipped Seq from 1482 to 1501
+Skipped Seq from 1501 to 1517
+Skipped Seq from 1517 to 1528
+Skipped Seq from 1552 to 1567
+Skipped Seq from 1567 to 1618
+Skipped Seq from 1618 to 1657
+Skipped Seq from 1657 to 1684
+Skipped Seq from 1834 to 1861
+Skipped Seq from 1861 to 1872
+Skipped Seq from 1946 to 1957
+Skipped Seq from 2299 to 2356
+Skipped Seq from 2451 to 2472
+Skipped Seq from 2518 to 2576
+Skipped Seq from 2636 to 2643
+Skipped Seq from 2671 to 2742
+Skipped Seq from 2760 to 2786
+Skipped Seq from 2820 to 2839
+Skipped Seq from 2843 to 2890
+Skipped Seq from 14978 to 14997
+Skipped Seq from 14997 to 15000
+Skipped Seq from 15000 to 15020
+Skipped Seq from 15020 to 15051
+Skipped Seq from 15107 to 15113
+Skipped Seq from 15113 to 15118
+Skipped Seq from 15137 to 15166
+Skipped Seq from 15166 to 15169
+Skipped Seq from 15200 to 15203
+Skipped Seq from 15203 to 15236
+Skipped Seq from 15663 to 15667
+Skipped Seq from 15667 to 15675
+Skipped Seq from 15675 to 15712
+Skipped Seq from 15715 to 15767
+Skipped Seq from 15825 to 15843
+Skipped Seq from 15843 to 15849
+Skipped Seq from 16191 to 16216
+Skipped Seq from 16216 to 16267
+Skipped Seq from 16291 to 16296
+Skipped Seq from 16337 to 16381
+Skipped Seq from 16381 to 16386
+Skipped Seq from 16435 to 16472
+Skipped Seq from 16472 to 16501
+Number of times throttled: 6
+Received: 15493 / 16679 packets
+Start time: 1332841283.278254
+End time: 1332841320.059013
+Duration: 36.780759

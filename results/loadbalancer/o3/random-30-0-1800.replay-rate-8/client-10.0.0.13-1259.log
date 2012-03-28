@@ -1,0 +1,75 @@
+Starting client at 10.0.0.13:1259 with timeout:10
+My IP address is 10.0.0.13Skipped Seq from 543 to 551
+Skipped Seq from 551 to 557
+Skipped Seq from 557 to 564
+Skipped Seq from 565 to 572
+Skipped Seq from 616 to 630
+Skipped Seq from 636 to 646
+Skipped Seq from 666 to 677
+Skipped Seq from 679 to 684
+Skipped Seq from 684 to 687
+Skipped Seq from 691 to 694
+Skipped Seq from 694 to 697
+Skipped Seq from 699 to 701
+Skipped Seq from 701 to 709
+Skipped Seq from 714 to 719
+Skipped Seq from 719 to 722
+Skipped Seq from 722 to 730
+Skipped Seq from 730 to 744
+Skipped Seq from 744 to 748
+Skipped Seq from 777 to 782
+Skipped Seq from 782 to 799
+Skipped Seq from 799 to 801
+Skipped Seq from 824 to 830
+Skipped Seq from 830 to 845
+Skipped Seq from 845 to 866
+Skipped Seq from 866 to 877
+Skipped Seq from 908 to 913
+Skipped Seq from 913 to 928
+Skipped Seq from 928 to 942
+Skipped Seq from 960 to 971
+Skipped Seq from 971 to 990
+Skipped Seq from 992 to 994
+Skipped Seq from 996 to 1012
+Skipped Seq from 1072 to 1074
+Skipped Seq from 1074 to 1083
+Skipped Seq from 1089 to 1091
+Skipped Seq from 1091 to 1107
+Skipped Seq from 1107 to 1113
+Skipped Seq from 1114 to 1133
+Skipped Seq from 1136 to 1155
+Skipped Seq from 1155 to 1172
+Skipped Seq from 1172 to 1186
+Skipped Seq from 1188 to 1195
+Skipped Seq from 1195 to 1212
+Skipped Seq from 1212 to 1230
+Skipped Seq from 1230 to 1238
+Skipped Seq from 1238 to 1257
+Skipped Seq from 1257 to 1274
+Skipped Seq from 1274 to 1283
+Skipped Seq from 1329 to 1336
+Skipped Seq from 1340 to 1355
+Skipped Seq from 1355 to 1372
+Skipped Seq from 1395 to 1400
+Skipped Seq from 1451 to 1460
+Skipped Seq from 1512 to 1522
+Skipped Seq from 1522 to 1551
+Skipped Seq from 1555 to 1566
+Skipped Seq from 1566 to 1605
+Skipped Seq from 1605 to 1640
+Skipped Seq from 1704 to 1721
+Skipped Seq from 1721 to 1730
+Skipped Seq from 1730 to 1748
+Skipped Seq from 1749 to 1768
+Skipped Seq from 1768 to 1792
+Skipped Seq from 1908 to 1922
+Skipped Seq from 2005 to 2016
+Skipped Seq from 2016 to 2026
+Skipped Seq from 2055 to 2058
+Skipped Seq from 2058 to 2073
+Skipped Seq from 2073 to 2081
+Number of times throttled: 3
+Received: 1508 / 2243 packets
+Start time: 1332842609.330427
+End time: 1332842613.450272
+Duration: 4.119845
